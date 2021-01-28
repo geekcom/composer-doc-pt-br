@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        CLI / Comandos - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "CLI / Comandos";
+        var mkdocs_page_input_path = "cli.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1">
+    <a class="" href="introducao.html">Introdução</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="uso-basico.html">Uso Básico</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="bibliotecas.html">Bibliotecas</a>
+                </li>
+                <li class="toctree-l1 current">
+    <a class="current" href="cli.html">CLI / Comandos</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#interface-de-linha-de-comando-comandos">Interface de Linha de Comando / Comandos</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#opcoes-globais">Opções Globais</a></li>
+        
+            <li><a class="toctree-l3" href="#codigos-de-saida-do-processo">Códigos de Saída do Processo</a></li>
+        
+            <li><a class="toctree-l3" href="#init">init</a></li>
+        
+            <li><a class="toctree-l3" href="#install-i">install / i</a></li>
+        
+            <li><a class="toctree-l3" href="#update-u">update / u</a></li>
+        
+            <li><a class="toctree-l3" href="#require">require</a></li>
+        
+            <li><a class="toctree-l3" href="#remove">remove</a></li>
+        
+            <li><a class="toctree-l3" href="#check-platform-reqs">check-platform-reqs</a></li>
+        
+            <li><a class="toctree-l3" href="#global">global</a></li>
+        
+            <li><a class="toctree-l3" href="#search">search</a></li>
+        
+            <li><a class="toctree-l3" href="#show">show</a></li>
+        
+            <li><a class="toctree-l3" href="#outdated">outdated</a></li>
+        
+            <li><a class="toctree-l3" href="#browse-home">browse / home</a></li>
+        
+            <li><a class="toctree-l3" href="#suggests">suggests</a></li>
+        
+            <li><a class="toctree-l3" href="#depends-why">depends (why)</a></li>
+        
+            <li><a class="toctree-l3" href="#prohibits-why-not">prohibits (why-not)</a></li>
+        
+            <li><a class="toctree-l3" href="#validate">validate</a></li>
+        
+            <li><a class="toctree-l3" href="#status">status</a></li>
+        
+            <li><a class="toctree-l3" href="#self-update-selfupdate">self-update (selfupdate)</a></li>
+        
+            <li><a class="toctree-l3" href="#config">config</a></li>
+        
+            <li><a class="toctree-l3" href="#create-project">create-project</a></li>
+        
+            <li><a class="toctree-l3" href="#dump-autoload-dumpautoload">dump-autoload (dumpautoload)</a></li>
+        
+            <li><a class="toctree-l3" href="#clear-cache-clearcache">clear-cache (clearcache)</a></li>
+        
+            <li><a class="toctree-l3" href="#licenses">licenses</a></li>
+        
+            <li><a class="toctree-l3" href="#run-script">run-script</a></li>
+        
+            <li><a class="toctree-l3" href="#exec">exec</a></li>
+        
+            <li><a class="toctree-l3" href="#diagnose">diagnose</a></li>
+        
+            <li><a class="toctree-l3" href="#archive">archive</a></li>
+        
+            <li><a class="toctree-l3" href="#help">help</a></li>
+        
+            <li><a class="toctree-l3" href="#preenchimento-automatico-na-linha-de-comando">Preenchimento Automático na Linha de Comando</a></li>
+        
+            <li><a class="toctree-l3" href="#variaveis-de-ambiente">Variáveis de Ambiente</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="esquema.html">O Esquema do composer.json</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="repositorios.html">Repositórios</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="config.html">Config</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>CLI / Comandos</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/cli.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="interface-de-linha-de-comando-comandos">Interface de Linha de Comando / Comandos<a class="headerlink" href="#interface-de-linha-de-comando-comandos" title="Permanent link">&para;</a></h1>
+<p>Você já aprendeu como usar a interface de linha de comando para fazer algumas
+coisas. Este capítulo documenta todos os comandos disponíveis.</p>
+<p>Para obter ajuda na linha de comando, basta chamar <code>composer</code> ou <code>composer list</code>
+para ver a lista completa de comandos e, em seguida, <code>--help</code> combinado com
+qualquer um deles para fornecer mais informações.</p>
+<p>Como o Composer usa o <a href="https://github.com/symfony/console">symfony/console</a>, você pode chamar os
+comandos pelo nomes abreviados, se não forem ambíguos.</p>
+<pre><code class="language-sh">composer dump
+</code></pre>
+<p>chama <code>composer dump-autoload</code>.</p>
+<h2 id="opcoes-globais">Opções Globais<a class="headerlink" href="#opcoes-globais" title="Permanent link">&para;</a></h2>
+<p>As seguintes opções estão disponíveis em todos os comandos:</p>
+<ul>
+<li><strong>--verbose (-v):</strong> Aumenta a verbosidade das mensagens.</li>
+<li><strong>--help (-h):</strong> Exibe informações de ajuda.</li>
+<li><strong>--quiet (-q):</strong> Não gera nenhuma mensagem.</li>
+<li><strong>--no-interaction (-n):</strong> Não faz nenhuma pergunta interativa.</li>
+<li><strong>--no-plugins:</strong> Desabilita os plugins.</li>
+<li><strong>--no-cache:</strong> Desabilita o uso do diretório de cache. O mesmo que definir a
+  variável de ambiente <code>COMPOSER_CACHE_DIR</code> como <code>/dev/null</code> (ou <code>NUL</code> no
+  Windows).</li>
+<li><strong>--working-dir (-d):</strong> Se especificado, usa o diretório fornecido como
+  diretório de trabalho.</li>
+<li><strong>--profile:</strong> Exibe informações de tempo e uso da memória.</li>
+<li><strong>--ansi:</strong> Força a saída ANSI.</li>
+<li><strong>--no-ansi:</strong> Desabilita a saída ANSI.</li>
+<li><strong>--version (-V):</strong> Exibe esta versão da aplicação.</li>
+</ul>
+<h2 id="codigos-de-saida-do-processo">Códigos de Saída do Processo<a class="headerlink" href="#codigos-de-saida-do-processo" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>0:</strong> OK</li>
+<li><strong>1:</strong> Código de erro genérico/desconhecido</li>
+<li><strong>2:</strong> Código de erro de resolução de dependências</li>
+</ul>
+<h2 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h2>
+<p>No capítulo <a href="bibliotecas.html">Bibliotecas</a>, vimos como criar um <code>composer.json</code>
+manualmente. Há também um comando <code>init</code> disponível que facilita um pouco isso.</p>
+<p>Quando você executa o comando, ele solicita interativamente que você preencha os
+campos, enquanto usa alguns padrões inteligentes.</p>
+<pre><code class="language-sh">php composer.phar init
+</code></pre>
+<h3 id="opcoes-init">Opções<a class="headerlink" href="#opcoes-init" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--name:</strong> Nome do pacote.</li>
+<li><strong>--description:</strong> Descrição do pacote.</li>
+<li><strong>--author:</strong> Nome da pessoa que criou o pacote.</li>
+<li><strong>--type:</strong> Tipo de pacote.</li>
+<li><strong>--homepage:</strong> Página do pacote.</li>
+<li><strong>--require:</strong> Pacote para exigir com uma restrição de versão. Deve estar no
+  formato <code>foo/bar:1.0.0</code>.</li>
+<li><strong>--require-dev:</strong> Requisitos de desenvolvimento, consulte <strong>--require</strong>.</li>
+<li><strong>--stability (-s):</strong> Valor para o campo <code>minimum-stability</code>.</li>
+<li><strong>--license (-l):</strong> Licença do pacote.</li>
+<li><strong>--repository:</strong> Fornece um (ou mais) repositórios personalizados. Eles serão
+  armazenados no <code>composer.json</code> gerado e usados para o preenchimento automático
+  ao solicitar a lista de requisitos. Cada repositório pode ser uma URL HTTP
+  apontando para um repositório do <code>composer</code> ou uma string JSON semelhante à
+  string aceita pela chave <a href="esquema.html#repositories">repositories</a>.</li>
+</ul>
+<h2 id="install-i">install / i<a class="headerlink" href="#install-i" title="Permanent link">&para;</a></h2>
+<p>O comando <code>install</code> lê o arquivo <code>composer.json</code> presente no diretório atual,
+resolve as dependências e as instala em <code>vendor</code>.</p>
+<pre><code class="language-sh">php composer.phar install
+</code></pre>
+<p>Se houver um arquivo <code>composer.lock</code> no diretório atual, ele usará as versões
+exatas desse arquivo em vez de resolvê-las. Isso garante que todas as pessoas
+usando a biblioteca obtenham as mesmas versões das dependências.</p>
+<p>Se não houver um arquivo <code>composer.lock</code>, o Composer criará um após a resolução
+das dependências.</p>
+<h3 id="opcoes-install">Opções<a class="headerlink" href="#opcoes-install" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--prefer-source:</strong> Existem duas maneiras de baixar um pacote: <code>source</code> e
+  <code>dist</code>. Para versões estáveis, o Composer usará <code>dist</code> por padrão. <code>source</code> é
+  um repositório de controle de versão. Se <code>--prefer-source</code> estiver habilitado,
+  o Composer instalará a partir de <code>source</code>, se possível. Isso é útil se você
+  deseja corrigir um bug em um projeto e obter um clone git local da dependência
+  diretamente.</li>
+<li><strong>--prefer-dist:</strong> O oposto de <code>--prefer-source</code>, o Composer instalará a
+  partir de <code>dist</code>, se possível. Isso pode acelerar substancialmente as
+  instalações em servidores de compilação e outros casos de uso em que você
+  normalmente não executa atualizações dos vendors. Também é uma maneira de
+  contornar problemas com o git se você não tiver uma configuração adequada.</li>
+<li><strong>--dry-run:</strong> Se você deseja passar por uma instalação sem realmente instalar
+  um pacote, pode usar <code>--dry-run</code>. Isso simulará a instalação e mostrará o que
+  aconteceria.</li>
+<li><strong>--dev:</strong> Instala os pacotes listados em <code>require-dev</code> (esse é o
+  comportamento padrão).</li>
+<li><strong>--no-dev:</strong> Ignora a instalação dos pacotes listados em <code>require-dev</code>. A
+  geração do autoloader ignora as regras em <code>autoload-dev</code>.</li>
+<li><strong>--no-autoloader:</strong> Ignora a geração do autoloader.</li>
+<li><strong>--no-scripts:</strong> Ignora a execução dos scripts definidos no <code>composer.json</code>.</li>
+<li><strong>--no-progress:</strong> Remove a exibição de progresso que pode interferir em
+  alguns terminais ou scripts que não tratam caracteres de backspace.</li>
+<li><strong>--no-suggest:</strong> Ignora pacotes sugeridos na saída.</li>
+<li><strong>--optimize-autoloader (-o):</strong> Converte o autoloading PSR-0/4 em um mapa de
+  classes para obter um autoloader mais rápido. Isso é recomendado especialmente
+  em produção, mas pode demorar um pouco para ser executado, portanto, no
+  momento não é feito por padrão.</li>
+<li><strong>--classmap-authoritative (-a):</strong> Faz o autoload apenas das classes do mapa
+  de classes. Implicitamente habilita <code>--optimize-autoloader</code>.</li>
+<li><strong>--apcu-autoloader:</strong> Usa a APCu para armazenar em cache as classes
+  encontradas/não encontradas.</li>
+<li><strong>--ignore-platform-reqs:</strong> Ignora os requisitos <code>php</code>, <code>hhvm</code>, <code>lib-*</code> e
+  <code>ext-*</code> e força a instalação, mesmo que a máquina local não os cumpra. Veja
+  também a opção de configuração <a href="config.html#platform"><code>platform</code></a>.</li>
+</ul>
+<h2 id="update-u">update / u<a class="headerlink" href="#update-u" title="Permanent link">&para;</a></h2>
+<p>Para obter as versões mais recentes das dependências e atualizar o arquivo
+<code>composer.lock</code>, você deve usar o comando <code>update</code>. Esse comando também tem um
+alias <code>upgrade</code>, já que ele faz o mesmo que <code>upgrade</code> faz, se você estiver
+pensando no <code>apt-get</code> ou em gerenciadores de pacotes similares.</p>
+<pre><code class="language-sh">php composer.phar update
+</code></pre>
+<p>Isso resolverá todas as dependências do projeto e gravará as versões exatas no
+<code>composer.lock</code>.</p>
+<p>Se você deseja atualizar apenas alguns pacotes e não todos, é possível listá-los
+da seguinte forma:</p>
+<pre><code class="language-sh">php composer.phar update vendor/pacote vendor/pacote2
+</code></pre>
+<p>Você também pode usar curingas para atualizar vários pacotes de uma vez:</p>
+<pre><code class="language-sh">php composer.phar update &quot;vendor/*&quot;
+</code></pre>
+<h3 id="opcoes-update">Opções<a class="headerlink" href="#opcoes-update" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--prefer-source:</strong> Instala os pacotes de <code>source</code>, quando disponíveis.</li>
+<li><strong>--prefer-dist:</strong> Instala os pacotes de <code>dist</code>, quando disponíveis.</li>
+<li><strong>--dry-run:</strong> Simula o comando sem realmente fazer nada.</li>
+<li><strong>--dev:</strong> Instala os pacotes listados em <code>require-dev</code> (esse é o
+  comportamento padrão).</li>
+<li><strong>--no-dev:</strong> Ignora a instalação dos pacotes listados em <code>require-dev</code>. A
+  geração do autoloader ignora as regras em <code>autoload-dev</code>.</li>
+<li><strong>--lock:</strong> Atualiza apenas o hash do arquivo lock para suprimir o aviso de
+  que o arquivo lock está desatualizado.</li>
+<li><strong>--no-autoloader:</strong> Ignora a geração do autoloader.</li>
+<li><strong>--no-scripts:</strong> Ignora a execução dos scripts definidos no <code>composer.json</code>.</li>
+<li><strong>--no-progress:</strong> Remove a exibição de progresso que pode interferir em
+  alguns terminais ou scripts que não tratam caracteres de backspace.</li>
+<li><strong>--no-suggest:</strong> Ignora pacotes sugeridos na saída.</li>
+<li><strong>--with-dependencies:</strong> Adiciona também dependências dos pacotes da lista de
+  pacotes permitidos à lista de pacotes permitidos, exceto aquelas que são
+  requisitos de primeiro grau.</li>
+<li><strong>--with-all-dependencies:</strong> Adiciona também todas as dependências dos pacotes
+  da lista de pacotes permitidos à lista de pacotes permitidos, incluindo
+  aquelas que são requisitos de primeiro grau.</li>
+<li><strong>--optimize-autoloader (-o):</strong> Converte o autoloading PSR-0/4 em um mapa de
+  classes para obter um autoloader mais rápido. Isso é recomendado especialmente
+  em produção, mas pode demorar um pouco para ser executado, portanto, no
+  momento não é feito por padrão.</li>
+<li><strong>--classmap-authoritative (-a):</strong> Faz o autoload apenas das classes do mapa
+  de classes. Implicitamente habilita <code>--optimize-autoloader</code>.</li>
+<li><strong>--apcu-autoloader:</strong> Usa a APCu para armazenar em cache as classes
+  encontradas/não encontradas.</li>
+<li><strong>--ignore-platform-reqs:</strong> Ignora os requisitos <code>php</code>, <code>hhvm</code>, <code>lib-*</code> e
+  <code>ext-*</code> e força a instalação, mesmo que a máquina local não os cumpra. Veja
+  também a opção de configuração <a href="config.html#platform"><code>platform</code></a>.</li>
+<li><strong>--prefer-stable:</strong> Prefere versões estáveis das dependências.</li>
+<li><strong>--prefer-lowest:</strong> Prefere as versões mais antigas das dependências. Útil
+  para testar versões mínimas de requisitos, geralmente usada com
+  <code>--prefer-stable</code>.</li>
+<li><strong>--interactive:</strong> Interface interativa com preenchimento automático para
+  selecionar os pacotes a serem atualizados.</li>
+<li><strong>--root-reqs:</strong> Restringe a atualização às dependências de primeiro grau.</li>
+</ul>
+<h2 id="require">require<a class="headerlink" href="#require" title="Permanent link">&para;</a></h2>
+<p>O comando <code>require</code> adiciona novos pacotes ao arquivo <code>composer.json</code> presente
+no diretório atual. Se nenhum arquivo existir, um arquivo será criado durante a
+execução do comando.</p>
+<pre><code class="language-sh">php composer.phar require
+</code></pre>
+<p>Após adicionar/alterar os requisitos, os requisitos modificados serão instalados
+ou atualizados.</p>
+<p>Se você não deseja escolher os requisitos interativamente, poderá passá-los para
+o comando.</p>
+<pre><code class="language-sh">php composer.phar require vendor/pacote:2.* vendor/pacote2:dev-master
+</code></pre>
+<p>Se você não especificar um pacote, o Composer solicitará que você procure um
+pacote e, caso haja resultados, que forneça uma lista de correspondências a
+serem requeridas.</p>
+<h3 id="opcoes-require">Opções<a class="headerlink" href="#opcoes-require" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--dev:</strong> Adiciona pacotes a <code>require-dev</code>.</li>
+<li><strong>--prefer-source:</strong> Instala os pacotes de <code>source</code>, quando disponíveis.</li>
+<li><strong>--prefer-dist:</strong> Instala os pacotes de <code>dist</code>, quando disponíveis.</li>
+<li><strong>--no-progress:</strong> Remove a exibição de progresso que pode interferir em
+  alguns terminais ou scripts que não tratam caracteres de backspace.</li>
+<li><strong>--no-suggest:</strong> Ignora pacotes sugeridos na saída.</li>
+<li><strong>--no-update:</strong> Desabilita a atualização automática das dependências.</li>
+<li><strong>--no-scripts:</strong> Ignora a execução dos scripts definidos no <code>composer.json</code>.</li>
+<li><strong>--update-no-dev:</strong> Executa a atualização de dependências com a opção
+  <code>--no-dev</code>.</li>
+<li><strong>--update-with-dependencies:</strong> Atualiza também as dependências dos novos
+  pacotes requeridos, exceto aquelas que são requisitos de primeiro grau.</li>
+<li><strong>--update-with-all-dependencies:</strong> Atualiza também as dependências dos novos
+  pacotes requeridos, incluindo aquelas que são requisitos de primeiro grau.</li>
+<li><strong>--ignore-platform-reqs:</strong> Ignora os requisitos <code>php</code>, <code>hhvm</code>, <code>lib-*</code> e
+  <code>ext-*</code> e força a instalação, mesmo que a máquina local não os cumpra. Veja
+  também a opção de configuração <a href="config.html#platform"><code>platform</code></a>.</li>
+<li><strong>--prefer-stable:</strong> Prefere versões estáveis das dependências.</li>
+<li><strong>--prefer-lowest:</strong> Prefere as versões mais antigas das dependências. Útil
+  para testar versões mínimas de requisitos, geralmente usada com
+  <code>--prefer-stable</code>.</li>
+<li><strong>--sort-packages:</strong> Mantém os pacotes ordenados no <code>composer.json</code>.</li>
+<li><strong>--optimize-autoloader (-o):</strong> Converte o autoloading PSR-0/4 em um mapa de
+  classes para obter um autoloader mais rápido. Isso é recomendado especialmente
+  em produção, mas pode demorar um pouco para ser executado, portanto, no
+  momento não é feito por padrão.</li>
+<li><strong>--classmap-authoritative (-a):</strong> Faz o autoload apenas das classes do mapa
+  de classes. Implicitamente habilita <code>--optimize-autoloader</code>.</li>
+<li><strong>--apcu-autoloader:</strong> Usa a APCu para armazenar em cache as classes
+  encontradas/não encontradas.</li>
+</ul>
+<h2 id="remove">remove<a class="headerlink" href="#remove" title="Permanent link">&para;</a></h2>
+<p>O comando <code>remove</code> remove pacotes do arquivo <code>composer.json</code> presente no
+diretório atual.</p>
+<pre><code class="language-sh">php composer.phar remove vendor/pacote vendor/pacote2
+</code></pre>
+<p>Após remover os requisitos, os requisitos modificados serão desinstalados.</p>
+<h3 id="opcoes-remove">Opções<a class="headerlink" href="#opcoes-remove" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--dev:</strong> Remove pacotes de <code>require-dev</code>.</li>
+<li><strong>--no-progress:</strong> Remove a exibição de progresso que pode interferir em
+  alguns terminais ou scripts que não tratam caracteres de backspace.</li>
+<li><strong>--no-update:</strong> Desabilita a atualização automática das dependências.</li>
+<li><strong>--no-scripts:</strong> Ignora a execução dos scripts definidos no <code>composer.json</code>.</li>
+<li><strong>--update-no-dev:</strong> Executa a atualização de dependências com a opção
+  <code>--no-dev</code>.</li>
+<li><strong>--update-with-dependencies:</strong> Atualiza também as dependências dos pacotes
+  removidos.</li>
+<li><strong>--ignore-platform-reqs:</strong> Ignora os requisitos <code>php</code>, <code>hhvm</code>, <code>lib-*</code> e
+  <code>ext-*</code> e força a instalação, mesmo que a máquina local não os cumpra. Veja
+  também a opção de configuração <a href="config.html#platform"><code>platform</code></a>.</li>
+<li><strong>--optimize-autoloader (-o):</strong> Converte o autoloading PSR-0/4 em um mapa de
+  classes para obter um autoloader mais rápido. Isso é recomendado especialmente
+  em produção, mas pode demorar um pouco para ser executado, portanto, no
+  momento não é feito por padrão.</li>
+<li><strong>--classmap-authoritative (-a):</strong> Faz o autoload apenas das classes do mapa
+  de classes. Implicitamente habilita <code>--optimize-autoloader</code>.</li>
+<li><strong>--apcu-autoloader:</strong> Usa a APCu para armazenar em cache as classes
+  encontradas/não encontradas.</li>
+</ul>
+<h2 id="check-platform-reqs">check-platform-reqs<a class="headerlink" href="#check-platform-reqs" title="Permanent link">&para;</a></h2>
+<p>O comando <code>check-platform-reqs</code> verifica se as versões do PHP e das extensões
+correspondem aos requisitos de plataforma dos pacotes instalados. Isso pode ser
+usado para verificar se um servidor de produção possui todas as extensões
+necessárias para executar um projeto após a instalação, por exemplo.</p>
+<p>Diferente de <code>update</code>/<code>install</code>, esse comando ignorará as configurações em
+<code>config.platform</code> e verificará os pacotes reais da plataforma para garantir que
+você tenha as dependências de plataforma necessárias.</p>
+<h2 id="global">global<a class="headerlink" href="#global" title="Permanent link">&para;</a></h2>
+<p>O comando <code>global</code> permite executar outros comandos, como <code>install</code>, <code>remove</code>,
+<code>require</code> ou <code>update</code>, como se você os estivesse executando a partir do
+diretório <a href="#composer-home">COMPOSER_HOME</a>.</p>
+<p>Isso é apenas um auxiliar para gerenciar um projeto armazenado em um local
+central que pode conter ferramentas da CLI ou plugins do Composer que você
+deseja disponibilizar em qualquer lugar.</p>
+<p>Isso pode ser usado para instalar utilitários da CLI globalmente. Aqui está um
+exemplo:</p>
+<pre><code class="language-sh">php composer.phar global require friendsofphp/php-cs-fixer
+</code></pre>
+<p>Agora, o binário <code>php-cs-fixer</code> está disponível globalmente. Certifique-se de
+que o diretório global dos <a href="artigos/vendor-binaries.md">binários dos vendors</a> esteja em sua
+variável de ambiente <code>PATH</code>, você pode obter sua localização com o seguinte
+comando:</p>
+<pre><code class="language-sh">php composer.phar global config bin-dir --absolute
+</code></pre>
+<p>Se você desejar atualizar o binário posteriormente, pode executar uma
+atualização global:</p>
+<pre><code class="language-sh">php composer.phar global update
+</code></pre>
+<h2 id="search">search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
+<p>O comando <code>search</code> permite pesquisar nos repositórios de pacotes do projeto
+atual. Geralmente será o Packagist. Você simplesmente passa os termos que deseja
+pesquisar.</p>
+<pre><code class="language-sh">php composer.phar search monolog
+</code></pre>
+<p>Você também pode pesquisar mais de um termo passando vários argumentos.</p>
+<h3 id="opcoes-search">Opções<a class="headerlink" href="#opcoes-search" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--only-name (-N):</strong> Pesquisa apenas pelo nome.</li>
+<li><strong>--type (-t):</strong> Pesquisa por um tipo de pacote específico.</li>
+</ul>
+<h2 id="show">show<a class="headerlink" href="#show" title="Permanent link">&para;</a></h2>
+<p>Para listar todos os pacotes disponíveis, você pode usar o comando <code>show</code>.</p>
+<pre><code class="language-sh">php composer.phar show
+</code></pre>
+<p>Para filtrar a lista, você pode passar uma máscara de pacote usando curingas.</p>
+<pre><code class="language-sh">php composer.phar show monolog/*
+
+monolog/monolog 1.19.0 Sends your logs to files, sockets, inboxes, databases and various web services
+</code></pre>
+<p>Se você deseja ver os detalhes de um determinado pacote, pode passar o nome do
+pacote.</p>
+<pre><code class="language-sh">php composer.phar show monolog/monolog
+
+name     : monolog/monolog
+versions : master-dev, 1.0.2, 1.0.1, 1.0.0, 1.0.0-RC1
+type     : library
+names    : monolog/monolog
+source   : [git] https://github.com/Seldaek/monolog.git 3d4e60d0cbc4b888fe5ad223d77964428b1978da
+dist     : [zip] https://github.com/Seldaek/monolog/zipball/3d4e60d0cbc4b888fe5ad223d77964428b1978da 3d4e60d0cbc4b888fe5ad223d77964428b1978da
+license  : MIT
+
+autoload
+psr-0
+Monolog : src/
+
+requires
+php &gt;=5.3.0
+</code></pre>
+<p>Você pode até passar a versão do pacote, o que informará os detalhes dessa
+versão específica.</p>
+<pre><code class="language-sh">php composer.phar show monolog/monolog 1.0.2
+</code></pre>
+<h3 id="opcoes-show">Opções<a class="headerlink" href="#opcoes-show" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--all :</strong> Lista todos os pacotes disponíveis em todos os repositórios.</li>
+<li><strong>--installed (-i):</strong> Lista os pacotes que estão instalados (isso está
+  habilitado por padrão e a opção está obsoleta).</li>
+<li><strong>--platform (-p):</strong> Lista apenas pacotes de plataforma (PHP e extensões).</li>
+<li><strong>--available (-a):</strong> Lista apenas os pacotes disponíveis.</li>
+<li><strong>--self (-s):</strong> Lista as informações do pacote raiz.</li>
+<li><strong>--name-only (-N):</strong> Lista apenas os nomes dos pacotes.</li>
+<li><strong>--path (-P):</strong> Lista os caminhos dos pacotes.</li>
+<li><strong>--tree (-t):</strong> Lista as dependências como uma árvore. Se você passar um nome
+  de pacote, isso exibirá a árvore de dependências para esse pacote.</li>
+<li><strong>--latest (-l):</strong> Lista todos os pacotes instalados, incluindo a versão mais
+  recente.</li>
+<li><strong>--outdated (-o):</strong> Implica <code>--latest</code>, mas lista <em>apenas</em> pacotes que têm
+  uma versão mais recente disponível.</li>
+<li><strong>--minor-only (-m):</strong> Use com <code>--latest</code>. Exibe apenas pacotes que possuem
+  atualizações menores compatíveis com o SemVer.</li>
+<li><strong>--direct (-D):</strong> Restringe a lista de pacotes às dependências diretas.</li>
+<li><strong>--strict:</strong> Retorna um código de saída diferente de zero quando há pacotes
+  desatualizados.</li>
+<li><strong>--format (-f):</strong> Permite escolher entre o formato de saída de texto (padrão)
+  ou json.</li>
+</ul>
+<h2 id="outdated">outdated<a class="headerlink" href="#outdated" title="Permanent link">&para;</a></h2>
+<p>O comando <code>outdated</code> exibe uma lista de pacotes instalados que possuem
+atualizações disponíveis, incluindo suas versões atuais e mais recentes. Isso é
+basicamente um alias para <code>composer show -lo</code>.</p>
+<p>O código de cores é o seguinte:</p>
+<ul>
+<li><strong>verde (=)</strong>: A dependência está na versão mais recente e atualizada.</li>
+<li><strong>amarelo (~)</strong>: A dependência possui uma nova versão disponível, que inclui
+  quebra de compatibilidade com versões anteriores de acordo com o SemVer;
+  portanto, atualize quando puder, mas isso pode envolver algum trabalho.</li>
+<li><strong>vermelho (!)</strong>: A dependência possui uma nova versão que é compatível com o
+  SemVer e você deve atualizá-la.</li>
+</ul>
+<h3 id="opcoes-outdated">Opções<a class="headerlink" href="#opcoes-outdated" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--all (-a):</strong> Exibe todos os pacotes, não apenas os desatualizados (alias
+  para <code>composer show -l</code>).</li>
+<li><strong>--direct (-D):</strong> Restringe a lista de pacotes às dependências diretas.</li>
+<li><strong>--strict:</strong> Retorna um código de saída diferente de zero quando há pacotes
+  desatualizados.</li>
+<li><strong>--minor-only (-m):</strong> Exibe apenas pacotes que possuem atualizações menores
+  compatíveis com o SemVer.</li>
+<li><strong>--format (-f):</strong> Permite escolher entre o formato de saída de texto (padrão)
+  ou json.</li>
+</ul>
+<h2 id="browse-home">browse / home<a class="headerlink" href="#browse-home" title="Permanent link">&para;</a></h2>
+<p>O comando <code>browse</code> (ou o alias <code>home</code>) abre a URL do repositório ou a página do
+pacote no navegador.</p>
+<h3 id="opcoes-browse">Opções<a class="headerlink" href="#opcoes-browse" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--homepage (-H):</strong> Abre a página do pacote em vez da URL do repositório.</li>
+<li><strong>--show (-s):</strong> Apenas exibe a página ou a URL do repositório.</li>
+</ul>
+<h2 id="suggests">suggests<a class="headerlink" href="#suggests" title="Permanent link">&para;</a></h2>
+<p>Lista todos os pacotes sugeridos pelo conjunto de pacotes atualmente instalado.
+Opcionalmente, você pode passar um ou mais nomes de pacotes no formato
+<code>vendor/package</code> para limitar a saída apenas às sugestões feitas por esses
+pacotes.</p>
+<p>Use as flags <code>--by-package</code> ou <code>--by-suggestion</code> para agrupar a saída pelo
+pacote que faz as sugestões ou pelos pacotes sugeridos, respectivamente.</p>
+<p>Use a flag <code>--verbose (-v)</code> para exibir o pacote que faz a sugestão e o motivo
+da sugestão. Isso implica <code>--by-package --by-suggestion</code>, mostrando as duas
+listas.</p>
+<h3 id="opcoes-suggests">Opções<a class="headerlink" href="#opcoes-suggests" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--by-package:</strong> Agrupa a saída pelo pacote que faz a sugestão.</li>
+<li><strong>--by-suggestion:</strong> Agrupa a saída pelo pacote sugerido.</li>
+<li><strong>--no-dev:</strong> Exclui sugestões dos pacotes de <code>require-dev</code>.</li>
+</ul>
+<h2 id="depends-why">depends (why)<a class="headerlink" href="#depends-why" title="Permanent link">&para;</a></h2>
+<p>O comando <code>depends</code> informa quais outros pacotes dependem de um determinado
+pacote. Assim como na instalação, os relacionamentos em <code>require-dev</code> são
+considerados apenas para o pacote raiz.</p>
+<pre><code class="language-sh">php composer.phar depends doctrine/lexer
+ doctrine/annotations v1.2.7 requires doctrine/lexer (1.*)
+ doctrine/common      v2.6.1 requires doctrine/lexer (1.*)
+</code></pre>
+<p>Opcionalmente, você pode especificar uma restrição de versão após o pacote para
+limitar a pesquisa.</p>
+<p>Adicione a flag <code>--tree</code> ou <code>-t</code> para mostrar uma árvore recursiva do motivo da
+dependência do pacote, por exemplo:</p>
+<pre><code class="language-sh">php composer.phar depends psr/log -t
+psr/log 1.0.0 Common interface for logging libraries
+|- aboutyou/app-sdk 2.6.11 (requires psr/log 1.0.*)
+|  `- __root__ (requires aboutyou/app-sdk ^2.6)
+|- monolog/monolog 1.17.2 (requires psr/log ~1.0)
+|  `- laravel/framework v5.2.16 (requires monolog/monolog ~1.11)
+|     `- __root__ (requires laravel/framework ^5.2)
+`- symfony/symfony v3.0.2 (requires psr/log ~1.0)
+   `- __root__ (requires symfony/symfony ^3.0)
+</code></pre>
+<h3 id="opcoes-depends">Opções<a class="headerlink" href="#opcoes-depends" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--recursive (-r):</strong> Resolve recursivamente até o pacote raiz.</li>
+<li><strong>--tree (-t):</strong> Exibe os resultados como uma árvore aninhada, implica <code>-r</code>.</li>
+</ul>
+<h2 id="prohibits-why-not">prohibits (why-not)<a class="headerlink" href="#prohibits-why-not" title="Permanent link">&para;</a></h2>
+<p>O comando <code>prohibits</code> informa quais pacotes estão impedindo a instalação de um
+determinado pacote. Especifique uma restrição de versão para verificar se as
+atualizações podem ser executadas no seu projeto e, se não, por que não. Veja o
+seguinte exemplo:</p>
+<pre><code class="language-sh">php composer.phar prohibits symfony/symfony 3.1
+ laravel/framework v5.2.16 requires symfony/var-dumper (2.8.*|3.0.*)
+</code></pre>
+<p>Observe que você também pode especificar os requisitos de plataforma, por
+exemplo, para verificar se você pode atualizar seu servidor para o PHP 8.0:</p>
+<pre><code class="language-sh">php composer.phar prohibits php:8
+ doctrine/cache        v1.6.0 requires php (~5.5|~7.0)
+ doctrine/common       v2.6.1 requires php (~5.5|~7.0)
+ doctrine/instantiator 1.0.5  requires php (&gt;=5.3,&lt;8.0-DEV)
+</code></pre>
+<p>Assim como <code>depends</code>, você pode solicitar uma pesquisa recursiva, que listará
+todos os pacotes que dependem dos pacotes que causam o conflito.</p>
+<h3 id="opcoes-prohibits">Opções<a class="headerlink" href="#opcoes-prohibits" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--recursive (-r):</strong> Resolve recursivamente até o pacote raiz.</li>
+<li><strong>--tree (-t):</strong> Exibe os resultados como uma árvore aninhada, implica <code>-r</code>.</li>
+</ul>
+<h2 id="validate">validate<a class="headerlink" href="#validate" title="Permanent link">&para;</a></h2>
+<p>Você sempre deve executar o comando <code>validate</code> antes de fazer o commit do
+arquivo <code>composer.json</code> e antes de criar a tag de uma versão. Ele verificará se
+o <code>composer.json</code> é válido.</p>
+<pre><code class="language-sh">php composer.phar validate
+</code></pre>
+<h3 id="opcoes-validate">Opções<a class="headerlink" href="#opcoes-validate" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--no-check-all:</strong> Não emite um aviso se os requisitos do <code>composer.json</code>
+  usarem restrições de versão não acopladas ou excessivamente rígidas.</li>
+<li><strong>--no-check-lock:</strong> Não emite um erro se o <code>composer.lock</code> existir e não
+  estiver atualizado.</li>
+<li><strong>--no-check-publish:</strong> Não emite um erro se o <code>composer.json</code> for inadequado
+  para publicação como um pacote no Packagist, mas for válido.</li>
+<li><strong>--with-dependencies:</strong> Também valida o <code>composer.json</code> de todas as
+  dependências instaladas.</li>
+<li><strong>--strict:</strong> Retorna um código de saída diferente de zero para avisos e
+  erros.</li>
+</ul>
+<h2 id="status">status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p>Se você precisar modificar frequentemente o código de suas dependências e elas
+são instaladas a partir de <code>source</code>, o comando <code>status</code> permitirá verificar se
+há alterações locais em alguma delas.</p>
+<pre><code class="language-sh">php composer.phar status
+</code></pre>
+<p>Com a opção <code>--verbose</code>, você obtém mais informações sobre o que foi alterado:</p>
+<pre><code class="language-sh">php composer.phar status -v
+
+You have changes in the following dependencies:
+vendor/seld/jsonlint:
+    M README.mdown
+</code></pre>
+<h2 id="self-update-selfupdate">self-update (selfupdate)<a class="headerlink" href="#self-update-selfupdate" title="Permanent link">&para;</a></h2>
+<p>Para atualizar o próprio Composer para a versão mais recente, execute o comando
+<code>self-update</code>. Ele substituirá seu <code>composer.phar</code> pela versão mais recente.</p>
+<pre><code class="language-sh">php composer.phar self-update
+</code></pre>
+<p>Se você deseja atualizar para uma versão específica, basta especificar:</p>
+<pre><code class="language-sh">php composer.phar self-update 1.0.0-alpha7
+</code></pre>
+<p>Se você instalou o Composer para todo o sistema (consulte a <a href="introducao.html#globalmente">instalação global</a>), pode ser necessário executar o comando com privilégios de
+<code>root</code>.</p>
+<pre><code class="language-sh">sudo -H composer self-update
+</code></pre>
+<h3 id="opcoes-self-update">Opções<a class="headerlink" href="#opcoes-self-update" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--rollback (-r):</strong> Reverte para a última versão que você instalou.</li>
+<li><strong>--clean-backups:</strong> Exclui os backups antigos durante uma atualização. Isso
+  torna a versão atual do Composer o único backup disponível após a atualização.</li>
+<li><strong>--no-progress:</strong> Remove a exibição de progresso do download.</li>
+<li><strong>--update-keys:</strong> Solicita uma atualização de chave.</li>
+<li><strong>--stable:</strong> Força uma atualização para o canal estável.</li>
+<li><strong>--preview:</strong> Força uma atualização para o canal preview.</li>
+<li><strong>--snapshot:</strong> Força uma atualização para o canal snapshot.</li>
+</ul>
+<h2 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h2>
+<p>O comando <code>config</code> permite editar configurações e repositórios do Composer tanto
+no arquivo local <code>composer.json</code> quanto no arquivo global <code>config.json</code>.</p>
+<p>Além disso, permite editar a maioria das propriedades no <code>composer.json</code> local.</p>
+<pre><code class="language-sh">php composer.phar config --list
+</code></pre>
+<h3 id="uso">Uso<a class="headerlink" href="#uso" title="Permanent link">&para;</a></h3>
+<p><code>config [opcoes] [nome-configuracao] [valor-configuracao1] ... [valor-configuracaoN]</code></p>
+<p><code>nome-configuracao</code> é um nome de opção de configuração e <code>valor-configuracao1</code>
+é um valor de configuração. Para configurações que podem receber uma lista de
+valores (como <code>github-protocols</code>), mais de um argumento <code>valor-configuracao</code> é
+permitido.</p>
+<p>Você também pode editar os valores das seguintes propriedades:</p>
+<p><code>description</code>, <code>homepage</code>, <code>keywords</code>, <code>license</code>, <code>minimum-stability</code>,
+<code>name</code>, <code>prefer-stable</code>, <code>type</code> e <code>version</code>.</p>
+<p>Veja o capítulo <a href="config.html">Config</a> para conhecer as opções de configuração válidas.</p>
+<h3 id="opcoes-config">Opções<a class="headerlink" href="#opcoes-config" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--global (-g):</strong> Opera no arquivo de configuração global localizado em
+  <code>$COMPOSER_HOME/config.json</code> por padrão. Sem essa opção, esse comando afeta o
+  arquivo <code>composer.json</code> local ou um arquivo especificado por <code>--file</code>.</li>
+<li><strong>--editor (-e):</strong> Abre o arquivo <code>composer.json</code> local usando um editor de
+  texto conforme definido pela variável de ambiente <code>EDITOR</code>. Com a opção
+  <code>--global</code>, abre o arquivo de configuração global.</li>
+<li><strong>--auth (-a):</strong> Afeta o arquivo de configuração de autenticação (usada apenas
+  para <code>--editor</code>).</li>
+<li><strong>--unset:</strong> Remove o elemento de configuração nomeado por
+  <code>nome-configuracao</code>.</li>
+<li><strong>--list (-l):</strong> Exibe a lista de variáveis de configuração atuais. Com a
+  opção <code>--global</code>, lista apenas as configurações globais.</li>
+<li><strong>--file="..." (-f):</strong> Opera em um arquivo específico em vez do
+  <code>composer.json</code>. Note que isso não pode ser usado em conjunto com a opção
+  <code>--global</code>.</li>
+<li><strong>--absolute:</strong> Retorna caminhos absolutos em vez de caminhos relativos ao
+  buscar valores de configuração <code>*-dir</code>.</li>
+</ul>
+<h3 id="modificando-repositorios">Modificando Repositórios<a class="headerlink" href="#modificando-repositorios" title="Permanent link">&para;</a></h3>
+<p>Além de modificar a seção <code>config</code>, o comando <code>config</code> também suporta
+alterações na seção <code>repositories</code>, usando-o da seguinte maneira:</p>
+<pre><code class="language-sh">php composer.phar config repositories.foo vcs https://github.com/foo/bar
+</code></pre>
+<p>Se o seu repositório exigir mais opções de configuração, você poderá passar sua
+representação JSON:</p>
+<pre><code class="language-sh">php composer.phar config repositories.foo '{&quot;type&quot;: &quot;vcs&quot;, &quot;url&quot;: &quot;http://svn.exemplo.org.br/meu-projeto/&quot;, &quot;trunk-path&quot;: &quot;master&quot;}'
+</code></pre>
+<h3 id="modificando-valores-extras">Modificando Valores Extras<a class="headerlink" href="#modificando-valores-extras" title="Permanent link">&para;</a></h3>
+<p>Além de modificar a seção <code>config</code>, o comando <code>config</code> também suporta alterações
+na seção <code>extra</code>, usando-o da seguinte maneira:</p>
+<pre><code class="language-sh">php composer.phar config extra.foo.bar valor
+</code></pre>
+<p>Os pontos indicam aninhamento de arrays, embora seja permitida uma profundidade
+máxima de 3 níveis. O comando acima definiria
+<code>"extra": { "foo": { "bar": "valor" } }</code>.</p>
+<h2 id="create-project">create-project<a class="headerlink" href="#create-project" title="Permanent link">&para;</a></h2>
+<p>Você pode usar o Composer para criar novos projetos a partir de um pacote
+existente. Isso é o equivalente a fazer um <code>git clone</code> ou um <code>svn checkout</code>
+seguido por um <code>composer install</code> dos vendors.</p>
+<p>Existem várias aplicações para isso:</p>
+<ol>
+<li>Você pode implantar pacotes de aplicações.</li>
+<li>Você pode baixar qualquer pacote e começar a desenvolver patches, por
+   exemplo.</li>
+<li>Projetos com vários desenvolvedores podem usar esse recurso para inicializar
+   a aplicação inicial para desenvolvimento.</li>
+</ol>
+<p>Para criar um novo projeto usando o Composer, você pode usar o comando
+<code>create-project</code>. Passe o nome de um pacote e o diretório para criar o
+projeto. Você também pode fornecer uma versão como terceiro argumento, caso
+contrário, a versão mais recente será usada.</p>
+<p>Se o diretório não existir, será criado durante a instalação.</p>
+<pre><code class="language-sh">php composer.phar create-project doctrine/orm caminho 2.2.*
+</code></pre>
+<p>Também é possível executar o comando sem parâmetros em um diretório com um
+arquivo <code>composer.json</code> existente para inicializar um projeto.</p>
+<p>Por padrão, o comando procura por pacotes no <a href="https://packagist.org/">Packagist</a>.</p>
+<h3 id="opcoes-create-project">Opções<a class="headerlink" href="#opcoes-create-project" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--stability (-s):</strong> Estabilidade mínima do pacote. O padrão é <code>stable</code>.</li>
+<li><strong>--prefer-source:</strong> Instala os pacotes de <code>source</code>, quando disponíveis.</li>
+<li><strong>--prefer-dist:</strong> Instala os pacotes de <code>dist</code>, quando disponíveis.</li>
+<li><strong>--repository:</strong> Fornece um repositório personalizado para pesquisar o
+  pacote, que será usado no lugar do Packagist. Pode ser uma URL HTTP apontando
+  para um repositório do <code>composer</code>, um caminho para um arquivo <code>packages.json</code>
+  local ou uma string JSON semelhante à string aceita pela chave
+  <a href="esquema.html#repositories">repositories</a>.</li>
+<li><strong>--dev:</strong> Instala os pacotes listados em <code>require-dev</code> (esse é o
+  comportamento padrão).</li>
+<li><strong>--no-dev:</strong> Ignora a instalação dos pacotes listados em <code>require-dev</code>. A
+  geração do autoloader ignora as regras em <code>autoload-dev</code>.</li>
+<li><strong>--no-scripts:</strong> Ignora a execução dos scripts definidos no pacote raiz.</li>
+<li><strong>--no-progress:</strong> Remove a exibição de progresso que pode interferir em
+  alguns terminais ou scripts que não tratam caracteres de backspace.</li>
+<li><strong>--no-secure-http:</strong> Desabilita a opção de configuração <code>secure-http</code>
+  temporariamente ao instalar o pacote raiz. Use por sua conta e risco. Usar
+  essa flag é uma má ideia.</li>
+<li><strong>--keep-vcs:</strong> Ignora a exclusão dos metadados do VCS para o projeto criado.
+  Isso é útil principalmente se você executar o comando em modo não interativo.</li>
+<li><strong>--remove-vcs:</strong> Força a remoção dos metadados do VCS sem pedir confirmação.</li>
+<li><strong>--no-install:</strong> Desabilita a instalação dos vendors.</li>
+<li><strong>--ignore-platform-reqs:</strong> Ignora os requisitos <code>php</code>, <code>hhvm</code>, <code>lib-*</code> e
+  <code>ext-*</code> e força a instalação, mesmo que a máquina local não os cumpra. Veja
+  também a opção de configuração <a href="config.html#platform"><code>platform</code></a>.</li>
+</ul>
+<h2 id="dump-autoload-dumpautoload">dump-autoload (dumpautoload)<a class="headerlink" href="#dump-autoload-dumpautoload" title="Permanent link">&para;</a></h2>
+<p>Se você precisar atualizar o autoloader por causa de novas classes em um pacote
+de mapa de classes, por exemplo, poderá usar <code>dump-autoload</code> para fazer isso sem
+precisar passar por uma instalação ou atualização.</p>
+<p>Além disso, ele pode fazer o dump de um autoloader otimizado que converte
+pacotes PSR-0/4 em pacotes de mapa de classes por motivos de desempenho. Em
+aplicações grandes com muitas classes, o autoloader pode ocupar uma porção
+substancial do tempo de cada requisição. O uso de mapas de classes para tudo é
+menos conveniente durante o desenvolvimento, mas, usando essa opção, você ainda
+pode usar PSR-0/4 por conveniência e mapas de classes por desempenho.</p>
+<h3 id="opcoes-dump-autoload">Opções<a class="headerlink" href="#opcoes-dump-autoload" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--no-scripts:</strong> Ignora a execução dos scripts definidos no <code>composer.json</code>.</li>
+<li><strong>--optimize (-o):</strong> Converte o autoloading PSR-0/4 em um mapa de classes para
+  obter um autoloader mais rápido. Isso é recomendado especialmente em produção,
+  mas pode demorar um pouco para ser executado, portanto, no momento não é feito
+  por padrão.</li>
+<li><strong>--classmap-authoritative (-a):</strong> Faz o autoload apenas das classes do mapa
+  de classes. Implicitamente habilita <code>--optimize</code>.</li>
+<li><strong>--apcu:</strong> Usa a APCu para armazenar em cache as classes encontradas/não
+  encontradas.</li>
+<li><strong>--no-dev:</strong> Desabilita as regras em <code>autoload-dev</code>.</li>
+</ul>
+<h2 id="clear-cache-clearcache">clear-cache (clearcache)<a class="headerlink" href="#clear-cache-clearcache" title="Permanent link">&para;</a></h2>
+<p>Exclui todo o conteúdo dos diretórios de cache do Composer.</p>
+<h2 id="licenses">licenses<a class="headerlink" href="#licenses" title="Permanent link">&para;</a></h2>
+<p>Lista o nome, versão e licença de cada pacote instalado. Use <code>--format=json</code>
+para obter uma saída legível para máquinas.</p>
+<h3 id="opcoes-licenses">Opções<a class="headerlink" href="#opcoes-licenses" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--format:</strong> Formato da saída: <code>text</code> ou <code>json</code> (padrão: <code>text</code>).</li>
+<li><strong>--no-dev:</strong> Remove as dependências de desenvolvimento da saída.</li>
+</ul>
+<h2 id="run-script">run-script<a class="headerlink" href="#run-script" title="Permanent link">&para;</a></h2>
+<h3 id="opcoes-run-script">Opções<a class="headerlink" href="#opcoes-run-script" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--timeout:</strong> Define o tempo limite do script em segundos ou 0 para
+  desabilitar o tempo limite.</li>
+<li><strong>--dev:</strong> Habilita o modo de desenvolvimento.</li>
+<li><strong>--no-dev:</strong> Desabilita o modo de desenvolvimento.</li>
+<li><strong>--list (-l):</strong> Lista os scripts definidos por quem que está desenvolvendo.</li>
+</ul>
+<p>Para executar <a href="artigos/scripts.md">scripts</a> manualmente, você pode usar esse comando,
+passando o nome do script e, opcionalmente, quaisquer argumentos necessários.</p>
+<h2 id="exec">exec<a class="headerlink" href="#exec" title="Permanent link">&para;</a></h2>
+<p>Executa um binário ou script de um vendor. Você pode executar qualquer comando e
+isso garantirá que o diretório <code>bin-dir</code> do Composer seja adicionado à variável
+<code>PATH</code> antes do comando ser executado.</p>
+<h3 id="opcoes-exec">Opções<a class="headerlink" href="#opcoes-exec" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--list (-l):</strong> Lista os binários disponíveis no Composer.</li>
+</ul>
+<h2 id="diagnose">diagnose<a class="headerlink" href="#diagnose" title="Permanent link">&para;</a></h2>
+<p>Se você acha que encontrou um erro ou se algo está se comportando de maneira
+estranha, convém executar o comando <code>diagnose</code> para realizar verificações
+automatizadas de muitos problemas comuns.</p>
+<pre><code class="language-sh">php composer.phar diagnose
+</code></pre>
+<h2 id="archive">archive<a class="headerlink" href="#archive" title="Permanent link">&para;</a></h2>
+<p>Esse comando é usado para gerar um arquivo compactado zip/tar para um
+determinado pacote em uma determinada versão. Também pode ser usado para
+arquivar seu projeto inteiro sem os arquivos excluídos/ignorados.</p>
+<pre><code class="language-sh">php composer.phar archive vendor/pacote 2.0.21 --format=zip
+</code></pre>
+<h3 id="opcoes-archive">Opções<a class="headerlink" href="#opcoes-archive" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>--format (-f):</strong> Formato do arquivo compactado resultante: <code>tar</code> ou <code>zip</code>
+  (padrão: <code>tar</code>).</li>
+<li><strong>--dir:</strong> Salva o arquivo compactado neste diretório (padrão: <code>.</code>).</li>
+<li><strong>--file:</strong> Salva o arquivo compactado com o nome de arquivo especificado.</li>
+</ul>
+<h2 id="help">help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h2>
+<p>Para obter mais informações sobre um determinado comando, você pode usar <code>help</code>.</p>
+<pre><code class="language-sh">php composer.phar help install
+</code></pre>
+<h2 id="preenchimento-automatico-na-linha-de-comando">Preenchimento Automático na Linha de Comando<a class="headerlink" href="#preenchimento-automatico-na-linha-de-comando" title="Permanent link">&para;</a></h2>
+<p>O preenchimento automático na linha de comando pode ser habilitado seguindo as
+instruções <a href="https://github.com/bamarni/symfony-console-autocomplete">nesta página</a>.</p>
+<h2 id="variaveis-de-ambiente">Variáveis de Ambiente<a class="headerlink" href="#variaveis-de-ambiente" title="Permanent link">&para;</a></h2>
+<p>Você pode definir algumas variáveis de ambiente que substituem determinadas
+configurações. Sempre que possível, é recomendável especificar essas
+configurações na seção <code>config</code> do <code>composer.json</code>. Vale ressaltar que as
+variáveis de ambiente sempre terão precedência sobre os valores especificados no
+<code>composer.json</code>.</p>
+<h3 id="composer">COMPOSER<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h3>
+<p>Ao definir a variável de ambiente <code>COMPOSER</code>, é possível definir o nome do
+arquivo <code>composer.json</code> como algum outro.</p>
+<p>Por exemplo:</p>
+<pre><code class="language-sh">COMPOSER=outro-composer.json php composer.phar install
+</code></pre>
+<p>O arquivo lock gerado usará o mesmo nome: <code>outro-composer.lock</code> nesse exemplo.</p>
+<h3 id="composer-allow-superuser">COMPOSER_ALLOW_SUPERUSER<a class="headerlink" href="#composer-allow-superuser" title="Permanent link">&para;</a></h3>
+<p>Se definida como <code>1</code>, esta variável de ambiente desabilita o aviso sobre a
+execução de comandos como root/superusuário. Ela também desabilita a limpeza
+automática de sessões sudo; portanto, você realmente deve defini-la apenas se
+usar o Composer como superusuário o tempo todo, como em containers do Docker.</p>
+<h3 id="composer-auth">COMPOSER_AUTH<a class="headerlink" href="#composer-auth" title="Permanent link">&para;</a></h3>
+<p>A variável <code>COMPOSER_AUTH</code> permite configurar a autenticação como uma variável
+de ambiente. O conteúdo da variável deve ser um objeto JSON contendo objetos
+<code>http-basic</code>, <code>github-oauth</code>, <code>bitbucket-oauth</code>, ..., conforme necessário e
+seguindo as <a href="config.html#gitlab-oauth">especificações da configuração</a>.</p>
+<h3 id="composer-bin-dir">COMPOSER_BIN_DIR<a class="headerlink" href="#composer-bin-dir" title="Permanent link">&para;</a></h3>
+<p>Ao definir esta opção, você pode alterar o diretório <code>bin</code> (<a href="artigos/vendor-binaries.md">Binários dos
+Vendors</a>) para algo diferente de <code>vendor/bin</code>.</p>
+<h3 id="composer-cache-dir">COMPOSER_CACHE_DIR<a class="headerlink" href="#composer-cache-dir" title="Permanent link">&para;</a></h3>
+<p>A variável <code>COMPOSER_CACHE_DIR</code> permite alterar o diretório de cache do
+Composer, que também é configurável através da opção <a href="config.html#cache-dir"><code>cache-dir</code></a>.</p>
+<p>Por padrão, ela aponta para <code>$COMPOSER_HOME/cache</code> no *nix e macOS e
+<code>C:\Users\&lt;user&gt;\AppData\Local\Composer</code> (ou <code>%LOCALAPPDATA%\Composer</code>) no
+Windows.</p>
+<h3 id="composer-cafile">COMPOSER_CAFILE<a class="headerlink" href="#composer-cafile" title="Permanent link">&para;</a></h3>
+<p>Ao definir esta variável de ambiente, é possível definir um caminho para um
+arquivo de pacote de certificado que será usado durante a verificação por par
+SSL/TLS.</p>
+<h3 id="composer-discard-changes">COMPOSER_DISCARD_CHANGES<a class="headerlink" href="#composer-discard-changes" title="Permanent link">&para;</a></h3>
+<p>Esta variável controla a opção de configuração <a href="config.html#discard-changes"><code>discard-changes</code></a>.</p>
+<h3 id="composer-home">COMPOSER_HOME<a class="headerlink" href="#composer-home" title="Permanent link">&para;</a></h3>
+<p>A variável <code>COMPOSER_HOME</code> permite alterar o diretório inicial do Composer. Este
+é um diretório oculto global (por usuário na máquina) compartilhado entre todos
+os projetos.</p>
+<p>Por padrão, ela aponta para <code>C:\Users\&lt;usuario&gt;\AppData\Roaming\Composer</code> no
+Windows e <code>/Users/&lt;usuario&gt;/.composer</code> no macOS. Em sistemas *nix que seguem as
+<a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">Especificações de Diretório Base do XDG</a>, ela aponta para
+<code>$XDG_CONFIG_HOME/composer</code>. Em outros sistemas *nix, ela aponta para
+<code>/home/&lt;usuario&gt;/.composer</code>.</p>
+<h4 id="composer-home-config-json">COMPOSER_HOME/config.json<a class="headerlink" href="#composer-home-config-json" title="Permanent link">&para;</a></h4>
+<p>Você pode colocar um arquivo <code>config.json</code> no local para o qual <code>COMPOSER_HOME</code>
+aponta. O Composer combinará esta configuração com o <code>composer.json</code> do seu
+projeto quando você executar os comandos <code>install</code> e <code>update</code>.</p>
+<p>Esse arquivo permite definir <a href="repositorios.html">repositórios</a> e <a href="config.html">configurações</a> para
+os seus projetos.</p>
+<p>Caso a configuração global corresponda à configuração <em>local</em>, a configuração <em>local</em>
+no <code>composer.json</code> do projeto sempre vence.</p>
+<h3 id="composer-htaccess-protect">COMPOSER_HTACCESS_PROTECT<a class="headerlink" href="#composer-htaccess-protect" title="Permanent link">&para;</a></h3>
+<p>O padrão é <code>1</code>. Se definida como <code>0</code>, o Composer não criará arquivos <code>.htaccess</code>
+nos diretórios home, cache e data do Composer.</p>
+<h3 id="composer-memory-limit">COMPOSER_MEMORY_LIMIT<a class="headerlink" href="#composer-memory-limit" title="Permanent link">&para;</a></h3>
+<p>Se definida, o valor é usado como <code>memory_limit</code> do PHP.</p>
+<h3 id="composer-mirror-path-repos">COMPOSER_MIRROR_PATH_REPOS<a class="headerlink" href="#composer-mirror-path-repos" title="Permanent link">&para;</a></h3>
+<p>Se definida como <code>1</code>, esta variável de ambiente altera a estratégia padrão do
+repositório de caminhos para <code>mirror</code> em vez de <code>symlink</code>. Como é a estratégia
+padrão definida, ela ainda pode ser substituída pelas opções do repositório.</p>
+<h3 id="composer-no-interaction">COMPOSER_NO_INTERACTION<a class="headerlink" href="#composer-no-interaction" title="Permanent link">&para;</a></h3>
+<p>Se definida como <code>1</code>, esta variável de ambiente fará o Composer se comportar
+como se você passasse a flag <code>--no-interaction</code> para todos os comandos. Ela pode
+ser definida em servidores de build/CI.</p>
+<h3 id="composer-process-timeout">COMPOSER_PROCESS_TIMEOUT<a class="headerlink" href="#composer-process-timeout" title="Permanent link">&para;</a></h3>
+<p>Esta variável de ambiente controla o tempo que o Composer espera por comandos
+(como comandos do git) antes de finalizar a execução. O valor padrão é 300
+segundos (5 minutos).</p>
+<h3 id="composer-root-version">COMPOSER_ROOT_VERSION<a class="headerlink" href="#composer-root-version" title="Permanent link">&para;</a></h3>
+<p>Ao definir esta variável, você pode especificar a versão do pacote raiz, se ela
+não puder ser deduzida a partir das informações do VCS e não estiver presente no
+<code>composer.json</code>.</p>
+<h3 id="composer-vendor-dir">COMPOSER_VENDOR_DIR<a class="headerlink" href="#composer-vendor-dir" title="Permanent link">&para;</a></h3>
+<p>Ao definir esta variável, você pode fazer com que o Composer instale as
+dependências em um diretório que não seja o <code>vendor</code>.</p>
+<h3 id="http-proxy">http_proxy ou HTTP_PROXY<a class="headerlink" href="#http-proxy" title="Permanent link">&para;</a></h3>
+<p>Se você estiver usando o Composer por trás de um proxy HTTP, poderá usar a
+variável de ambiente padrão <code>http_proxy</code> ou <code>HTTP_PROXY</code>. Basta configurá-la
+como a URL do seu proxy. Muitos sistemas operacionais já definem esta variável
+para você.</p>
+<p>Usar <code>http_proxy</code> (letras minúsculas) ou mesmo definir as duas pode ser
+preferível, pois algumas ferramentas como git ou curl usarão apenas a versão
+<code>http_proxy</code> com letras minúsculas. Como alternativa, você também pode definir o
+proxy do git usando <code>git config --global http.proxy &lt;url-do-proxy&gt;</code>.</p>
+<p>Se você estiver usando o Composer em um contexto que não seja a CLI (ou seja,
+integração em um CMS ou caso de uso semelhante) e precisar oferecer suporte a
+proxies, forneça a variável de ambiente <code>CGI_HTTP_PROXY</code>. Consulte <a href="https://httpoxy.org">httpoxy
+.org</a> para mais detalhes.</p>
+<h3 id="http-proxy-request-fulluri">HTTP_PROXY_REQUEST_FULLURI<a class="headerlink" href="#http-proxy-request-fulluri" title="Permanent link">&para;</a></h3>
+<p>Se você usar um proxy, mas ele não suportar a flag <code>request_fulluri</code>, então você
+deve definir esta variável como <code>false</code> ou <code>0</code> para impedir que o Composer
+defina a opção <code>request_fulluri</code>.</p>
+<h3 id="https-proxy-request-fulluri">HTTPS_PROXY_REQUEST_FULLURI<a class="headerlink" href="#https-proxy-request-fulluri" title="Permanent link">&para;</a></h3>
+<p>Se você usar um proxy, mas ele não suportar a flag <code>request_fulluri</code> para
+requisições HTTPS, então você deve definir esta variável como <code>false</code> ou <code>0</code>
+para impedir que o Composer defina a opção <code>request_fulluri</code>.</p>
+<h3 id="composer-self-update-target">COMPOSER_SELF_UPDATE_TARGET<a class="headerlink" href="#composer-self-update-target" title="Permanent link">&para;</a></h3>
+<p>Se definida, faz com que o comando <code>self-update</code> salve o novo arquivo phar do
+Composer neste caminho em vez de sobrescrever-se. Útil para atualizar o Composer
+em sistemas de arquivos somente leitura.</p>
+<h3 id="no-proxy">no_proxy ou NO_PROXY<a class="headerlink" href="#no-proxy" title="Permanent link">&para;</a></h3>
+<p>Se você estiver atrás de um proxy e deseja desabilitá-lo para determinados
+domínios, pode usar a variável de ambiente <code>no_proxy</code> ou <code>NO_PROXY</code>.
+Simplesmente defina-a como uma lista de domínios separados por vírgula para os
+quais o proxy <em>não</em> deve ser usado.</p>
+<p>A variável de ambiente aceita domínios, endereços de IP e blocos de endereços de
+IP em notação CIDR. Você pode restringir o filtro a uma porta específica (por
+exemplo, <code>:80</code>). Você também pode configurá-la como <code>*</code> para ignorar o proxy
+para todas as requisições HTTP.</p>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="esquema.html" class="btn btn-neutral float-right" title="O Esquema do composer.json">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="bibliotecas.html" class="btn btn-neutral" title="Bibliotecas">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="bibliotecas.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="esquema.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>

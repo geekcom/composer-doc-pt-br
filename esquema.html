@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        O Esquema do composer.json - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "O Esquema do composer.json";
+        var mkdocs_page_input_path = "esquema.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1">
+    <a class="" href="introducao.html">Introdução</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="uso-basico.html">Uso Básico</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="bibliotecas.html">Bibliotecas</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="cli.html">CLI / Comandos</a>
+                </li>
+                <li class="toctree-l1 current">
+    <a class="current" href="esquema.html">O Esquema do composer.json</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#o-esquema-do-composerjson">O Esquema do composer.json</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#esquema-json">Esquema JSON</a></li>
+        
+            <li><a class="toctree-l3" href="#pacote-raiz">Pacote Raiz</a></li>
+        
+            <li><a class="toctree-l3" href="#propriedades">Propriedades</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="repositorios.html">Repositórios</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="config.html">Config</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>O Esquema do composer.json</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/esquema.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="o-esquema-do-composerjson">O Esquema do composer.json<a class="headerlink" href="#o-esquema-do-composerjson" title="Permanent link">&para;</a></h1>
+<p>Este capítulo explicará todos os campos disponíveis no <code>composer.json</code>.</p>
+<h2 id="esquema-json">Esquema JSON<a class="headerlink" href="#esquema-json" title="Permanent link">&para;</a></h2>
+<p>Temos um <a href="https://json-schema.org/">esquema JSON</a> que documenta o formato e também pode ser
+usado para validar seu <code>composer.json</code>. De fato, ele é usado pelo comando
+<code>validate</code>. Você pode encontrá-lo no <a href="https://getcomposer.org/schema.json">site do Composer</a>.</p>
+<h2 id="pacote-raiz">Pacote Raiz<a class="headerlink" href="#pacote-raiz" title="Permanent link">&para;</a></h2>
+<p>O pacote raiz é o pacote definido pelo <code>composer.json</code> na raiz do seu projeto. É
+o <code>composer.json</code> principal que define os requisitos do seu projeto.</p>
+<p>Certos campos se aplicam apenas no contexto do pacote raiz. Um exemplo disto é o
+campo <code>config</code>. Somente o pacote raiz pode definir a configuração. O campo
+<code>config</code> das dependências é ignorado. Isto faz do campo <code>config</code> um campo
+<code>root-only</code>.</p>
+<blockquote>
+<p><strong>Nota:</strong> Um pacote pode ser o pacote raiz ou não, dependendo do contexto. Por
+exemplo, se seu projeto depende da biblioteca <code>monolog</code>, seu projeto é o
+pacote raiz. No entanto, se você clonar o <code>monolog</code> no GitHub para corrigir um
+erro, então o <code>monolog</code> é o pacote raiz.</p>
+</blockquote>
+<h2 id="propriedades">Propriedades<a class="headerlink" href="#propriedades" title="Permanent link">&para;</a></h2>
+<h3 id="name">name<a class="headerlink" href="#name" title="Permanent link">&para;</a></h3>
+<p>O nome do pacote. Consiste no nome do vendor e no nome do projeto, separados por
+<code>/</code>. Exemplos:</p>
+<ul>
+<li>monolog/monolog</li>
+<li>igorw/event-source</li>
+</ul>
+<p>O nome pode conter qualquer caractere, incluindo espaços em branco, e não
+diferencia maiúsculas de minúsculas (<code>foo/bar</code> e <code>Foo/Bar</code> são considerados o
+mesmo pacote). Para simplificar sua instalação, é recomendável definir um nome
+curto e em minúsculas que não inclua caracteres não alfanuméricos ou espaços em
+branco.</p>
+<p>Obrigatório para pacotes publicados (bibliotecas).</p>
+<h3 id="description">description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h3>
+<p>Uma breve descrição do pacote. Normalmente, tem apenas uma linha de comprimento.</p>
+<p>Obrigatório para pacotes publicados (bibliotecas).</p>
+<h3 id="version">version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h3>
+<p>A versão do pacote. Na maioria dos casos, não é necessária e deve ser omitida
+(veja abaixo).</p>
+<p>Ela deve seguir o formato <code>X.Y.Z</code> ou <code>vX.Y.Z</code> com um sufixo opcional <code>-dev</code>,
+<code>-patch</code> (<code>-p</code>), <code>-alpha</code> (<code>-a</code>), <code>-beta</code> (<code>-b</code>) ou <code>-RC</code>. Os sufixos patch,
+alpha, beta e RC podem ser seguidos por um número.</p>
+<p>Exemplos:</p>
+<ul>
+<li>1.0.0</li>
+<li>1.0.2</li>
+<li>1.1.0</li>
+<li>0.2.5</li>
+<li>1.0.0-dev</li>
+<li>1.0.0-alpha3</li>
+<li>1.0.0-beta2</li>
+<li>1.0.0-RC5</li>
+<li>v2.0.4-p1</li>
+</ul>
+<p>Opcional se o repositório do pacote puder inferir a versão de algum lugar, como
+o nome da tag no repositório VCS. Neste caso, também é recomendável omiti-la.</p>
+<blockquote>
+<p><strong>Nota:</strong> O Packagist usa repositórios VCS, portanto, a declaração acima
+também é verdadeira para o Packagist. Especificar a versão por conta própria
+provavelmente criará problemas em algum momento devido a erro humano.</p>
+</blockquote>
+<h3 id="type">type<a class="headerlink" href="#type" title="Permanent link">&para;</a></h3>
+<p>O tipo do pacote. O padrão é <code>library</code>.</p>
+<p>Os tipos de pacote são usados para lógica de instalação personalizada. Se você
+tiver um pacote que precise de alguma lógica especial, você pode definir um tipo
+personalizado. Pode ser, por exemplo, <code>symfony-bundle</code>, <code>wordpress-plugin</code> ou
+<code>typo3-cms-extension</code>. Estes tipos serão específicos para determinados projetos
+e precisarão fornecer um instalador capaz de instalar pacotes deste tipo.</p>
+<p>Pronto para uso, o Composer suporta quatro tipos:</p>
+<ul>
+<li><strong>library:</strong> Este é o padrão. Ele simplesmente copiará os arquivos para
+  <code>vendor</code>.</li>
+<li><strong>project:</strong> Denota um projeto em vez de uma biblioteca. Por exemplo, shells
+  de aplicações como a <a href="https://github.com/symfony/symfony-standard">Edição Padrão do Symfony</a>, CMSs como o
+  <a href="https://github.com/silverstripe/silverstripe-installer">instalador do SilverStripe</a> ou aplicações completas
+  distribuídas como pacotes. Isto pode ser usado, por exemplo, pelas IDEs para
+  fornecer listagens de projetos a serem inicializados ao criar um novo
+  workspace.</li>
+<li><strong>metapackage:</strong> Um pacote vazio que contém requisitos e acionará suas
+  instalações, mas não contém nenhum arquivo e não gravará nada no sistema de
+  arquivos. Sendo assim, não requer uma chave <code>dist</code> ou <code>source</code> para ser
+  instalável.</li>
+<li><strong>composer-plugin:</strong> Um pacote do tipo <code>composer-plugin</code> pode fornecer um
+  instalador para outros pacotes que possuem um tipo personalizado. Leia mais no
+  <a href="artigos/custom-installers.md">artigo dedicado</a>.</li>
+</ul>
+<p>Use um tipo personalizado somente se precisar de lógica personalizada durante a
+instalação. É recomendável omitir este campo e usar o padrão <code>library</code>.</p>
+<h3 id="keywords">keywords<a class="headerlink" href="#keywords" title="Permanent link">&para;</a></h3>
+<p>Um array de palavras-chave às quais o pacote está relacionado. Elas podem ser
+usadas para pesquisa e filtragem.</p>
+<p>Exemplos:</p>
+<ul>
+<li>logging</li>
+<li>events</li>
+<li>database</li>
+<li>redis</li>
+<li>templating</li>
+</ul>
+<p>Opcional.</p>
+<h3 id="homepage">homepage<a class="headerlink" href="#homepage" title="Permanent link">&para;</a></h3>
+<p>Uma URL para o site do projeto.</p>
+<p>Opcional.</p>
+<h3 id="readme">readme<a class="headerlink" href="#readme" title="Permanent link">&para;</a></h3>
+<p>Um caminho relativo para o documento <code>README</code>.</p>
+<p>Opcional.</p>
+<h3 id="time">time<a class="headerlink" href="#time" title="Permanent link">&para;</a></h3>
+<p>Data de lançamento da versão.</p>
+<p>Deve estar no formato <code>YYYY-MM-DD</code> ou <code>YYYY-MM-DD HH:MM:SS</code>.</p>
+<p>Opcional.</p>
+<h3 id="license">license<a class="headerlink" href="#license" title="Permanent link">&para;</a></h3>
+<p>A licença do pacote. Pode ser uma string ou um array de strings.</p>
+<p>A notação recomendada para as licenças mais comuns é (em ordem alfabética):</p>
+<ul>
+<li>Apache-2.0</li>
+<li>BSD-2-Clause</li>
+<li>BSD-3-Clause</li>
+<li>BSD-4-Clause</li>
+<li>GPL-2.0-only / GPL-2.0-or-later</li>
+<li>GPL-3.0-only / GPL-3.0-or-later</li>
+<li>LGPL-2.1-only / LGPL-2.1-or-later</li>
+<li>LGPL-3.0-only / LGPL-3.0-or-later</li>
+<li>MIT</li>
+</ul>
+<p>Opcional, mas é altamente recomendável fornecê-la. Mais identificadores estão
+listados no <a href="https://spdx.org/licenses/">Registro de Licenças de Código Aberto SPDX</a>.</p>
+<p>Para software de código fechado, você pode usar <code>proprietary</code> como identificador
+da licença.</p>
+<p>Um exemplo:</p>
+<pre><code class="language-json">{
+    &quot;license&quot;: &quot;MIT&quot;
+}
+</code></pre>
+<p>Para um pacote, quando há uma escolha entre as licenças ("licenças
+disjuntivas"), várias podem ser especificadas como array.</p>
+<p>Um exemplo usando licenças disjuntivas:</p>
+<pre><code class="language-json">{
+    &quot;license&quot;: [
+       &quot;LGPL-2.1-only&quot;,
+       &quot;GPL-3.0-or-later&quot;
+    ]
+}
+</code></pre>
+<p>Alternativamente, elas podem ser separadas por <code>or</code> e colocadas entre
+parênteses;</p>
+<pre><code class="language-json">{
+    &quot;license&quot;: &quot;(LGPL-2.1-only or GPL-3.0-or-later)&quot;
+}
+</code></pre>
+<p>Da mesma forma, quando várias licenças precisam ser aplicadas ("licenças
+conjuntivas"), elas devem ser separadas por <code>and</code> e colocadas entre parênteses;</p>
+<h3 id="authors">authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h3>
+<p>As pessoas que criaram o pacote, listadas em um array de objetos.</p>
+<p>Cada objeto de pessoa pode ter as seguintes propriedades:</p>
+<ul>
+<li><strong>name:</strong> O nome da pessoa. Geralmente o nome verdadeiro.</li>
+<li><strong>email:</strong> O endereço de e-mail da pessoa.</li>
+<li><strong>homepage:</strong> Uma URL para o site da pessoa.</li>
+<li><strong>role:</strong> A função da pessoa no projeto (por exemplo, desenvolvedora ou
+  tradutora).</li>
+</ul>
+<p>Um exemplo:</p>
+<pre><code class="language-json">{
+    &quot;authors&quot;: [
+        {
+            &quot;name&quot;: &quot;Nils Adermann&quot;,
+            &quot;email&quot;: &quot;naderman@naderman.de&quot;,
+            &quot;homepage&quot;: &quot;http://www.naderman.de&quot;,
+            &quot;role&quot;: &quot;Developer&quot;
+        },
+        {
+            &quot;name&quot;: &quot;Jordi Boggiano&quot;,
+            &quot;email&quot;: &quot;j.boggiano@seld.be&quot;,
+            &quot;homepage&quot;: &quot;https://seld.be&quot;,
+            &quot;role&quot;: &quot;Developer&quot;
+        }
+    ]
+}
+</code></pre>
+<p>Opcional, mas altamente recomendada.</p>
+<h3 id="support">support<a class="headerlink" href="#support" title="Permanent link">&para;</a></h3>
+<p>Várias informações para obter suporte para o projeto.</p>
+<p>As informações de suporte incluem as seguintes:</p>
+<ul>
+<li><strong>email:</strong> Endereço de e-mail para suporte.</li>
+<li><strong>issues:</strong> URL do sistema para acompanhamento de issues.</li>
+<li><strong>forum:</strong> URL do fórum.</li>
+<li><strong>wiki:</strong> URL da wiki.</li>
+<li><strong>irc:</strong> canal IRC para suporte, como <code>irc://servidor/canal</code>.</li>
+<li><strong>source:</strong> URL para pesquisar ou baixar o código-fonte.</li>
+<li><strong>docs:</strong> URL da documentação.</li>
+<li><strong>rss:</strong> URL para o feed RSS.</li>
+<li><strong>chat:</strong> URL para o canal de chat.</li>
+</ul>
+<p>Um exemplo:</p>
+<pre><code class="language-json">{
+    &quot;support&quot;: {
+        &quot;email&quot;: &quot;suporte@exemplo.org.br&quot;,
+        &quot;irc&quot;: &quot;irc://irc.freenode.org/composer&quot;
+    }
+}
+</code></pre>
+<p>Opcional.</p>
+<h3 id="links-de-pacotes">Links de Pacotes<a class="headerlink" href="#links-de-pacotes" title="Permanent link">&para;</a></h3>
+<p>Todos os itens a seguir recebem um objeto que mapeia nomes de pacotes para
+versões do pacote através de restrições de versão. Leia mais sobre versões
+<a href="artigos/versions.md">aqui</a>.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;1.0.*&quot;
+    }
+}
+</code></pre>
+<p>Todos os links são campos opcionais.</p>
+<p><code>require</code> e <code>require-dev</code> também oferecem suporte a flags de estabilidade
+(<a href="#pacote-raiz">root-only</a>). Elas permitem restringir ou expandir ainda mais a
+estabilidade de um pacote além do escopo da configuração <a href="#minimum-stability">minimum-stability</a>. Você pode aplicá-las a uma restrição ou aplicá-las a uma
+restrição vazia, se desejar permitir pacotes instáveis de uma dependência, por
+exemplo.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;1.0.*@beta&quot;,
+        &quot;acme/foo&quot;: &quot;@dev&quot;
+    }
+}
+</code></pre>
+<p>Se uma de suas dependências depender de um pacote instável, você também
+precisará requisitá-lo explicitamente, juntamente com a flag de estabilidade
+necessária.</p>
+<p>Exemplo:</p>
+<p>Assumindo que <code>doctrine/doctrine-fixtures-bundle</code> requer
+<code>"doctrine/data-fixtures": "dev-master"</code>, então dentro do <code>composer.json</code>raiz,
+você precisará adicionar a segunda linha abaixo para permitir versões de
+desenvolvimento do pacote <code>doctrine/data-fixtures</code>:</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;doctrine/doctrine-fixtures-bundle&quot;: &quot;dev-master&quot;,
+        &quot;doctrine/data-fixtures&quot;: &quot;@dev&quot;
+    }
+}
+</code></pre>
+<p>Além disso, <code>require</code> e <code>require-dev</code> suportam referências explícitas (ou seja,
+commits) para versões de desenvolvimento para garantir que elas estejam travadas
+em um determinado estado, mesmo quando você executa a atualização. Elas
+funcionam apenas se você requisitar explicitamente uma versão de desenvolvimento
+e adicionar a referência com <code>#&lt;ref&gt;</code>. Este também é um recurso <a href="#pacote-raiz">root-only</a> e será ignorado nas dependências.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;dev-master#2eb0c0978d290a1c45346a1955188929cb4e5db7&quot;,
+        &quot;acme/foo&quot;: &quot;1.0.x-dev#abc123&quot;
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Esse recurso tem graves limitações técnicas, pois os metadados do
+<code>composer.json</code> ainda serão lidos a partir do nome do branch que você
+especificar antes do hash. Portanto, você deve usar isso apenas como uma
+solução temporária durante o desenvolvimento para corrigir problemas
+transitórios, até poder alternar para versões de tag. O time do Composer não
+suporta ativamente esse recurso e não aceita relatórios de erros relacionados
+a ele.</p>
+</blockquote>
+<p>Também é possível criar um alias em linha de uma restrição de pacote, para que
+ela corresponda a uma restrição que de outra forma não corresponderia. Para
+obter mais informações, <a href="artigos/aliases.html">consulte o artigo sobre aliases</a>.</p>
+<p><code>require</code> e <code>require-dev</code> também suportam referências a versões específicas do
+PHP e de extensões PHP que seu projeto precisa para executar com sucesso.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;require&quot; : {
+        &quot;php&quot; : &quot;^5.5 || ^7.0&quot;,
+        &quot;ext-mbstring&quot;: &quot;*&quot;
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> É importante listar as extensões PHP que seu projeto requer. Nem
+todas as instalações PHP são criadas da mesma forma: algumas podem não possuir
+extensões que você pode considerar como padrão (como <code>ext-mysqli</code>, que não é
+instalada por padrão nas instalações mínimas dos sistemas Fedora/CentOS).
+Não listar as extensões PHP necessárias pode levar a uma experiência ruim do
+usuário: o Composer instalará seu pacote sem erros, mas ele falhará em tempo
+de execução. O comando <code>composer show --platform</code> lista todas as extensões PHP
+disponíveis no seu sistema. Você pode usá-lo para te ajudar a compilar a lista
+de extensões que você usa e precisa. Como alternativa, você pode usar
+ferramentas de terceiros para analisar seu projeto para obter a lista de
+extensões usadas.</p>
+</blockquote>
+<h4 id="require">require<a class="headerlink" href="#require" title="Permanent link">&para;</a></h4>
+<p>Lista os pacotes exigidos por este pacote. O pacote não será instalado, a menos
+que estes requisitos possam ser atendidos.</p>
+<h4 id="require-dev">require-dev <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#require-dev" title="Permanent link">&para;</a></h4>
+<p>Lista os pacotes necessários para desenvolver este pacote, executar testes, etc.
+Os requisitos de desenvolvimento do pacote raiz são instalados por padrão. Tanto
+<code>install</code> quanto <code>update</code> suportam a opção <code>--no-dev</code>, que impede a instalação
+das dependências de desenvolvimento.</p>
+<h4 id="conflict">conflict<a class="headerlink" href="#conflict" title="Permanent link">&para;</a></h4>
+<p>Lista os pacotes que entram em conflito com esta versão deste pacote. Eles não
+poderão ser instalados junto com o seu pacote.</p>
+<p>Observe que, ao especificar intervalos como <code>&lt;1.0 &gt;=1.1</code> em um link de
+<code>conflict</code>, isso indicará um conflito com todas as versões inferiores a 1.0 <em>e</em>
+iguais ou mais recentes que 1.1 ao mesmo tempo, o que provavelmente não é o que
+você deseja. Você provavelmente quer escolher <code>&lt;1.0 || &gt;=1.1</code>, neste caso.</p>
+<h4 id="replace">replace<a class="headerlink" href="#replace" title="Permanent link">&para;</a></h4>
+<p>Lista os pacotes que são substituídos por este pacote. Isso permite que você
+faça o fork de um pacote, publique-o com um nome diferente com seus próprios
+números de versão, enquanto os pacotes que exigem o pacote original continuam a
+funcionar com o seu fork, pois ele substitui o pacote original.</p>
+<p>Isso também é útil para pacotes que contêm subpacotes, por exemplo, o pacote
+principal <code>symfony/symfony</code> contém todos os Componentes do Symfony que também
+estão disponíveis como pacotes individuais. Se você exigir o pacote principal,
+ele atenderá automaticamente a qualquer requisito de um dos componentes
+individuais, uma vez que os substitui.</p>
+<p>Recomenda-se cuidado ao usar <code>replace</code> para a finalidade de subpacote explicada
+acima. Em geral, você deve substituir apenas usando <code>self.version</code> como uma
+restrição de versão, para garantir que o pacote principal substitua apenas os
+subpacotes desta versão exata e de nenhuma outra versão, o que seria incorreto.</p>
+<h4 id="provide">provide<a class="headerlink" href="#provide" title="Permanent link">&para;</a></h4>
+<p>Lista de outros pacotes que são fornecidos por este pacote. Isso é útil
+principalmente para interfaces comuns. Um pacote pode depender de algum pacote
+virtual <code>logger</code> e qualquer biblioteca que implemente esta interface <code>logger</code>
+simplesmente irá listá-la em <code>provide</code>.</p>
+<h4 id="suggest">suggest<a class="headerlink" href="#suggest" title="Permanent link">&para;</a></h4>
+<p>Pacotes sugeridos que podem melhorar ou funcionar bem com este pacote. Eles são
+informativos e são exibidos após a instalação do pacote, para dar às pessoas uma
+dica de que elas poderiam adicionar mais pacotes, mesmo que não sejam
+estritamente necessários.</p>
+<p>O formato é como os links de pacotes acima, exceto que os valores são texto
+livre e não restrições de versão.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;suggest&quot;: {
+        &quot;monolog/monolog&quot;: &quot;Permite o registro mais avançado de logging do fluxo da aplicação&quot;,
+        &quot;ext-xml&quot;: &quot;Necessária para suportar o formato XML na classe Foo&quot;
+    }
+}
+</code></pre>
+<h3 id="autoload">autoload<a class="headerlink" href="#autoload" title="Permanent link">&para;</a></h3>
+<p>Mapeamento de autoload para um autoloader PHP.</p>
+<p>O autoloading <a href="https://www.php-fig.org/psr/psr-4/"><code>PSR-4</code></a> e <a href="https://www.php-fig.org/psr/psr-0/"><code>PSR-0</code></a>, a geração de <code>classmap</code>
+e a inclusão de <code>files</code> são suportados.</p>
+<p>PSR-4 é a maneira recomendada, pois oferece maior facilidade de uso (não é
+necessário gerar o autoloader novamente ao adicionar classes).</p>
+<h4 id="psr-4">PSR-4<a class="headerlink" href="#psr-4" title="Permanent link">&para;</a></h4>
+<p>Usando a chave <code>psr-4</code>, você define um mapeamento de namespaces para caminhos
+relativos à raiz do pacote. Ao fazer o autoloading de uma classe como
+<code>Foo\\Bar\\Baz</code>, um prefixo de namespace <code>Foo\\</code> apontando para um diretório
+<code>src/</code> significa que o autoloader procurará por um arquivo chamado
+<code>src/Bar/Baz.php</code> e o incluirá, se ele existir. Observe que, ao contrário do
+antigo estilo PSR-0, o prefixo (<code>Foo\\</code>) <strong>não</strong> está presente no caminho do
+arquivo.</p>
+<p>Os prefixos de namespace devem terminar em <code>\\</code> para evitar conflitos entre
+prefixos semelhantes. Por exemplo, <code>Foo</code> corresponderia às classes no namespace
+<code>FooBar</code>, por isso as barras invertidas à direita resolvem o problema: <code>Foo\\</code>
+e <code>FooBar\\</code> são distintos.</p>
+<p>As referências PSR-4 são todas combinadas, durante a instalação/atualização, em
+um único array associativo, que pode ser encontrado no arquivo
+<code>vendor/composer/autoload_psr4.php</code> gerado.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: {
+            &quot;Monolog\\&quot;: &quot;src/&quot;,
+            &quot;Vendor\\Namespace\\&quot;: &quot;&quot;
+        }
+    }
+}
+</code></pre>
+<p>Se você precisar procurar um mesmo prefixo em vários diretórios, poderá
+especificá-los como um array como:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: { &quot;Monolog\\&quot;: [&quot;src/&quot;, &quot;lib/&quot;] }
+    }
+}
+</code></pre>
+<p>Se você deseja ter um diretório alternativo onde qualquer namespace será
+procurado, use um prefixo vazio como:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: { &quot;&quot;: &quot;src/&quot; }
+    }
+}
+</code></pre>
+<h4 id="psr-0">PSR-0<a class="headerlink" href="#psr-0" title="Permanent link">&para;</a></h4>
+<p>Usando a chave <code>psr-0</code>, você define um mapeamento de namespaces para caminhos
+relativos à raiz do pacote. Observe que ele também suporta a convenção sem
+namespaces do estilo PEAR.</p>
+<p>Observe que as declarações de namespaces devem terminar em <code>\\</code> para garantir
+que o autoloader responda precisamente. Por exemplo, <code>Foo</code> corresponderia a
+<code>FooBar</code> então as barras invertidas à direita resolvem o problema: <code>Foo\\</code> e
+<code>FooBar\\</code> são distintos.</p>
+<p>As referências PSR-0 são todas combinadas, durante a instalação/atualização, em
+um único array associativo, que pode ser encontrado no arquivo
+<code>vendor/composer/autoload_namespaces.php</code> gerado.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-0&quot;: {
+            &quot;Monolog\\&quot;: &quot;src/&quot;,
+            &quot;Vendor\\Namespace\\&quot;: &quot;src/&quot;,
+            &quot;Vendor_Namespace_&quot;: &quot;src/&quot;
+        }
+    }
+}
+</code></pre>
+<p>Se você precisar procurar um mesmo prefixo em vários diretórios, poderá
+especificá-los como um array como:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-0&quot;: { &quot;Monolog\\&quot;: [&quot;src/&quot;, &quot;lib/&quot;] }
+    }
+}
+</code></pre>
+<p>O estilo PSR-0 não se limita apenas às declarações de namespace, mas pode ser
+especificado até o nível da classe. Isso pode ser útil para bibliotecas com
+apenas uma classe no namespace global. Se o arquivo-fonte PHP também estiver
+localizado na raiz do pacote, por exemplo, ele poderá ser declarado assim:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-0&quot;: { &quot;ClasseGlobalUnica&quot;: &quot;&quot; }
+    }
+}
+</code></pre>
+<p>Se você deseja ter um diretório alternativo onde qualquer namespace será
+procurado, use um prefixo vazio como:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-0&quot;: { &quot;&quot;: &quot;src/&quot; }
+    }
+}
+</code></pre>
+<h4 id="classmap">Classmap<a class="headerlink" href="#classmap" title="Permanent link">&para;</a></h4>
+<p>As referências em <code>classmap</code> são todas combinadas, durante a
+instalação/atualização, em um único array associativo, que pode ser encontrado
+no arquivo <code>vendor/composer/autoload_classmap.php</code> gerado. Esse mapa é
+construído pesquisando por classes em todos os arquivos <code>.php</code> e <code>.inc</code> nos
+diretórios/arquivos fornecidos.</p>
+<p>Você pode usar o suporte à geração de mapa de classes para definir o autoloading
+para todas as bibliotecas que não seguem as PSR-0/4. Para configurar isso, você
+especifica todos os diretórios ou arquivos onde procurar por classes.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;classmap&quot;: [&quot;src/&quot;, &quot;lib/&quot;, &quot;AlgumaCoisa.php&quot;]
+    }
+}
+</code></pre>
+<h4 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h4>
+<p>Se você deseja exigir determinados arquivos explicitamente em todas as
+requisições, pode usar o mecanismo de autoloading <code>files</code>. Ele é útil se seu
+pacote incluir funções PHP que não podem ser carregadas automaticamente pelo PHP.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;files&quot;: [&quot;src/MinhaBiblioteca/funcoes.php&quot;]
+    }
+}
+</code></pre>
+<h4 id="excluir-arquivos-do-mapa-de-classes">Excluir Arquivos do Mapa de Classes<a class="headerlink" href="#excluir-arquivos-do-mapa-de-classes" title="Permanent link">&para;</a></h4>
+<p>Se você deseja excluir alguns arquivos ou pastas do mapa de classes, use a
+propriedade <code>exclude-from-classmap</code>. Isso pode ser útil para excluir as classes
+de teste em seu ambiente ativo, por exemplo, pois elas serão omitidas do mapa
+de classes, até mesmo ao criar um autoloader otimizado.</p>
+<p>O gerador de mapa de classes ignorará todos os arquivos nos caminhos
+configurados aqui. Os caminhos são absolutos no diretório raiz do pacote (ou
+seja, o local do <code>composer.json</code>) e suportam <code>*</code> para corresponder a qualquer
+coisa, exceto uma barra, e <code>**</code> para corresponder a qualquer coisa. <code>**</code> é
+incluído implicitamente ao final dos caminhos.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;exclude-from-classmap&quot;: [&quot;/Tests/&quot;, &quot;/test/&quot;, &quot;/tests/&quot;]
+    }
+}
+</code></pre>
+<h4 id="otimizando-o-autoloader">Otimizando o Autoloader<a class="headerlink" href="#otimizando-o-autoloader" title="Permanent link">&para;</a></h4>
+<p>O autoloader pode ter um impacto bastante substancial no tempo da requisição
+(50-100ms por requisição em frameworks grandes usando muitas classes). Consulte
+o <a href="artigos/autoloader-optimization.md">artigo sobre otimização do autoloader</a> para obter mais
+detalhes sobre como reduzir esse impacto.</p>
+<h3 id="autoload-dev">autoload-dev <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#autoload-dev" title="Permanent link">&para;</a></h3>
+<p>Esta seção permite definir regras de autoload para fins de desenvolvimento.</p>
+<p>As classes necessárias para executar a suíte de testes não devem ser
+incluídas nas regras principais de autoload para evitar poluir o autoloader em
+produção e quando outras pessoas usarem seu pacote como uma dependência.</p>
+<p>Portanto, é uma boa ideia contar com um caminho dedicado para seus testes
+unitários e adicioná-lo na seção <code>autoload-dev</code>.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: { &quot;MinhaBiblioteca\\&quot;: &quot;src/&quot; }
+    },
+    &quot;autoload-dev&quot;: {
+        &quot;psr-4&quot;: { &quot;MinhaBiblioteca\\Tests\\&quot;: &quot;tests/&quot; }
+    }
+}
+</code></pre>
+<h3 id="include-path">include-path<a class="headerlink" href="#include-path" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>OBSOLETA</strong>: Esta propriedade está presente apenas para oferecer suporte a
+projetos legados e todo código novo deve preferencialmente usar o autoloading.
+Como tal, é uma prática desaprovada, mas o recurso em si provavelmente não
+desaparecerá do Composer.</p>
+</blockquote>
+<p>Uma lista de caminhos que devem ser anexados ao <code>include_path</code> do PHP.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;include-path&quot;: [&quot;lib/&quot;]
+}
+</code></pre>
+<p>Opcional.</p>
+<h3 id="target-dir">target-dir<a class="headerlink" href="#target-dir" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p><strong>OBSOLETA</strong>: Esta propriedade está presente apenas para oferecer suporte ao
+autoloading no estilo PSR-0 legado e todo código novo deve preferencialmente
+usar a PSR-4 sem <code>target-dir</code> e os projetos usando a PSR-0 com namespaces PHP
+são encorajados a migrar para a PSR-4.</p>
+</blockquote>
+<p>Define o destino da instalação.</p>
+<p>Caso a raiz do pacote esteja abaixo da declaração do namespace, você não poderá
+fazer o autoload corretamente. <code>target-dir</code> resolve este problema.</p>
+<p>Um exemplo é o Symfony. Existem pacotes individuais para os componentes. O
+componente Yaml está em <code>Symfony\Component\Yaml</code>. A raiz do pacote é esse
+diretório <code>Yaml</code>. Para tornar o autoloading possível, precisamos garantir que
+ele não esteja instalado em <code>vendor/symfony/yaml</code>, mas sim em
+<code>vendor/symfony/yaml/Symfony/Component/Yaml</code>, para que o autoloader possa
+carregá-lo a partir de <code>vendor/symfony/yaml</code>.</p>
+<p>Para fazer isso, <code>autoload</code> e <code>target-dir</code> são definidas da seguinte maneira:</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-0&quot;: { &quot;Symfony\\Component\\Yaml\\&quot;: &quot;&quot; }
+    },
+    &quot;target-dir&quot;: &quot;Symfony/Component/Yaml&quot;
+}
+</code></pre>
+<p>Opcional.</p>
+<h3 id="minimum-stability">minimum-stability <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#minimum-stability" title="Permanent link">&para;</a></h3>
+<p>Isso define o comportamento padrão para filtrar pacotes pela estabilidade. O
+padrão é <code>stable</code>, portanto, se você depender de um pacote <code>dev</code>, especifique-o
+em seu arquivo para evitar surpresas.</p>
+<p>Todas as versões de cada pacote são verificadas quanto à estabilidade, e as que
+são menos estáveis que a configuração <code>minimum-stability</code> serão ignoradas ao
+resolver as dependências do projeto. (Observe que você também pode especificar
+requisitos de estabilidade por pacote, usando flags de estabilidade nas
+restrições de versão especificadas em um bloco <code>require</code> (consulte os <a href="#links-de-pacotes">links de
+pacotes</a> para obter mais detalhes).</p>
+<p>As opções disponíveis (em ordem de estabilidade) são <code>dev</code>, <code>alpha</code>, <code>beta</code>,
+<code>RC</code> e <code>stable</code>.</p>
+<h3 id="prefer-stable">prefer-stable <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#prefer-stable" title="Permanent link">&para;</a></h3>
+<p>Quando isso está habilitado, o Composer prefere pacotes mais estáveis do que os
+instáveis quando é possível encontrar pacotes estáveis compatíveis. Se você
+precisar de uma versão de desenvolvimento ou apenas versões alpha estiverem
+disponíveis para um pacote, elas ainda serão selecionadas, desde que a
+<code>minimum-stability</code> permita.</p>
+<p>Use <code>"prefer-stable": true</code> para habilitar.</p>
+<h3 id="repositories">repositories <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#repositories" title="Permanent link">&para;</a></h3>
+<p>Repositórios de pacotes personalizados a serem usados.</p>
+<p>Por padrão, o Composer usa apenas o repositório Packagist. Ao especificar
+repositórios, você pode obter pacotes de outros lugares.</p>
+<p>Os repositórios não são resolvidos recursivamente. Você pode adicioná-los apenas
+ao seu <code>composer.json</code> principal. As declarações de repositórios do
+<code>composer.json</code> das dependências são ignoradas.</p>
+<p>Os seguintes tipos de repositórios são suportados:</p>
+<ul>
+<li><strong>composer:</strong> Um repositório do Composer é simplesmente um arquivo
+  <code>packages.json</code> servido via rede (HTTP, FTP, SSH), que contém uma lista de
+  objetos <code>composer.json</code> com informações adicionais sobre <code>dist</code> e/ou <code>source</code>.
+  O arquivo <code>packages.json</code> é carregado usando um stream PHP. Você pode definir
+  opções extras para esse stream usando o parâmetro <code>options</code>.</li>
+<li><strong>vcs:</strong> O repositório do sistema de controle de versão pode buscar pacotes
+  nos repositórios do git, svn, fossil e hg.</li>
+<li><strong>pear:</strong> Com isso, você pode importar qualquer repositório PEAR para o seu
+  projeto Composer.</li>
+<li><strong>package:</strong> Se você depende de um projeto que não possui absolutamente nenhum
+  suporte ao Composer, você pode definir o pacote em linha usando um repositório
+  <code>package</code>. Você basicamente adiciona o objeto <code>composer.json</code> em linha.</li>
+</ul>
+<p>Para obter mais informações sobre qualquer um deles, consulte <a href="repositorios.html">Repositórios</a>.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;composer&quot;,
+            &quot;url&quot;: &quot;http://packages.exemplo.com.br&quot;
+        },
+        {
+            &quot;type&quot;: &quot;composer&quot;,
+            &quot;url&quot;: &quot;https://packages.exemplo.com.br&quot;,
+            &quot;options&quot;: {
+                &quot;ssl&quot;: {
+                    &quot;verify_peer&quot;: &quot;true&quot;
+                }
+            }
+        },
+        {
+            &quot;type&quot;: &quot;vcs&quot;,
+            &quot;url&quot;: &quot;https://github.com/Seldaek/monolog&quot;
+        },
+        {
+            &quot;type&quot;: &quot;pear&quot;,
+            &quot;url&quot;: &quot;https://pear2.php.net&quot;
+        },
+        {
+            &quot;type&quot;: &quot;package&quot;,
+            &quot;package&quot;: {
+                &quot;name&quot;: &quot;smarty/smarty&quot;,
+                &quot;version&quot;: &quot;3.1.7&quot;,
+                &quot;dist&quot;: {
+                    &quot;url&quot;: &quot;https://www.smarty.net/files/Smarty-3.1.7.zip&quot;,
+                    &quot;type&quot;: &quot;zip&quot;
+                },
+                &quot;source&quot;: {
+                    &quot;url&quot;: &quot;https://smarty-php.googlecode.com/svn/&quot;,
+                    &quot;type&quot;: &quot;svn&quot;,
+                    &quot;reference&quot;: &quot;tags/Smarty_3_1_7/distribution/&quot;
+                }
+            }
+        }
+    ]
+}
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Aqui a ordem é importante. Ao procurar um pacote, o Composer
+procurará do primeiro repositório ao último e escolherá a primeira
+correspondência. Por padrão, o Packagist é adicionado por último, o que
+significa que os repositórios personalizados podem sobrescrever os pacotes
+dele.</p>
+</blockquote>
+<p>O uso da notação de objeto JSON também é possível. No entanto, os pares de
+chave/valor JSON devem ser considerados ignorando a ordem, então um
+comportamento consistente não pode ser garantido.</p>
+<p><code>json
+{
+    "repositories": {
+         "foo": {
+             "type": "composer",
+             "url": "http://packages.foo.com"
+         }
+    }
+}</code></p>
+<h3 id="config">config <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
+<p>Um conjunto de opções de configuração. É usada apenas para projetos. Consulte
+<a href="config.html">Config</a> para obter uma descrição de cada opção individual.</p>
+<h3 id="scripts">scripts <span>(<a href="#pacote-raiz">root-only</a>)</span><a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h3>
+<p>O Composer permite conectar-se a várias partes do processo de instalação através
+do uso de scripts.</p>
+<p>Consulte <a href="artigos/scripts.md">Scripts</a> para obter detalhes e exemplos de eventos.</p>
+<h3 id="extra">extra<a class="headerlink" href="#extra" title="Permanent link">&para;</a></h3>
+<p>Dados extras arbitrários para consumo por <code>scripts</code>.</p>
+<p>Isso pode ser praticamente qualquer coisa. Para acessá-los de dentro de um
+manipulador de eventos de script, você pode fazer:</p>
+<pre><code class="language-php">$extra = $event-&gt;getComposer()-&gt;getPackage()-&gt;getExtra();
+</code></pre>
+<p>Opcional.</p>
+<h3 id="bin">bin<a class="headerlink" href="#bin" title="Permanent link">&para;</a></h3>
+<p>Um conjunto de arquivos que devem ser tratados como binários e ter links
+simbólicos no <code>bin-dir</code> (da configuração).</p>
+<p>Consulte os <a href="artigos/vendor-binaries.md">Binários dos Vendors</a> para obter mais detalhes.</p>
+<p>Opcional.</p>
+<h3 id="archive">archive<a class="headerlink" href="#archive" title="Permanent link">&para;</a></h3>
+<p>Um conjunto de opções para criar arquivos de pacotes compactados.</p>
+<p>As seguintes opções são suportadas:</p>
+<ul>
+<li><strong>exclude:</strong> Permite configurar uma lista de padrões para caminhos excluídos.
+  A sintaxe do padrão corresponde aos arquivos <code>.gitignore</code>. Um ponto de
+  exclamação (<code>!</code>) inicial resultará na inclusão de todos os arquivos
+  correspondentes, mesmo que um padrão anterior os tenha excluído. Uma barra
+  inicial corresponderá apenas no início do caminho relativo do projeto. Um
+  asterisco não será expandido para um separador de diretório.</li>
+</ul>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;archive&quot;: {
+        &quot;exclude&quot;: [&quot;/foo/bar&quot;, &quot;baz&quot;, &quot;/*.test&quot;, &quot;!/foo/bar/baz&quot;]
+    }
+}
+</code></pre>
+<p>O exemplo incluirá <code>/dir/foo/bar/arquivo</code>, <code>/foo/bar/baz</code>, <code>/arquivo.php</code>,
+<code>/foo/meu.test</code>, mas excluirá <code>/foo/bar/qualquer</code>, <code>/foo/baz</code> e <code>/meu.test</code>.</p>
+<p>Opcional.</p>
+<h3 id="abandoned">abandoned<a class="headerlink" href="#abandoned" title="Permanent link">&para;</a></h3>
+<p>Indica se este pacote foi abandonado.</p>
+<p>Pode ser booleano ou um nome/URL de pacote apontando para uma alternativa
+recomendada.</p>
+<p>Exemplos:</p>
+<p>Use <code>"abandoned": true</code> para indicar que este pacote foi abandonado.
+Use <code>"abandoned": "monolog/monolog"</code> para indicar que este pacote foi abandonado
+e a alternativa recomendada é <code>monolog/monolog</code>.</p>
+<p>O padrão é <code>false</code>.</p>
+<p>Opcional.</p>
+<h3 id="non-feature-branches">non-feature-branches<a class="headerlink" href="#non-feature-branches" title="Permanent link">&para;</a></h3>
+<p>Uma lista de padrões de expressões regulares de nomes de branches não numéricos
+(por exemplo, "latest" ou algo parecido), que NÃO serão tratados como feature
+branches. É um array de strings.</p>
+<p>Se você tiver nomes de branches não numéricos, por exemplo, como "latest",
+"current", "latest-stable" ou algo parecido, que não se pareçam com um número de
+versão, o Composer tratará esses branches como feature branches. Isso significa
+que ele procurará por branches pai, que se parecem com uma versão ou terminam em
+branches especiais (como <code>master</code>) e o número da versão do pacote raiz se
+tornará a versão do branch pai ou, pelo menos, <code>master</code> ou algo parecido.</p>
+<p>Para tratar branches com nomes não numéricos como versões em vez de procurar por
+um branch pai com uma versão válida ou nome de branch especial como <code>master</code>,
+você pode definir padrões para nomes de branches, que devem ser tratados como
+branches de versões de desenvolvimento.</p>
+<p>Isso é realmente útil quando você tem dependências usando <code>self.version</code>, para
+que não o <code>dev-master</code>, mas o mesmo branch seja instalado (no exemplo:
+<code>latest-testing</code>).</p>
+<p>Um exemplo:</p>
+<p>Se você possui um branch <code>testing</code>, que é fortemente mantido durante uma fase de
+testes e é implantado em seu ambiente staging, normalmente <code>composer show -s</code>
+retornará <code>versions : * dev-master</code>.</p>
+<p>Se você configurar <code>"latest-.*"</code> como um padrão para <code>non-feature-branches</code>
+desta forma:</p>
+<pre><code class="language-json">{
+    &quot;non-feature-branches&quot;: [&quot;latest-.*&quot;]
+}
+</code></pre>
+<p>Então <code>composer show -s</code> retornará <code>versions : * dev-latest-testing</code>.</p>
+<p>Opcional.</p>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="repositorios.html" class="btn btn-neutral float-right" title="Repositórios">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="cli.html" class="btn btn-neutral" title="CLI / Comandos">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="cli.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="repositorios.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>

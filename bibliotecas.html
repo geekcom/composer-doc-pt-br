@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        Bibliotecas - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "Bibliotecas";
+        var mkdocs_page_input_path = "bibliotecas.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1">
+    <a class="" href="introducao.html">Introdução</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="uso-basico.html">Uso Básico</a>
+                </li>
+                <li class="toctree-l1 current">
+    <a class="current" href="bibliotecas.html">Bibliotecas</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#bibliotecas">Bibliotecas</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#todo-projeto-e-um-pacote">Todo Projeto É um Pacote</a></li>
+        
+            <li><a class="toctree-l3" href="#versionamento-de-biblioteca">Versionamento de Biblioteca</a></li>
+        
+            <li><a class="toctree-l3" href="#arquivo-lock">Arquivo Lock</a></li>
+        
+            <li><a class="toctree-l3" href="#publicando-em-um-vcs">Publicando em um VCS</a></li>
+        
+            <li><a class="toctree-l3" href="#publicando-no-packagist">Publicando no Packagist</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="cli.html">CLI / Comandos</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="esquema.html">O Esquema do composer.json</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="repositorios.html">Repositórios</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="config.html">Config</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>Bibliotecas</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/bibliotecas.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="bibliotecas">Bibliotecas<a class="headerlink" href="#bibliotecas" title="Permanent link">&para;</a></h1>
+<p>Este capítulo mostrará como tornar sua biblioteca instalável através do
+Composer.</p>
+<h2 id="todo-projeto-e-um-pacote">Todo Projeto É um Pacote<a class="headerlink" href="#todo-projeto-e-um-pacote" title="Permanent link">&para;</a></h2>
+<p>Assim que você tiver um <code>composer.json</code> em um diretório, esse diretório será um
+pacote. Ao adicionar um <a href="esquema.html#require"><code>require</code></a> a um projeto, você
+está criando um pacote que depende de outros pacotes. A única diferença entre
+seu projeto e uma biblioteca é que seu projeto é um pacote sem nome.</p>
+<p>Para tornar esse pacote instalável, você precisa dar um nome a ele. Você faz
+isso adicionando a propriedade <a href="esquema.html#name"><code>name</code></a> ao <code>composer.json</code>:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;acme/ola-mundo&quot;,
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;1.0.*&quot;
+    }
+}
+</code></pre>
+<p>Nesse caso, o nome do projeto é <code>acme/ola-mundo</code>, onde <code>acme</code> é o nome do
+vendor. É obrigatório fornecer o nome do vendor.</p>
+<blockquote>
+<p><strong>Nota:</strong> Se você não sabe o que usar como nome do vendor, seu nome de usuário
+do GitHub geralmente é uma boa aposta. Embora os nomes de pacotes não façam
+distinção entre maiúsculas e minúsculas, a convenção é usar apenas minúsculas
+e hífen para separar as palavras.</p>
+</blockquote>
+<h2 id="versionamento-de-biblioteca">Versionamento de Biblioteca<a class="headerlink" href="#versionamento-de-biblioteca" title="Permanent link">&para;</a></h2>
+<p>Na grande maioria dos casos, você manterá sua biblioteca usando algum tipo de
+sistema de controle de versão como git, svn, hg ou fossil. Nesses casos, o
+Composer deduz as versões a partir do seu VCS e você <strong>não deve</strong> especificar
+uma versão no arquivo <code>composer.json</code>. (Consulte o <a href="artigos/versions.md">artigo sobre versões</a> para aprender sobre como o Composer usa branches e tags do VCS
+para resolver restrições de versão.)</p>
+<p>Se você estiver mantendo pacotes manualmente (ou seja, sem um VCS), precisará
+especificar a versão explicitamente, adicionando uma propriedade <code>version</code> no
+arquivo <code>composer.json</code>:</p>
+<pre><code class="language-json">{
+    &quot;version&quot;: &quot;1.0.0&quot;
+}
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Quando você adiciona uma versão fixa no código ao VCS, a versão
+entra em conflito com os nomes das tags. O Composer não poderá determinar o
+número da versão.</p>
+</blockquote>
+<h3 id="versionamento-do-vcs">Versionamento do VCS<a class="headerlink" href="#versionamento-do-vcs" title="Permanent link">&para;</a></h3>
+<p>O Composer usa os recursos de branch e tag do VCS para resolver as restrições de
+versão que você especifica no campo <code>require</code> para conjuntos específicos de
+arquivos. Ao determinar as versões disponíveis válidas, o Composer examina todas
+as suas tags e branches e converte seus nomes em uma lista interna de opções
+que, em seguida, faz a correspondência com a restrição de versão que você
+forneceu.</p>
+<p>Para saber mais sobre como o Composer trata tags e branches e como resolve
+restrições de versão de pacote, leia o artigo sobre <a href="artigos/versions.md">versões</a>.</p>
+<h2 id="arquivo-lock">Arquivo Lock<a class="headerlink" href="#arquivo-lock" title="Permanent link">&para;</a></h2>
+<p>Para sua biblioteca, você pode fazer o commit do arquivo <code>composer.lock</code>, se
+desejar. Isso pode ajudar seu time a testar sempre as mesmas versões das
+dependências. No entanto, esse arquivo lock não terá efeito em outros projetos
+que dependem dele. Ele só afeta o projeto principal.</p>
+<p>Se você não deseja fazer o commit do arquivo lock e estiver usando o git,
+adicione-o ao <code>.gitignore</code>.</p>
+<h2 id="publicando-em-um-vcs">Publicando em um VCS<a class="headerlink" href="#publicando-em-um-vcs" title="Permanent link">&para;</a></h2>
+<p>Depois de ter um repositório VCS (sistema de controle de versão, por exemplo,
+git) contendo um arquivo <code>composer.json</code>, sua biblioteca já pode ser instalada
+pelo Composer. Neste exemplo, publicaremos a biblioteca <code>acme/ola-mundo</code> no
+GitHub em <code>github.com/&lt;usuario&gt;/ola-mundo</code>.</p>
+<p>Agora, para testar a instalação do pacote <code>acme/ola-mundo</code>, criamos um novo
+projeto localmente. Iremos chamá-lo <code>acme/blog</code>. Este blog dependerá do
+<code>acme/ola-mundo</code>, que por sua vez depende do <code>monolog/monolog</code>. Podemos fazer
+isso criando um novo diretório <code>blog</code> em algum lugar, contendo um
+<code>composer.json</code>:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;acme/blog&quot;,
+    &quot;require&quot;: {
+        &quot;acme/ola-mundo&quot;: &quot;dev-master&quot;
+    }
+}
+</code></pre>
+<p>O nome não é necessário neste caso, pois não queremos publicar o blog como uma
+biblioteca. Ele é adicionado aqui para esclarecer qual <code>composer.json</code> está
+sendo descrito.</p>
+<p>Agora precisamos informar à aplicação do blog onde encontrar a dependência
+<code>ola-mundo</code>. Fazemos isso adicionando uma especificação de repositório de
+pacotes ao <code>composer.json</code> do blog:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;acme/blog&quot;,
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;vcs&quot;,
+            &quot;url&quot;: &quot;https://github.com/&lt;usuario&gt;/ola-mundo&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;acme/ola-mundo&quot;: &quot;dev-master&quot;
+    }
+}
+</code></pre>
+<p>Para obter mais detalhes sobre como os repositórios de pacotes funcionam e quais
+outros tipos estão disponíveis, consulte <a href="repositorios.html">Repositórios</a>.</p>
+<p>Isso é tudo. Agora você pode instalar as dependências executando o comando
+<a href="cli.html#install"><code>install</code></a> do Composer!</p>
+<p><strong>Recapitulando:</strong> Qualquer repositório git/svn/hg/fossil que contenha um
+<code>composer.json</code> pode ser adicionado ao seu projeto especificando o repositório
+do pacote e declarando a dependência no campo <a href="esquema.html#require"><code>require</code></a>.</p>
+<h2 id="publicando-no-packagist">Publicando no Packagist<a class="headerlink" href="#publicando-no-packagist" title="Permanent link">&para;</a></h2>
+<p>Tudo bem, então agora você pode publicar pacotes. Mas especificar o repositório
+VCS o tempo todo é complicado. Você não deseja forçar todos os seus usuários a
+fazer isso.</p>
+<p>A outra coisa que você deve ter notado é que não especificamos um repositório de
+pacotes para o <code>monolog/monolog</code>. Como isso funcionou? A resposta é Packagist.</p>
+<p>O <a href="https://packagist.org/">Packagist</a> é o principal repositório de pacotes do Composer e está
+habilitado por padrão. Tudo o que é publicado no Packagist está disponível
+automaticamente através do Composer. Como o <a href="https://packagist.org/packages/monolog/monolog">Monolog está no Packagist</a>, podemos depender dele sem precisar especificar repositórios
+adicionais.</p>
+<p>Se quiséssemos compartilhar o <code>ola-mundo</code> com o mundo, também iríamos publicá-lo
+no Packagist. Fazer isso é realmente fácil.</p>
+<p>Você simplesmente acessa o <a href="https://packagist.org/">Packagist</a> e clica no botão "Submit".
+Isso solicitará que você se inscreva se ainda não o fez e, em seguida, permitirá
+que você envie a URL ao seu repositório VCS; neste momento o Packagist começará
+a pesquisá-lo. Uma vez feito isso, seu pacote estará disponível para qualquer
+pessoa!</p>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="cli.html" class="btn btn-neutral float-right" title="CLI / Comandos">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="uso-basico.html" class="btn btn-neutral" title="Uso Básico">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="uso-basico.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="cli.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>

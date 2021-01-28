@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        Repositórios - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "Reposit\u00f3rios";
+        var mkdocs_page_input_path = "repositorios.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1">
+    <a class="" href="introducao.html">Introdução</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="uso-basico.html">Uso Básico</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="bibliotecas.html">Bibliotecas</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="cli.html">CLI / Comandos</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="esquema.html">O Esquema do composer.json</a>
+                </li>
+                <li class="toctree-l1 current">
+    <a class="current" href="repositorios.html">Repositórios</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#repositorios">Repositórios</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#conceitos">Conceitos</a></li>
+        
+            <li><a class="toctree-l3" href="#tipos">Tipos</a></li>
+        
+            <li><a class="toctree-l3" href="#hospedando-seu-proprio-repositorio">Hospedando Seu Próprio Repositório</a></li>
+        
+            <li><a class="toctree-l3" href="#desabilitando-o-packagistorg">Desabilitando o Packagist.org</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="config.html">Config</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>Repositórios</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/repositorios.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="repositorios">Repositórios<a class="headerlink" href="#repositorios" title="Permanent link">&para;</a></h1>
+<p>Este capítulo explicará o conceito de pacotes e repositórios, que tipos de
+repositórios estão disponíveis e como eles funcionam.</p>
+<h2 id="conceitos">Conceitos<a class="headerlink" href="#conceitos" title="Permanent link">&para;</a></h2>
+<p>Antes de examinarmos os diferentes tipos de repositórios existentes, precisamos
+entender alguns dos conceitos básicos sobre os quais o Composer é construído.</p>
+<h3 id="pacote">Pacote<a class="headerlink" href="#pacote" title="Permanent link">&para;</a></h3>
+<p>O Composer é um gerenciador de dependências. Ele instala pacotes localmente. Um
+pacote é essencialmente um diretório que contém alguma coisa. Nesse caso, código
+PHP, mas em teoria poderia ser qualquer coisa. E ele contém uma descrição do
+pacote que possui um nome e uma versão. O nome e a versão são usados para
+identificar o pacote.</p>
+<p>De fato, internamente o Composer vê cada versão como um pacote separado. Embora
+essa distinção não importe quando você estiver usando o Composer, ela é muito
+importante quando você quiser alterar o pacote.</p>
+<p>Além do nome e da versão, existem metadados úteis. A informação mais relevante
+para a instalação é a definição da fonte, que descreve onde obter o conteúdo do
+pacote. Os dados do pacote apontam para o conteúdo do pacote. E há duas opções
+aqui: <code>dist</code> e <code>source</code>.</p>
+<p><strong>Dist:</strong> é uma versão empacotada dos dados do pacote. Geralmente é uma versão
+publicada, normalmente é uma versão estável.</p>
+<p><strong>Source:</strong> é usada para desenvolvimento. Ela geralmente se origina de um
+repositório de código-fonte, como o git. Você pode obter o código-fonte quando
+quiser modificar o pacote baixado.</p>
+<p>Os pacotes podem fornecer uma dessas ou até mesmo as duas. Dependendo de certos
+fatores, como as opções fornecidas pela pessoa e a estabilidade do pacote, uma
+delas terá a preferência.</p>
+<h3 id="repositorio">Repositório<a class="headerlink" href="#repositorio" title="Permanent link">&para;</a></h3>
+<p>Um repositório é uma fonte de pacotes. É uma lista de pacotes/versões. O
+Composer procurará em todos os seus repositórios para encontrar os pacotes que
+seu projeto exige.</p>
+<p>Por padrão, apenas o repositório Packagist está registrado no Composer. Você
+pode adicionar mais repositórios ao seu projeto declarando-os no
+<code>composer.json</code>.</p>
+<p>Os repositórios estão disponíveis apenas para o pacote raiz e os repositórios
+definidos em suas dependências não serão carregados. Leia a <a href="faqs/why-can't-composer-load-repositories-recursively.md">FAQ</a> se quiser saber o porquê.</p>
+<h2 id="tipos">Tipos<a class="headerlink" href="#tipos" title="Permanent link">&para;</a></h2>
+<h3 id="composer">composer<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h3>
+<p>O principal tipo de repositório é o repositório <code>composer</code>. Ele usa um único
+arquivo <code>packages.json</code> que contém todos os metadados dos pacotes.</p>
+<p>Este também é o tipo de repositório que o Packagist usa. Para referenciar um
+repositório <code>composer</code>, forneça o caminho antes do arquivo <code>packages.json</code>. No
+caso do Packagist, esse arquivo está localizado em <code>/packages.json</code>, portanto, a
+URL do repositório seria <code>repo.packagist.org</code>. Para
+<code>exemplo.org.br/packages.json</code>, a URL do repositório seria <code>exemplo.org.br</code>.</p>
+<h4 id="packages">packages<a class="headerlink" href="#packages" title="Permanent link">&para;</a></h4>
+<p>O único campo obrigatório é <code>packages</code>. A estrutura JSON é a seguinte:</p>
+<pre><code class="language-json">{
+    &quot;packages&quot;: {
+        &quot;vendor/nome-pacote&quot;: {
+            &quot;dev-master&quot;: { @composer.json },
+            &quot;1.0.x-dev&quot;: { @composer.json },
+            &quot;0.0.1&quot;: { @composer.json },
+            &quot;1.0.0&quot;: { @composer.json }
+        }
+    }
+}
+</code></pre>
+<p>O marcador <code>@composer.json</code> seria o conteúdo do <code>composer.json</code> dessa versão do
+pacote, incluindo no mínimo:</p>
+<ul>
+<li><code>name</code></li>
+<li><code>version</code></li>
+<li><code>dist</code> ou <code>source</code></li>
+</ul>
+<p>Aqui está uma definição mínima de pacote:</p>
+<pre><code class="language-json">{
+    &quot;name&quot;: &quot;smarty/smarty&quot;,
+    &quot;version&quot;: &quot;3.1.7&quot;,
+    &quot;dist&quot;: {
+        &quot;url&quot;: &quot;https://www.smarty.net/files/Smarty-3.1.7.zip&quot;,
+        &quot;type&quot;: &quot;zip&quot;
+    }
+}
+</code></pre>
+<p>Ela pode incluir qualquer um dos outros campos especificados no <a href="esquema.html">esquema</a>.</p>
+<h4 id="notify-batch">notify-batch<a class="headerlink" href="#notify-batch" title="Permanent link">&para;</a></h4>
+<p>O campo <code>notify-batch</code> permite especificar uma URL que será chamada sempre que
+alguém instalar um pacote. A URL pode ser um caminho absoluto (que usará o mesmo
+domínio que o repositório) ou uma URL completamente qualificada.</p>
+<p>Um exemplo de valor:</p>
+<pre><code class="language-json">{
+    &quot;notify-batch&quot;: &quot;/downloads/&quot;
+}
+</code></pre>
+<p>Para <code>exemplo.org.br/packages.json</code> contendo um pacote <code>monolog/monolog</code>, isso
+enviaria uma requisição <code>POST</code> para <code>exemplo.org.br/downloads/</code> com o seguinte
+corpo da requisição JSON:</p>
+<pre><code class="language-json">{
+    &quot;downloads&quot;: [
+        {&quot;name&quot;: &quot;monolog/monolog&quot;, &quot;version&quot;: &quot;1.2.1.0&quot;}
+    ]
+}
+</code></pre>
+<p>O campo <code>version</code> conterá a representação normalizada do número da versão.</p>
+<p>Este campo é opcional.</p>
+<h4 id="provider-includes-e-providers-url">provider-includes e providers-url<a class="headerlink" href="#provider-includes-e-providers-url" title="Permanent link">&para;</a></h4>
+<p>O campo <code>provider-includes</code> permite listar um conjunto de arquivos que listam
+nomes de pacotes fornecidos por este repositório. Nesse caso, o hash deve ser um
+sha256 dos arquivos.</p>
+<p>O campo <code>providers-url</code> descreve como os arquivos do provedor são encontrados no
+servidor. É um caminho absoluto da raiz do repositório. Deve conter os
+placeholders <code>%package%</code> e <code>%hash%</code>.</p>
+<p>Um exemplo:</p>
+<pre><code class="language-json">{
+    &quot;provider-includes&quot;: {
+        &quot;providers-a.json&quot;: {
+            &quot;sha256&quot;: &quot;f5b4bc0b354108ef08614e569c1ed01a2782e67641744864a74e788982886f4c&quot;
+        },
+        &quot;providers-b.json&quot;: {
+            &quot;sha256&quot;: &quot;b38372163fac0573053536f5b8ef11b86f804ea8b016d239e706191203f6efac&quot;
+        }
+    },
+    &quot;providers-url&quot;: &quot;/p/%package%$%hash%.json&quot;
+}
+</code></pre>
+<p>Esses arquivos contêm listas de nomes de pacotes e hashes para verificar a
+integridade do arquivo, por exemplo:</p>
+<pre><code class="language-json">{
+    &quot;providers&quot;: {
+        &quot;acme/foo&quot;: {
+            &quot;sha256&quot;: &quot;38968de1305c2e17f4de33aea164515bc787c42c7e2d6e25948539a14268bb82&quot;
+        },
+        &quot;acme/bar&quot;: {
+            &quot;sha256&quot;: &quot;4dd24c930bd6e1103251306d6336ac813b563a220d9ca14f4743c032fb047233&quot;
+        }
+    }
+}
+</code></pre>
+<p>O arquivo acima declara que <code>acme/foo</code> e <code>acme/bar</code> podem ser encontrados neste
+repositório, carregando o arquivo referenciado por <code>providers-url</code>, substituindo
+<code>%package%</code> pelo nome do pacote com o nome do vendor e <code>%hash%</code> pelo campo
+<code>sha256</code>. Esses arquivos contêm definições de pacotes, conforme descrito <a href="#packages">acima</a>.</p>
+<p>Estes campos são opcionais. Você provavelmente não precisa deles para seu
+próprio repositório personalizado.</p>
+<h4 id="opcoes-de-stream">Opções de Stream<a class="headerlink" href="#opcoes-de-stream" title="Permanent link">&para;</a></h4>
+<p>O arquivo <code>packages.json</code> é carregado usando um stream PHP. Você pode definir
+opções extras para esse stream usando o parâmetro <code>options</code>. Você pode definir
+qualquer opção de contexto de stream PHP válida. Consulte <a href="https://www.php.net/manual/pt_BR/context.php">Opções e parâmetros
+de contexto</a> para obter mais informações.</p>
+<h3 id="vcs">VCS<a class="headerlink" href="#vcs" title="Permanent link">&para;</a></h3>
+<p>VCS significa sistema de controle de versão. Isso inclui sistemas de
+versionamento como git, svn, fossil ou hg. O Composer possui um tipo de
+repositório para instalar pacotes desses sistemas.</p>
+<h4 id="carregando-um-pacote-de-um-repositorio-vcs">Carregando um Pacote de um Repositório VCS<a class="headerlink" href="#carregando-um-pacote-de-um-repositorio-vcs" title="Permanent link">&para;</a></h4>
+<p>Existem alguns casos de uso para isso. O mais comum é manter seu próprio fork de
+uma biblioteca de terceiros. Se você estiver usando uma determinada biblioteca
+para seu projeto e decidir alterar algo na biblioteca, desejará que seu projeto
+use a versão alterada. Se a biblioteca estiver no GitHub (esse é o caso na
+maioria das vezes), você pode simplesmente fazer o fork dela lá e fazer o push
+das suas alterações para o seu fork. Depois disso, você atualiza o
+<code>composer.json</code> do projeto. Tudo que você precisa fazer é adicionar seu fork
+como um repositório e atualizar a restrição de versão para apontar para seu
+branch personalizado. No <code>composer.json</code>, você deve prefixar o nome do seu
+branch personalizado com <code>dev-</code>. Para convenções de nomenclatura de restrições
+de versão, consulte <a href="bibliotecas.html">Bibliotecas</a> para obter mais informações.</p>
+<p>Exemplo assumindo que você alterou o monolog para corrigir um erro no branch
+<code>bugfix</code>:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;vcs&quot;,
+            &quot;url&quot;: &quot;https://github.com/igorw/monolog&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;dev-bugfix&quot;
+    }
+}
+</code></pre>
+<p>Quando você executar <code>php composer.phar update</code>, você deve obter sua versão
+modificada do <code>monolog/monolog</code> em vez da versão do Packagist.</p>
+<p>Observe que você não deve renomear o pacote, a menos que realmente pretenda
+fazer o fork do projeto a longo prazo e se afastar completamente do pacote
+original. O Composer selecionará seu pacote corretamente no lugar do original,
+já que o repositório personalizado tem prioridade sobre o Packagist. Se você
+deseja renomear o pacote, deve fazê-lo no branch padrão (geralmente <code>master</code>) e
+não no feature branch, pois o nome do pacote é obtido do branch padrão.</p>
+<p>Observe também que a substituição não funcionará se você alterar a propriedade
+<code>name</code> no arquivo <code>composer.json</code> do repositório criado pelo fork, pois ela
+precisa corresponder à original para a substituição funcionar.</p>
+<p>Se outra dependência depender do pacote criado pelo fork, é possível adicionar
+um alias em linha para que ela corresponda a uma restrição que, de outra forma,
+ela não iria. Para obter mais informações, <a href="artigos/aliases.html">consulte o artigo sobre aliases</a>.</p>
+<h4 id="usando-repositorios-privados">Usando Repositórios Privados<a class="headerlink" href="#usando-repositorios-privados" title="Permanent link">&para;</a></h4>
+<p>Exatamente a mesma solução permite que você trabalhe com seus repositórios
+privados no GitHub e BitBucket:</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;vendor/meu-repo-privado&quot;: &quot;dev-master&quot;
+    },
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;vcs&quot;,
+            &quot;url&quot;:  &quot;git@bitbucket.org:vendor/meu-repo-privado.git&quot;
+        }
+    ]
+}
+</code></pre>
+<p>O único requisito é a instalação de chaves SSH para um cliente git.</p>
+<h4 id="alternativas-ao-git">Alternativas ao Git<a class="headerlink" href="#alternativas-ao-git" title="Permanent link">&para;</a></h4>
+<p>Git não é o único sistema de controle de versão suportado pelo repositório VCS.
+Os seguintes são suportados:</p>
+<ul>
+<li><strong>Git:</strong> <a href="https://git-scm.com">git-scm.com</a></li>
+<li><strong>Subversion:</strong> <a href="https://subversion.apache.org">subversion.apache.org</a></li>
+<li><strong>Mercurial:</strong> <a href="https://www.mercurial-scm.org">mercurial-scm.org</a></li>
+<li><strong>Fossil</strong>: <a href="https://www.fossil-scm.org/">fossil-scm.org</a></li>
+</ul>
+<p>Para obter pacotes desses sistemas, você precisa ter seus respectivos clientes
+instalados. Isso pode ser inconveniente. E por esse motivo, há suporte especial
+ao GitHub e BitBucket que usa as APIs fornecidas por esses sites para buscar os
+pacotes sem precisar instalar o sistema de controle de versão. O repositório VCS
+fornece opções <code>dist</code> para eles que buscam os pacotes como arquivos zip.</p>
+<ul>
+<li><strong>GitHub:</strong> <a href="https://github.com">github.com</a> (Git)</li>
+<li><strong>BitBucket:</strong> <a href="https://bitbucket.org">bitbucket.org</a> (Git e Mercurial)</li>
+</ul>
+<p>O driver VCS a ser usado é detectado automaticamente com base na URL.
+Entretanto, se você precisar especificar um por qualquer motivo, poderá usar
+<code>git-bitbucket</code>, <code>hg-bitbucket</code>, <code>github</code>, <code>gitlab</code>, <code>perforce</code>, <code>fossil</code>,
+<code>git</code>, <code>svn</code> ou <code>hg</code> como o tipo de repositório em vez de <code>vcs</code>.</p>
+<p>Se você definir a chave <code>no-api</code> como <code>true</code> em um repositório <code>github</code>, clonará
+o repositório como faria com qualquer outro repositório git, em vez de usar a
+API do GitHub. Porém, diferente de usar o driver <code>git</code> diretamente, o Composer
+ainda tentará usar os arquivos zip do GitHub.</p>
+<p>Note que:</p>
+<ul>
+<li><strong>Para permitir que o Composer escolha qual driver usar</strong>, o tipo de
+  repositório precisa ser definido como <code>vcs</code>;</li>
+<li><strong>Se você já usou um repositório privado</strong>, isso significa que o Composer deve
+  ter clonado ele no cache. Se você deseja instalar o mesmo pacote com drivers,
+  lembre-se de executar o comando <code>composer clearcache</code> seguido do comando
+  <code>composer update</code> para atualizar o cache do Composer e instalar o pacote a
+  partir de <code>dist</code>.</li>
+</ul>
+<h4 id="configuracao-do-driver-do-bitbucket">Configuração do Driver do BitBucket<a class="headerlink" href="#configuracao-do-driver-do-bitbucket" title="Permanent link">&para;</a></h4>
+<p>O driver do BitBucket usa OAuth para acessar seus repositórios privados por meio
+das APIs REST do BitBucket e você precisará criar um consumidor OAuth para usar
+o driver, consulte a <a href="https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html">Documentação da Atlassian</a>. Você
+precisará preencher a URL de callback com algo para satisfazer o BitBucket, mas
+o endereço não precisa ir a lugar algum e não é usado pelo Composer.</p>
+<p>Depois de criar um consumidor OAuth no painel de controle do BitBucket, você
+precisa configurar o arquivo <code>auth.json</code> com as credenciais desta forma (mais
+informações <a href="config.html#bitbucket-oauth">aqui</a>):</p>
+<pre><code class="language-json">{
+    &quot;bitbucket-oauth&quot;: {
+        &quot;bitbucket.org&quot;: {
+            &quot;consumer-key&quot;: &quot;minha-chave&quot;,
+            &quot;consumer-secret&quot;: &quot;meu-segredo&quot;
+        }
+    }
+}
+</code></pre>
+<p><strong>Observe que o endpoint do repositório precisa ser <code>https</code> em vez de <code>git</code>.</strong></p>
+<p>Como alternativa, se você preferir não ter suas credenciais OAuth em seu sistema
+de arquivos, poderá exportar o bloco <code>bitbucket-oauth</code> acima para a variável de
+ambiente <a href="cli.html#composer-auth">COMPOSER_AUTH</a>.</p>
+<h4 id="opcoes-do-subversion">Opções do Subversion<a class="headerlink" href="#opcoes-do-subversion" title="Permanent link">&para;</a></h4>
+<p>Como o Subversion não possui um conceito nativo de branches e tags, o Composer
+assume por padrão que o código está localizado em <code>$url/trunk</code>, <code>$url/branches</code>
+e <code>$url/tags</code>. Se seu repositório tiver um layout diferente, você poderá alterar
+esses valores. Por exemplo, se você usasse nomes com iniciais em maiúsculas,
+poderia configurar o repositório desta forma:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;vcs&quot;,
+            &quot;url&quot;: &quot;http://svn.exemplo.org.br/projeto-a/&quot;,
+            &quot;trunk-path&quot;: &quot;Trunk&quot;,
+            &quot;branches-path&quot;: &quot;Branches&quot;,
+            &quot;tags-path&quot;: &quot;Tags&quot;
+        }
+    ]
+}
+</code></pre>
+<p>Se você não tiver um diretório <code>branches</code> ou <code>tags</code>, poderá desabilitá-los
+completamente definindo <code>branches-path</code> ou <code>tags-path</code> como <code>false</code>.</p>
+<p>Se o pacote estiver em um subdiretório, por exemplo,
+<code>/trunk/foo/bar/composer.json</code> e <code>/tags/1.0/foo/bar/composer.json</code>, você pode
+fazer o Composer acessá-lo definindo a opção <code>package-path</code> com o subdiretório,
+nesse exemplo seria <code>"package-path": "foo/bar/"</code>.</p>
+<p>Se você possui um repositório Subversion privado, pode salvar as credenciais na
+seção <code>http-basic</code> da sua configuração (consulte <a href="esquema.html">Esquema</a>):</p>
+<pre><code class="language-json">{
+    &quot;http-basic&quot;: {
+        &quot;svn.exemplo.org.br&quot;: {
+            &quot;username&quot;: &quot;usuario&quot;,
+            &quot;password&quot;: &quot;senha&quot;
+        }
+    }
+}
+</code></pre>
+<p>Se o seu cliente Subversion estiver configurado para armazenar credenciais por
+padrão, essas credenciais serão salvas para o usuário atual e as credenciais
+salvas anteriormente para esse servidor serão substituídas. Você pode alterar
+esse comportamento definindo a opção <code>svn-cache-credentials</code> como <code>false</code> na
+configuração do seu repositório:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;vcs&quot;,
+            &quot;url&quot;: &quot;http://svn.exemplo.org.br/projeto-a/&quot;,
+            &quot;svn-cache-credentials&quot;: false
+        }
+    ]
+}
+</code></pre>
+<h3 id="pear">PEAR<a class="headerlink" href="#pear" title="Permanent link">&para;</a></h3>
+<p>É possível instalar pacotes de qualquer canal PEAR usando o repositório <code>pear</code>.
+O Composer prefixará todos os nomes de pacotes com <code>pear-{NomeCanal}/</code> para
+evitar conflitos. Todos os pacotes também têm alias com o prefixo
+<code>pear-{AliasCanal}/</code>.</p>
+<p>Exemplo usando <code>pear2.php.net</code>:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;pear&quot;,
+            &quot;url&quot;: &quot;https://pear2.php.net&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;pear-pear2.php.net/PEAR2_Text_Markdown&quot;: &quot;*&quot;,
+        &quot;pear-pear2/PEAR2_HTTP_Request&quot;: &quot;*&quot;
+    }
+}
+</code></pre>
+<p>Nesse caso, o nome abreviado do canal é <code>pear2</code>, portanto, o nome do pacote
+<code>PEAR2_HTTP_Request</code> se torna <code>pear-pear2/PEAR2_HTTP_Request</code>.</p>
+<blockquote>
+<p><strong>Nota:</strong> O repositório <code>pear</code> requer várias requisições por pacote, portanto,
+isso pode retardar consideravelmente o processo de instalação.</p>
+</blockquote>
+<h4 id="alias-de-vendor-personalizado">Alias de Vendor Personalizado<a class="headerlink" href="#alias-de-vendor-personalizado" title="Permanent link">&para;</a></h4>
+<p>É possível criar um alias de pacotes de canais PEAR com um nome de vendor
+personalizado.</p>
+<p>Exemplo:</p>
+<p>Suponha que você tenha um repositório PEAR privado e deseje usar o Composer para
+incorporar dependências de um VCS. Seu repositório PEAR contém os seguintes
+pacotes:</p>
+<ul>
+<li><code>PacoteBase</code></li>
+<li><code>PacoteIntermediario</code>, que depende do <code>PacoteBase</code></li>
+<li><code>PacoteDeAltoNivel1</code> e <code>PacoteDeAltoNivel2</code>, que dependem do
+   <code>PacoteIntermediario</code></li>
+</ul>
+<p>Sem um alias de vendor, o Composer usará o nome do canal PEAR como a parte do
+vendor no nome do pacote:</p>
+<ul>
+<li><code>pear-pear.foobar.repo/PacoteBase</code></li>
+<li><code>pear-pear.foobar.repo/PacoteIntermediario</code></li>
+<li><code>pear-pear.foobar.repo/PacoteDeAltoNivel1</code></li>
+<li><code>pear-pear.foobar.repo/PacoteDeAltoNivel2</code></li>
+</ul>
+<p>Suponha que posteriormente você deseje migrar seus pacotes PEAR para um esquema
+de nomenclatura e repositório do Composer e adote o nome de vendor <code>foobar</code>.
+Os projetos que usam seus pacotes PEAR não veriam os pacotes atualizados, pois
+eles têm um nome de vendor diferente (<code>foobar/PacoteIntermediario</code> vs.
+<code>pear-pear.foobar.repo/PacoteIntermediario</code>).</p>
+<p>Ao especificar <code>vendor-alias</code> para o repositório PEAR desde o início, você pode
+evitar esse cenário e proteger os nomes de seus pacotes de mudanças futuras.</p>
+<p>Para ilustrar, o exemplo a seguir obteria os pacotes <code>PacoteBase</code>,
+<code>PacoteDeAltoNivel1</code> e <code>PacoteDeAltoNivel2</code> do seu repositório PEAR e o
+<code>PacoteIntermediario</code> de um repositório do GitHub:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;git&quot;,
+            &quot;url&quot;: &quot;https://github.com/foobar/intermediario.git&quot;
+        },
+        {
+            &quot;type&quot;: &quot;pear&quot;,
+            &quot;url&quot;: &quot;http://pear.foobar.repo&quot;,
+            &quot;vendor-alias&quot;: &quot;foobar&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;foobar/PacoteDeAltoNivel1&quot;: &quot;*&quot;,
+        &quot;foobar/PacoteDeAltoNivel2&quot;: &quot;*&quot;
+    }
+}
+</code></pre>
+<h3 id="package">Package<a class="headerlink" href="#package" title="Permanent link">&para;</a></h3>
+<p>Se você deseja usar um projeto que não oferece suporte ao Composer por qualquer
+um dos meios acima, você mesmo ainda pode definir o pacote usando um repositório
+<code>package</code>.</p>
+<p>Basicamente, você define as mesmas informações incluídas no <code>packages.json</code> do
+repositório <code>composer</code>, mas apenas para um único pacote. Novamente, os campos
+mínimos necessários são <code>name</code>, <code>version</code> e <code>dist</code> ou <code>source</code>.</p>
+<p>Aqui está um exemplo para o mecanismo de template Smarty:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;package&quot;,
+            &quot;package&quot;: {
+                &quot;name&quot;: &quot;smarty/smarty&quot;,
+                &quot;version&quot;: &quot;3.1.7&quot;,
+                &quot;dist&quot;: {
+                    &quot;url&quot;: &quot;https://www.smarty.net/files/Smarty-3.1.7.zip&quot;,
+                    &quot;type&quot;: &quot;zip&quot;
+                },
+                &quot;source&quot;: {
+                    &quot;url&quot;: &quot;http://smarty-php.googlecode.com/svn/&quot;,
+                    &quot;type&quot;: &quot;svn&quot;,
+                    &quot;reference&quot;: &quot;tags/Smarty_3_1_7/distribution/&quot;
+                },
+                &quot;autoload&quot;: {
+                    &quot;classmap&quot;: [&quot;libs/&quot;]
+                }
+            }
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;smarty/smarty&quot;: &quot;3.1.*&quot;
+    }
+}
+</code></pre>
+<p>Normalmente, você não incluiria a parte <code>source</code>, pois realmente não precisa
+dela.</p>
+<blockquote>
+<p><strong>Nota</strong>: Esse tipo de repositório possui algumas limitações e deve ser
+evitado sempre que possível:</p>
+<ul>
+<li>O Composer não atualizará o pacote, a menos que você altere o campo
+  <code>version</code>.</li>
+<li>O Composer não atualizará as referências dos commits, portanto, se você usar
+  <code>master</code> como referência, terá que excluir o pacote para forçar uma
+  atualização e precisará lidar com um arquivo lock instável.</li>
+</ul>
+</blockquote>
+<p>A chave <code>package</code> em um repositório <code>package</code> pode ser definida como um array
+para definir várias versões de um pacote:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;package&quot;,
+            &quot;package&quot;: [
+                {
+                    &quot;name&quot;: &quot;foo/bar&quot;,
+                    &quot;version&quot;: &quot;1.0.0&quot;,
+                    ...
+                },
+                {
+                    &quot;name&quot;: &quot;foo/bar&quot;,
+                    &quot;version&quot;: &quot;2.0.0&quot;,
+                    ...
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<h2 id="hospedando-seu-proprio-repositorio">Hospedando Seu Próprio Repositório<a class="headerlink" href="#hospedando-seu-proprio-repositorio" title="Permanent link">&para;</a></h2>
+<p>Embora você provavelmente deseje colocar seus pacotes no Packagist na maioria
+das vezes, existem alguns casos de uso para hospedar seu próprio repositório.</p>
+<ul>
+<li>
+<p><strong>Pacotes de empresas privadas:</strong> Se você faz parte de uma empresa que usa o
+  Composer para seus pacotes internamente, convém manter esses pacotes privados.</p>
+</li>
+<li>
+<p><strong>Ecossistema separado:</strong> Se você tem um projeto que possui seu próprio
+  ecossistema e os pacotes não são realmente reutilizáveis pela imensa
+  comunidade PHP, convém mantê-los separados do Packagist. Um exemplo disso
+  seriam os plugins do WordPress.</p>
+</li>
+</ul>
+<p>Para hospedar seus próprios pacotes, é recomendado o tipo de repositório nativo
+<code>composer</code>, que oferece o melhor desempenho.</p>
+<p>Existem algumas ferramentas que podem te ajudar a criar um repositório
+<code>composer</code>.</p>
+<h3 id="packagist-privado">Packagist Privado<a class="headerlink" href="#packagist-privado" title="Permanent link">&para;</a></h3>
+<p><a href="https://packagist.com/">Packagist Privado</a> é uma aplicação hospedada ou com hospedagem
+própria que fornece hospedagem de pacotes privados, além do espelhamento do
+GitHub, Packagist.org e outros repositórios de pacotes.</p>
+<p>Visite <a href="https://packagist.com/">Packagist.com</a> para obter mais informações.</p>
+<h3 id="satis">Satis<a class="headerlink" href="#satis" title="Permanent link">&para;</a></h3>
+<p>Satis é um gerador de repositórios <code>composer</code> estáticos. Parece um pouco com uma
+versão ultra leve e estática do Packagist, baseada em arquivos.</p>
+<p>Você fornece a ele um <code>composer.json</code> contendo repositórios, geralmente VCS, e
+definições de repositórios de pacotes. Ele buscará todos os pacotes que estão em
+<code>require</code> e fará o dump de um <code>packages.json</code>, que é o seu repositório
+<code>composer</code>.</p>
+<p>Verifique <a href="https://github.com/composer/satis">o repositório do Satis no GitHub</a> e o <a href="artigos/handling-private-packages-with-satis.md">artigo sobre o
+Satis</a> para obter mais informações.</p>
+<h3 id="artifact">Artifact<a class="headerlink" href="#artifact" title="Permanent link">&para;</a></h3>
+<p>Existem alguns casos em que não é possível ter online nenhum dos tipos de
+repositório mencionados anteriormente, nem mesmo o VCS. Um exemplo típico pode
+ser a troca de bibliotecas entre organizações através de artefatos construídos.
+Claro, na maioria das vezes eles são privados. Para simplificar a manutenção,
+pode-se simplesmente usar um repositório do tipo <code>artifact</code> com um diretório
+contendo arquivos zip desses pacotes privados:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;artifact&quot;,
+            &quot;url&quot;: &quot;caminho/para/o/diretorio/com/zips/&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;vendor-privado-um/core&quot;: &quot;15.6.2&quot;,
+        &quot;vendor-privado-dois/connectivity&quot;: &quot;*&quot;,
+        &quot;acme-corp/parser&quot;: &quot;10.3.5&quot;
+    }
+}
+</code></pre>
+<p>Cada artefato zip é um arquivo zip com um <code>composer.json</code> no diretório raiz:</p>
+<pre><code class="language-sh">unzip -l acme-corp-parser-10.3.5.zip
+
+composer.json
+...
+</code></pre>
+<p>Se houver dois arquivos com versões diferentes de um pacote, eles serão
+importados. Quando um arquivo com uma versão mais recente for adicionado no
+diretório de artefatos e você executar <code>update</code>, essa versão também será
+importada e o Composer atualizará para a versão mais recente.</p>
+<h3 id="path">Path<a class="headerlink" href="#path" title="Permanent link">&para;</a></h3>
+<p>Além do repositório <code>artifact</code>, é possível usar o repositório <code>path</code>, que
+permite depender de um diretório local, absoluto ou relativo. Isso pode ser
+especialmente útil ao lidar com repositórios monolíticos.</p>
+<p>Por exemplo, se você possui a seguinte estrutura de diretórios no seu
+repositório:</p>
+<pre><code>apps
+└── minha-aplicacao
+    └── composer.json
+pacotes
+└── meu-pacote
+    └── composer.json
+</code></pre>
+<p>Então, para adicionar o pacote <code>meu/pacote</code> como uma dependência, no arquivo
+<code>apps/minha-aplicacao/composer.json</code>, você pode usar a seguinte configuração:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;path&quot;,
+            &quot;url&quot;: &quot;../../pacotes/meu-pacote&quot;
+        }
+    ],
+    &quot;require&quot;: {
+        &quot;meu/pacote&quot;: &quot;*&quot;
+    }
+}
+</code></pre>
+<p>Se o pacote for um repositório VCS local, a versão poderá ser inferida a partir
+do branch ou tag do qual foi feito o checkout. Caso contrário, a versão deverá
+ser explicitamente definida no arquivo <code>composer.json</code> do pacote. Se a versão
+não puder ser resolvida por esses meios, presume-se que seja <code>dev-master</code>.</p>
+<p>Se possível, será criado um link simbólico do pacote local; nesse caso a saída
+no console exibirá <code>Symlinking from ../../pacotes/meu-pacote</code>. Se a criação do
+link simbólico <em>não</em> for possível, o pacote será copiado. Nesse caso, o console
+exibirá <code>Mirrored from ../../pacotes/meu-pacote</code>.</p>
+<p>Em vez da estratégia de fallback padrão, você pode forçar o uso do link
+simbólico com a opção <code>"symlink": true</code> ou o espelhamento com a opção
+<code>"symlink": false</code>. Forçar o espelhamento pode ser útil ao implantar ou gerar
+pacotes a partir de um repositório monolítico.</p>
+<blockquote>
+<p><strong>Nota:</strong> No Windows, os links simbólicos de diretório são implementados
+usando junções NTFS porque elas podem ser criadas por usuários não
+administradores. O espelhamento sempre será usado nas versões abaixo do
+Windows 7 ou se <code>proc_open</code> estiver desabilitado.</p>
+</blockquote>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;type&quot;: &quot;path&quot;,
+            &quot;url&quot;: &quot;../../pacotes/meu-pacote&quot;,
+            &quot;options&quot;: {
+                &quot;symlink&quot;: false
+            }
+        }
+    ]
+}
+</code></pre>
+<p>O til no início dos caminhos é expandido para a pasta inicial do usuário atual
+e as variáveis de ambiente são processadas usando as notações do Windows e
+Linux/Mac. Por exemplo, <code>~/git/meu-pacote</code> automaticamente carregará o clone de
+<code>meu-pacote</code> de <code>/home/&lt;usuario&gt;/git/meu-pacote</code>, equivalente a
+<code>$HOME/git/meu-pacote</code> ou <code>%USERPROFILE%/git/meu-pacote</code>.</p>
+<blockquote>
+<p><strong>Nota:</strong> Caminhos de repositórios também podem conter curingas como <code>*</code> e
+<code>?</code>. Para mais detalhes, consulte a <a href="https://php.net/glob">função glob do PHP</a>.</p>
+</blockquote>
+<h2 id="desabilitando-o-packagistorg">Desabilitando o Packagist.org<a class="headerlink" href="#desabilitando-o-packagistorg" title="Permanent link">&para;</a></h2>
+<p>Você pode desabilitar o repositório padrão Packagist.org adicionando isto ao seu
+<code>composer.json</code>:</p>
+<pre><code class="language-json">{
+    &quot;repositories&quot;: [
+        {
+            &quot;packagist.org&quot;: false
+        }
+    ]
+}
+</code></pre>
+<p>Você pode desabilitar o Packagist.org globalmente usando a flag de configuração
+global:</p>
+<pre><code class="language-bash">composer config -g repo.packagist false
+</code></pre>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="config.html" class="btn btn-neutral float-right" title="Config">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="esquema.html" class="btn btn-neutral" title="O Esquema do composer.json">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="esquema.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="config.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>

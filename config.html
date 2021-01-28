@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        Config - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "Config";
+        var mkdocs_page_input_path = "config.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1">
+    <a class="" href="introducao.html">Introdução</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="uso-basico.html">Uso Básico</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="bibliotecas.html">Bibliotecas</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="cli.html">CLI / Comandos</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="esquema.html">O Esquema do composer.json</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="repositorios.html">Repositórios</a>
+                </li>
+                <li class="toctree-l1 current">
+    <a class="current" href="config.html">Config</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#config">Config</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#process-timeout">process-timeout</a></li>
+        
+            <li><a class="toctree-l3" href="#use-include-path">use-include-path</a></li>
+        
+            <li><a class="toctree-l3" href="#preferred-install">preferred-install</a></li>
+        
+            <li><a class="toctree-l3" href="#store-auths">store-auths</a></li>
+        
+            <li><a class="toctree-l3" href="#github-protocols">github-protocols</a></li>
+        
+            <li><a class="toctree-l3" href="#github-oauth">github-oauth</a></li>
+        
+            <li><a class="toctree-l3" href="#gitlab-oauth">gitlab-oauth</a></li>
+        
+            <li><a class="toctree-l3" href="#gitlab-token">gitlab-token</a></li>
+        
+            <li><a class="toctree-l3" href="#disable-tls">disable-tls</a></li>
+        
+            <li><a class="toctree-l3" href="#secure-http">secure-http</a></li>
+        
+            <li><a class="toctree-l3" href="#bitbucket-oauth">bitbucket-oauth</a></li>
+        
+            <li><a class="toctree-l3" href="#cafile">cafile</a></li>
+        
+            <li><a class="toctree-l3" href="#capath">capath</a></li>
+        
+            <li><a class="toctree-l3" href="#http-basic">http-basic</a></li>
+        
+            <li><a class="toctree-l3" href="#platform">platform</a></li>
+        
+            <li><a class="toctree-l3" href="#vendor-dir">vendor-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#bin-dir">bin-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#data-dir">data-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#cache-dir">cache-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#cache-files-dir">cache-files-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#cache-repo-dir">cache-repo-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#cache-vcs-dir">cache-vcs-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#cache-files-ttl">cache-files-ttl</a></li>
+        
+            <li><a class="toctree-l3" href="#cache-files-maxsize">cache-files-maxsize</a></li>
+        
+            <li><a class="toctree-l3" href="#bin-compat">bin-compat</a></li>
+        
+            <li><a class="toctree-l3" href="#prepend-autoloader">prepend-autoloader</a></li>
+        
+            <li><a class="toctree-l3" href="#autoloader-suffix">autoloader-suffix</a></li>
+        
+            <li><a class="toctree-l3" href="#optimize-autoloader">optimize-autoloader</a></li>
+        
+            <li><a class="toctree-l3" href="#sort-packages">sort-packages</a></li>
+        
+            <li><a class="toctree-l3" href="#classmap-authoritative">classmap-authoritative</a></li>
+        
+            <li><a class="toctree-l3" href="#apcu-autoloader">apcu-autoloader</a></li>
+        
+            <li><a class="toctree-l3" href="#github-domains">github-domains</a></li>
+        
+            <li><a class="toctree-l3" href="#github-expose-hostname">github-expose-hostname</a></li>
+        
+            <li><a class="toctree-l3" href="#gitlab-domains">gitlab-domains</a></li>
+        
+            <li><a class="toctree-l3" href="#use-github-api">use-github-api</a></li>
+        
+            <li><a class="toctree-l3" href="#notify-on-install">notify-on-install</a></li>
+        
+            <li><a class="toctree-l3" href="#discard-changes">discard-changes</a></li>
+        
+            <li><a class="toctree-l3" href="#archive-format">archive-format</a></li>
+        
+            <li><a class="toctree-l3" href="#archive-dir">archive-dir</a></li>
+        
+            <li><a class="toctree-l3" href="#htaccess-protect">htaccess-protect</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>Config</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/config.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h1>
+<p>Este capítulo descreve a seção <code>config</code> do <a href="esquema.html">esquema</a> do <code>composer.json</code>.</p>
+<h2 id="process-timeout">process-timeout<a class="headerlink" href="#process-timeout" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>300</code>. A duração que processos como <code>git clone</code> podem ser executados
+antes que o Composer assuma que eles morreram. Pode ser necessário aumentar isso
+se você tiver uma conexão lenta ou grandes vendors.</p>
+<p>Para desabilitar o tempo limite do processo em um comando personalizado em
+<code>scripts</code>, um auxiliar estático está disponível:</p>
+<pre><code class="language-json">{
+    &quot;scripts&quot;: {
+        &quot;test&quot;: [
+            &quot;Composer\\Config::disableProcessTimeout&quot;,
+            &quot;phpunit&quot;
+        ]
+    }
+}
+</code></pre>
+<h2 id="use-include-path">use-include-path<a class="headerlink" href="#use-include-path" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code>. Se <code>true</code>, o autoloader do Composer também procurará classes
+no <code>include_path</code> do PHP.</p>
+<h2 id="preferred-install">preferred-install<a class="headerlink" href="#preferred-install" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>auto</code> e pode ser <code>source</code>, <code>dist</code> ou <code>auto</code>. Essa opção permite
+definir o método de instalação que o Composer usará preferencialmente.
+Opcionalmente, pode ser um hash de padrões para preferências de instalação mais
+granulares.</p>
+<pre><code class="language-json">{
+    &quot;config&quot;: {
+        &quot;preferred-install&quot;: {
+            &quot;minha-organizacao/pacote-estavel&quot;: &quot;dist&quot;,
+            &quot;minha-organizacao/*&quot;: &quot;source&quot;,
+            &quot;organizacao-parceira/*&quot;: &quot;auto&quot;,
+            &quot;*&quot;: &quot;dist&quot;
+        }
+    }
+}
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> A ordem importa. Padrões mais específicos devem vir antes de padrões
+mais relaxados. Ao misturar a notação de string com a configuração de hash nas
+configurações global e de pacote, a notação de string é convertida em um
+padrão de pacote <code>*</code>.</p>
+</blockquote>
+<h2 id="store-auths">store-auths<a class="headerlink" href="#store-auths" title="Permanent link">&para;</a></h2>
+<p>O que fazer depois de solicitar a autenticação, uma das seguintes opções: <code>true</code>
+(sempre armazenar), <code>false</code> (não armazenar) e <code>prompt</code> (perguntar sempre), o
+padrão é <code>prompt</code>.</p>
+<h2 id="github-protocols">github-protocols<a class="headerlink" href="#github-protocols" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>["https", "ssh", "git"]</code>. Uma lista de protocolos a serem usados ao
+clonar de github.com, em ordem de prioridade. Por padrão, <code>git</code> está presente,
+mas apenas se <a href="#secure-http">secure-http</a> estiver desabilitada, pois o protocolo
+git não é criptografado. Se você deseja que as URLs de push do seu repositório
+remoto <code>origin</code> usem https e não ssh (<code>git@github.com:...</code>), defina a lista de
+protocolos como somente <code>["https"]</code> e o Composer parará de substituir a URL de
+push por uma URL ssh.</p>
+<h2 id="github-oauth">github-oauth<a class="headerlink" href="#github-oauth" title="Permanent link">&para;</a></h2>
+<p>Uma lista de nomes de domínio e chaves OAuth. Por exemplo, ao usar
+<code>{"github.com": "token-oauth"}</code> como valor desta opção, <code>token-oauth</code> será usado
+para acessar repositórios privados no GitHub e contornar a baixa limitação de
+uso baseada em IP da API deles. <a href="artigos/troubleshooting.md#api-rate-limit-and-oauth-tokens">Leia mais</a> sobre como
+obter um token OAuth para o GitHub.</p>
+<h2 id="gitlab-oauth">gitlab-oauth<a class="headerlink" href="#gitlab-oauth" title="Permanent link">&para;</a></h2>
+<p>Uma lista de nomes de domínio e chaves OAuth. Por exemplo, ao usar
+<code>{"gitlab.com": "token-oauth"}</code> como valor desta opção, <code>token-oauth</code> será usado
+para acessar repositórios privados no GitLab. Note que, se o pacote não estiver
+hospedado em gitlab.com, os nomes de domínio também devem ser especificados com
+a opção <a href="#gitlab-domains"><code>gitlab-domains</code></a>.</p>
+<h2 id="gitlab-token">gitlab-token<a class="headerlink" href="#gitlab-token" title="Permanent link">&para;</a></h2>
+<p>Uma lista de nomes de domínio e tokens privados. Por exemplo, ao usar
+<code>{"gitlab.com": "token-privado"}</code> como valor desta opção, <code>token-privado</code> será
+usado para acessar repositórios privados no GitLab. Note que, se o pacote não
+estiver hospedado em gitlab.com, os nomes de domínio também devem ser
+especificados com a opção <a href="#gitlab-domains"><code>gitlab-domains</code></a>.</p>
+<h2 id="disable-tls">disable-tls<a class="headerlink" href="#disable-tls" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code>. Se definida como <code>true</code>, todas as URLs HTTPS serão acessadas
+com HTTP e nenhuma criptografia no nível de rede será usada. Habilitar esta
+opção é um risco à segurança e NÃO é recomendado. A melhor maneira é habilitar a
+extensão <code>php_openssl</code> no <code>php.ini</code>.</p>
+<h2 id="secure-http">secure-http<a class="headerlink" href="#secure-http" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>true</code>. Se definida como <code>true</code>, somente as URLs HTTPS poderão ser
+baixadas pelo Composer. Se você realmente precisa de acesso HTTP a alguma coisa,
+pode desabilitá-la, mas usar o <a href="https://letsencrypt.org/">Let's Encrypt</a> para obter um
+certificado SSL gratuito geralmente é uma alternativa melhor.</p>
+<h2 id="bitbucket-oauth">bitbucket-oauth<a class="headerlink" href="#bitbucket-oauth" title="Permanent link">&para;</a></h2>
+<p>Uma lista de nomes de domínio e consumidores. Por exemplo, usando
+<code>{"bitbucket.org": {"consumer-key": "minha-chave", "consumer-secret": "meu-segredo"}}</code>.
+<a href="https://confluence.atlassian.com/bitbucket/oauth-on-bitbucket-cloud-238027431.html">Leia</a> sobre como configurar um consumidor no Bitbucket.</p>
+<h2 id="cafile">cafile<a class="headerlink" href="#cafile" title="Permanent link">&para;</a></h2>
+<p>Localização do arquivo da Autoridade de Certificação no sistema de arquivos
+local. No PHP 5.6+, você deve definir isso via <code>openssl.cafile</code> no <code>php.ini</code>,
+embora o PHP 5.6+ possa detectar o arquivo CA do sistema automaticamente.</p>
+<h2 id="capath">capath<a class="headerlink" href="#capath" title="Permanent link">&para;</a></h2>
+<p>Se <code>cafile</code> não for especificado ou se o certificado não for encontrado lá, o
+diretório apontado por <code>capath</code> será usado para procurar um certificado
+adequado. <code>capath</code> deve ser um diretório de certificado com hash correto.</p>
+<h2 id="http-basic">http-basic<a class="headerlink" href="#http-basic" title="Permanent link">&para;</a></h2>
+<p>Uma lista de nomes de domínios e usuários/senhas com os quais se autenticar
+nesses domínios. Por exemplo, usar
+<code>{"exemplo.org.br": {"username": "alice", "password": "foo"}}</code> como valor desta
+opção permitirá que o Composer se autentique em exemplo.org.br.</p>
+<blockquote>
+<p><strong>Nota:</strong> Opções de configuração relacionadas à autenticação, como
+<code>http-basic</code> e <code>github-oauth</code>, também podem ser especificadas em um arquivo
+<code>auth.json</code> que fica junto ao seu arquivo <code>composer.json</code>. Dessa forma, você
+pode adicioná-lo ao <code>.gitignore</code> e cada desenvolvedor pode colocar suas
+próprias credenciais lá.</p>
+</blockquote>
+<h2 id="platform">platform<a class="headerlink" href="#platform" title="Permanent link">&para;</a></h2>
+<p>Permite simular pacotes de plataforma (PHP e extensões) para que você possa
+emular um ambiente de produção ou definir sua plataforma de destino na
+configuração. Exemplo: <code>{"php": "7.0.3", "ext-alguma-coisa": "4.0.3"}</code>.</p>
+<h2 id="vendor-dir">vendor-dir<a class="headerlink" href="#vendor-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>vendor</code>. Você pode instalar dependências em um diretório diferente,
+se desejar. <code>$HOME</code> e <code>~</code> serão substituídos pelo caminho do seu diretório
+inicial em <code>vendor-dir</code> e todas as opções <code>*-dir</code> abaixo.</p>
+<h2 id="bin-dir">bin-dir<a class="headerlink" href="#bin-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>vendor/bin</code>. Se um projeto incluir binários, serão criados links
+simbólicos para eles neste diretório.</p>
+<h2 id="data-dir">data-dir<a class="headerlink" href="#data-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>C:\Users\&lt;usuario&gt;\AppData\Roaming\Composer</code> no Windows,
+<code>$XDG_DATA_HOME/composer</code> em sistemas *nix que seguem as Especificações de
+Diretório Base do XDG e <code>$HOME</code> em outros sistemas *nix. No momento, é usada
+apenas para armazenar arquivos <code>composer.phar</code> anteriores para poder reverter
+para versões mais antigas. Veja também <a href="cli.html#composer-home">COMPOSER_HOME</a>.</p>
+<h2 id="cache-dir">cache-dir<a class="headerlink" href="#cache-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>C:\Users\&lt;usuario&gt;\AppData\Local\Composer</code> no Windows,
+<code>$XDG_CACHE_HOME/composer</code> em sistemas *nix que seguem as Especificações de
+Diretório Base do XDG e <code>$HOME/cache</code> em outros sistemas *nix. Armazena todos
+os caches usados pelo Composer. Veja também <a href="cli.html#composer-home">COMPOSER_HOME</a>.</p>
+<h2 id="cache-files-dir">cache-files-dir<a class="headerlink" href="#cache-files-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>$cache-dir/files</code>. Armazena os arquivos zip dos pacotes.</p>
+<h2 id="cache-repo-dir">cache-repo-dir<a class="headerlink" href="#cache-repo-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>$cache-dir/repo</code>. Armazena os metadados dos repositórios do tipo
+<code>composer</code> e os repositórios VCS dos tipos <code>svn</code>, <code>fossil</code>, <code>github</code> e
+<code>bitbucket</code>.</p>
+<h2 id="cache-vcs-dir">cache-vcs-dir<a class="headerlink" href="#cache-vcs-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>$cache-dir/vcs</code>. Armazena clones VCS para carregar os metadados de
+repositórios VCS dos tipos <code>git</code>/<code>hg</code> e acelerar as instalações.</p>
+<h2 id="cache-files-ttl">cache-files-ttl<a class="headerlink" href="#cache-files-ttl" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>15552000</code> (6 meses). O Composer armazena em cache todos os pacotes
+<code>dist</code> (zip, tar, ...) que ele baixa. Por padrão, eles são eliminados após seis
+meses sem serem utilizados. Esta opção permite ajustar essa duração (em
+segundos) ou desabilitá-la completamente, definindo-a como <code>0</code>.</p>
+<h2 id="cache-files-maxsize">cache-files-maxsize<a class="headerlink" href="#cache-files-maxsize" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>300MiB</code>. O Composer armazena em cache todos os pacotes <code>dist</code> (zip,
+tar, ...) que ele baixa. Quando a coleta de lixo é executada periodicamente,
+esse é o tamanho máximo que o cache poderá usar. Os arquivos mais antigos (menos
+usados) serão removidos primeiro até que o cache se ajuste a esse tamanho.</p>
+<h2 id="bin-compat">bin-compat<a class="headerlink" href="#bin-compat" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>auto</code>. Determina a compatibilidade dos binários a serem instalados.
+Se for <code>auto</code>, o Composer instala apenas arquivos proxy .bat quando no Windows.
+Se definida como <code>full</code>, os arquivos .bat para o Windows e scripts para sistemas
+operacionais baseados em Unix serão instalados para cada binário. Isso é útil
+principalmente se você executar o Composer dentro de uma VM Linux, mas ainda
+desejar ter os proxies .bat disponíveis para usar no Windows do host.</p>
+<h2 id="prepend-autoloader">prepend-autoloader<a class="headerlink" href="#prepend-autoloader" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>true</code>. Se <code>false</code>, o autoloader do Composer não será adicionado
+antes dos autoloaders existentes. Às vezes, isso é necessário para corrigir
+erros de interoperabilidade com outros autoloaders.</p>
+<h2 id="autoloader-suffix">autoloader-suffix<a class="headerlink" href="#autoloader-suffix" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>null</code>. String a ser usada como sufixo pelo autoloader gerado pelo
+Composer. Quando <code>null</code>, um sufixo aleatório será gerado.</p>
+<h2 id="optimize-autoloader">optimize-autoloader<a class="headerlink" href="#optimize-autoloader" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code>. Se <code>true</code>, sempre otimizará ao fazer o dump do autoloader.</p>
+<h2 id="sort-packages">sort-packages<a class="headerlink" href="#sort-packages" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code>. Se <code>true</code>, o comando <code>require</code> manterá os pacotes ordenados
+por nome no <code>composer.json</code> ao adicionar um novo pacote.</p>
+<h2 id="classmap-authoritative">classmap-authoritative<a class="headerlink" href="#classmap-authoritative" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code>. Se <code>true</code>, o autoloader do Composer carregará apenas classes
+do mapa de classes. Implica <code>optimize-autoloader</code>.</p>
+<h2 id="apcu-autoloader">apcu-autoloader<a class="headerlink" href="#apcu-autoloader" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code>. Se <code>true</code>, o autoloader do Composer procurará pela extensão
+APCu e a usará para armazenar em cache as classes encontradas/não encontradas
+quando ela estiver habilitada.</p>
+<h2 id="github-domains">github-domains<a class="headerlink" href="#github-domains" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>["github.com"]</code>. Uma lista de domínios a serem usados no modo
+GitHub. Isso é usado para instalações do GitHub Enterprise.</p>
+<h2 id="github-expose-hostname">github-expose-hostname<a class="headerlink" href="#github-expose-hostname" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>true</code>. Se <code>false</code>, os tokens OAuth criados para acessar a API do
+GitHub terão uma data em vez do hostname da máquina.</p>
+<h2 id="gitlab-domains">gitlab-domains<a class="headerlink" href="#gitlab-domains" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>["gitlab.com"]</code>. Uma lista de domínios de servidores GitLab. Isso é
+usado se você usar o tipo de repositório <code>gitlab</code>.</p>
+<h2 id="use-github-api">use-github-api<a class="headerlink" href="#use-github-api" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>true</code>. Semelhante à chave <code>no-api</code> em um repositório específico,
+definir <code>use-github-api</code> como <code>false</code> definirá o comportamento global para todos
+os repositórios GitHub para clonar o repositório como clonaria qualquer outro
+repositório git, em vez de usar a API do GitHub. Mas, em vez de usar o driver
+<code>git</code> diretamente, o Composer ainda tentará usar os arquivos zip do GitHub.</p>
+<h2 id="notify-on-install">notify-on-install<a class="headerlink" href="#notify-on-install" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>true</code>. O Composer permite que repositórios definam uma URL de
+notificação, para que sejam notificados sempre que um pacote desse repositório
+for instalado. Esta opção permite desabilitar esse comportamento.</p>
+<h2 id="discard-changes">discard-changes<a class="headerlink" href="#discard-changes" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>false</code> e pode ser <code>true</code>, <code>false</code> ou <code>stash</code>. Esta opção permite
+definir a forma padrão de lidar com atualizações sujas quando em modo não
+interativo. <code>true</code> sempre descartará as alterações em vendors, enquanto <code>stash</code>
+tentará fazer o stash e reaplicar. Use isso para servidores de CI ou scripts de
+implantação se você tende a ter vendors modificados.</p>
+<h2 id="archive-format">archive-format<a class="headerlink" href="#archive-format" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>tar</code>. O Composer permite adicionar um formato de arquivo padrão
+quando o fluxo de trabalho precisa criar um formato de arquivo dedicado.</p>
+<h2 id="archive-dir">archive-dir<a class="headerlink" href="#archive-dir" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>.</code>. O Composer permite adicionar um diretório de arquivo padrão
+quando o fluxo de trabalho precisa criar um formato de arquivo dedicado. Ou para
+um desenvolvimento mais fácil entre os módulos.</p>
+<p>Exemplo:</p>
+<pre><code class="language-json">{
+    &quot;config&quot;: {
+        &quot;archive-dir&quot;: &quot;/home/&lt;usuario&gt;/.composer/repo&quot;
+    }
+}
+</code></pre>
+<h2 id="htaccess-protect">htaccess-protect<a class="headerlink" href="#htaccess-protect" title="Permanent link">&para;</a></h2>
+<p>O padrão é <code>true</code>. Se definida como <code>false</code>, O Composer não criará arquivos
+<code>.htaccess</code> nos diretórios inicial, de cache e de dados do Composer.</p>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="comunidade.html" class="btn btn-neutral float-right" title="Comunidade">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="repositorios.html" class="btn btn-neutral" title="Repositórios">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="repositorios.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="comunidade.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>

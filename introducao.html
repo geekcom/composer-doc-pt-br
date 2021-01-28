@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        Introdução - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "Introdu\u00e7\u00e3o";
+        var mkdocs_page_input_path = "introducao.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1 current">
+    <a class="current" href="introducao.html">Introdução</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#introducao">Introdução</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#gerenciamento-de-dependencias">Gerenciamento de Dependências</a></li>
+        
+            <li><a class="toctree-l3" href="#requisitos-de-sistema">Requisitos de Sistema</a></li>
+        
+            <li><a class="toctree-l3" href="#instalacao-linux-unix-macos">Instalação - Linux / Unix / macOS</a></li>
+        
+            <li><a class="toctree-l3" href="#instalacao-windows">Instalação - Windows</a></li>
+        
+            <li><a class="toctree-l3" href="#usando-o-composer">Usando o Composer</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="uso-basico.html">Uso Básico</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="bibliotecas.html">Bibliotecas</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="cli.html">CLI / Comandos</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="esquema.html">O Esquema do composer.json</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="repositorios.html">Repositórios</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="config.html">Config</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>Introdução</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/introducao.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h1>
+<p>O Composer é uma ferramenta para gerenciamento de dependências no PHP. Ele
+permite que você declare as bibliotecas das quais seu projeto depende e as
+gerencia (instala/atualiza) para você.</p>
+<h2 id="gerenciamento-de-dependencias">Gerenciamento de Dependências<a class="headerlink" href="#gerenciamento-de-dependencias" title="Permanent link">&para;</a></h2>
+<p>O Composer <strong>não</strong> é um gerenciador de pacotes no mesmo sentido que o Yum ou
+Apt. Sim, ele lida com "pacotes" ou bibliotecas, mas os gerencia separadamente
+por projeto, instalando-os em um diretório (por exemplo, <code>vendor</code>) dentro do seu
+projeto. Por padrão, ele não instala nada globalmente. Portanto, ele é um
+gerenciador de dependências. No entanto, ele suporta um projeto "global" por
+conveniência, através do comando <a href="cli.html#global">global</a>.</p>
+<p>Essa ideia não é nova e o Composer é fortemente inspirado pelo <a href="https://www.npmjs.com/">npm</a>
+do node e pelo <a href="https://bundler.io/">bundler</a> do ruby.</p>
+<p>Suponha que:</p>
+<ol>
+<li>Você tem um projeto que depende de várias bibliotecas.</li>
+<li>Algumas dessas bibliotecas dependem de outras bibliotecas.</li>
+</ol>
+<p>O Composer:</p>
+<ol>
+<li>Permite declarar as bibliotecas das quais você depende.</li>
+<li>Descobre quais versões de quais pacotes podem e precisam ser instaladas e as
+   instala (o que significa que elas são baixadas no seu projeto).</li>
+</ol>
+<p>Consulte o capítulo <a href="uso-basico.html">Uso Básico</a> para obter mais detalhes sobre a
+declaração de dependências.</p>
+<h2 id="requisitos-de-sistema">Requisitos de Sistema<a class="headerlink" href="#requisitos-de-sistema" title="Permanent link">&para;</a></h2>
+<p>O Composer requer o PHP 5.3.2+ para executar. Algumas configurações sensíveis do
+PHP e flags de compilação também são necessárias, mas ao usar o instalador, você
+ficará sabendo de quaisquer incompatibilidades.</p>
+<p>Para instalar pacotes a partir do código-fonte, em vez de arquivos zip simples,
+você precisará do git, svn, fossil ou hg, dependendo de como é feito o controle
+de versão do pacote.</p>
+<p>O Composer é multiplataforma e nós nos esforçamos para fazê-lo funcionar
+igualmente bem no Windows, Linux e macOS.</p>
+<h2 id="instalacao-linux-unix-macos">Instalação - Linux / Unix / macOS<a class="headerlink" href="#instalacao-linux-unix-macos" title="Permanent link">&para;</a></h2>
+<h3 id="baixando-o-executavel-do-composer">Baixando o Executável do Composer<a class="headerlink" href="#baixando-o-executavel-do-composer" title="Permanent link">&para;</a></h3>
+<p>O Composer oferece um instalador conveniente que você pode executar diretamente
+da linha de comando. Sinta-se à vontade para <a href="https://getcomposer.org/installer">baixar esse arquivo</a>
+ou revisá-lo no <a href="https://github.com/composer/getcomposer.org/blob/master/web/installer">GitHub</a>, se desejar saber mais sobre
+o funcionamento interno do instalador. O código-fonte é PHP simples.</p>
+<p>Em resumo, existem duas formas de instalar o Composer. Localmente como parte do
+seu projeto ou globalmente como um executável disponível em todo o sistema.</p>
+<h4 id="localmente">Localmente<a class="headerlink" href="#localmente" title="Permanent link">&para;</a></h4>
+<p>Para instalar o Composer localmente, execute o instalador no diretório do seu
+projeto. Consulte <a href="https://getcomposer.org/download/">a página de download</a> para obter instruções.</p>
+<p>O instalador verificará algumas configurações do PHP e fará o download do
+<code>composer.phar</code> no seu diretório atual. Esse arquivo é o binário do Composer.
+Ele é um PHAR (PHP Archive), que é um formato de arquivo para PHP que pode ser
+executado na linha de comando, entre outras coisas.</p>
+<p>Agora execute <code>php composer.phar</code> para executar o Composer.</p>
+<p>Você pode instalar o Composer em um diretório específico usando a opção
+<code>--install-dir</code> e, adicionalmente, também renomeá-lo usando a opção
+<code>--filename</code>. Ao executar o instalador, seguindo <a href="https://getcomposer.org/download/">as instruções da página de
+download</a>, adicione os seguintes parâmetros:</p>
+<pre><code class="language-sh">php composer-setup.php --install-dir=bin --filename=composer
+</code></pre>
+<p>Agora execute <code>php bin/composer</code> para executar o Composer.</p>
+<h4 id="globalmente">Globalmente<a class="headerlink" href="#globalmente" title="Permanent link">&para;</a></h4>
+<p>Você pode colocar o PHAR do Composer em qualquer lugar que desejar. Se você o
+colocar em um diretório que faça parte da sua variável de ambiente <code>PATH</code>, você
+poderá acessá-lo globalmente. Nos sistemas Unix, você pode até torná-lo
+executável e invocá-lo sem usar diretamente o interpretador <code>php</code>.</p>
+<p>Após executar o instalador, seguindo <a href="https://getcomposer.org/download/">as instruções da página de download</a>, você pode executar isto para mover o <code>composer.phar</code> para um
+diretório que esteja na sua variável <code>PATH</code>:</p>
+<pre><code class="language-sh">mv composer.phar /usr/local/bin/composer
+</code></pre>
+<p>Se você deseja instalá-lo apenas para o seu usuário e evitar exigir permissões
+de root, use <code>~/.local/bin</code>, que está disponível por padrão em algumas
+distribuições Linux.</p>
+<blockquote>
+<p><strong>Nota:</strong> Se o comando acima falhar devido a permissões, pode ser necessário
+executá-lo novamente com sudo.</p>
+<p><strong>Nota:</strong> Em algumas versões do macOS, o diretório <code>/usr</code> não existe por
+padrão. Se você receber o erro "/usr/local/bin/composer: No such file or
+directory", deverá criar o diretório manualmente antes de continuar:
+<code>mkdir -p /usr/local/bin</code>.</p>
+<p><strong>Nota:</strong> Para obter informações sobre como alterar sua variável <code>PATH</code>, leia
+o <a href="https://en.wikipedia.org/wiki/PATH_(variable)">artigo da Wikipedia</a> e/ou use seu mecanismo de busca
+preferido.</p>
+</blockquote>
+<p>Agora execute <code>composer</code> para executar o Composer em vez de <code>php composer.phar</code>.</p>
+<h2 id="instalacao-windows">Instalação - Windows<a class="headerlink" href="#instalacao-windows" title="Permanent link">&para;</a></h2>
+<h3 id="usando-o-instalador">Usando o Instalador<a class="headerlink" href="#usando-o-instalador" title="Permanent link">&para;</a></h3>
+<p>Esta é a maneira mais fácil de configurar o Composer na sua máquina.</p>
+<p>Baixe e execute o <a href="https://getcomposer.org/Composer-Setup.exe">Composer-Setup.exe</a>. Ele instalará a versão
+mais recente do Composer e configurará sua variável <code>PATH</code> para que você possa
+executar o <code>composer</code> de qualquer diretório na sua linha de comando.</p>
+<blockquote>
+<p><strong>Nota:</strong> Feche seu terminal atual. Teste o uso com um novo terminal: Isso é
+importante, pois a variável <code>PATH</code> só é carregada quando o terminal é
+iniciado.</p>
+</blockquote>
+<h3 id="instalacao-manual">Instalação Manual<a class="headerlink" href="#instalacao-manual" title="Permanent link">&para;</a></h3>
+<p>Mude para um diretório que esteja na sua variável <code>PATH</code> e execute o instalador
+seguindo <a href="https://getcomposer.org/download/">as instruções da página de download</a> para baixar o
+<code>composer.phar</code>.</p>
+<p>Crie um novo arquivo <code>composer.bat</code> junto ao <code>composer.phar</code>:</p>
+<pre><code class="language-sh">C:\bin&gt;echo @php &quot;%~dp0composer.phar&quot; %*&gt;composer.bat
+</code></pre>
+<p>Adicione o diretório à sua variável de ambiente <code>PATH</code>, se ainda não estiver.
+Para obter informações sobre como alterar sua variável <code>PATH</code>, consulte <a href="https://www.computerhope.com/issues/ch000549.htm">este
+artigo</a> e/ou use seu mecanismo de pesquisa preferido.</p>
+<p>Feche o seu terminal atual. Teste o uso em um novo terminal:</p>
+<pre><code class="language-sh">C:\Users\username&gt;composer -V
+Composer version 1.0.0 2016-01-10 20:34:53
+</code></pre>
+<h2 id="usando-o-composer">Usando o Composer<a class="headerlink" href="#usando-o-composer" title="Permanent link">&para;</a></h2>
+<p>Agora que você instalou o Composer, está tudo pronto para usá-lo! Vá para o
+próximo capítulo para uma demonstração curta e simples.</p>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="uso-basico.html" class="btn btn-neutral float-right" title="Uso Básico">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="index.html" class="btn btn-neutral" title="Documentação do Composer">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="index.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="uso-basico.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>

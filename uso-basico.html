@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="pt-br">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    
+    
+    <link rel="shortcut icon" href="img/favicon.ico">
+    
+    <title>
+        Uso Básico - Documentação do Composer
+    </title>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+    
+    <script>
+        // Current page data
+        var mkdocs_page_name = "Uso B\u00e1sico";
+        var mkdocs_page_input_path = "uso-basico.md";
+        var mkdocs_page_url = null;
+    </script>
+    
+    <script src="js/jquery-2.1.1.min.js" defer></script>
+    <script src="js/modernizr-2.8.3.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159946240-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159946240-2');
+    </script>
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+<div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+            <div class="wy-side-nav-search">
+                <a href="index.html" class="icon icon-home"> Documentação do Composer</a>
+                <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./pesquisar.html" method="get">
+        <input type="text" name="q" placeholder="Pesquisar na Documentação"
+               title="Digite o termo a ser pesquisado aqui" />
+    </form>
+</div>
+            </div>
+
+            <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Livro</span></p>
+                <ul  class="current">
+                <li class="toctree-l1">
+    <a class="" href="introducao.html">Introdução</a>
+                </li>
+                <li class="toctree-l1 current">
+    <a class="current" href="uso-basico.html">Uso Básico</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#uso-basico">Uso Básico</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#introducao">Introdução</a></li>
+        
+            <li><a class="toctree-l3" href="#composerjson-configuracao-do-projeto">composer.json: Configuração do Projeto</a></li>
+        
+            <li><a class="toctree-l3" href="#instalando-dependencias">Instalando Dependências</a></li>
+        
+            <li><a class="toctree-l3" href="#atualizando-as-dependencias-para-suas-versoes-mais-recentes">Atualizando as Dependências para Suas Versões mais Recentes</a></li>
+        
+            <li><a class="toctree-l3" href="#packagist">Packagist</a></li>
+        
+            <li><a class="toctree-l3" href="#pacotes-de-plataforma">Pacotes de Plataforma</a></li>
+        
+            <li><a class="toctree-l3" href="#autoloading">Autoloading</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="bibliotecas.html">Bibliotecas</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="cli.html">CLI / Comandos</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="esquema.html">O Esquema do composer.json</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="repositorios.html">Repositórios</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="config.html">Config</a>
+                </li>
+                <li class="toctree-l1">
+    <a class="" href="comunidade.html">Comunidade</a>
+                </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Artigos</span></p>
+                <ul >
+                <li class="toctree-l1">
+    <a class="" href="artigos/aliases.html">Aliases</a>
+                </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+        
+        <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+            <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+            <a href="index.html">Documentação do Composer</a>
+        </nav>
+
+        
+        <div class="wy-nav-content">
+            <div class="rst-content">
+                <div role="navigation" aria-label="breadcrumbs navigation">
+    <ul class="wy-breadcrumbs">
+        
+        <li><a href="index.html">Documentação</a>&raquo;</li>
+        
+        
+        
+        
+        <li>Livro &raquo;</li>
+        
+        
+        
+        
+        <li>Uso Básico</li>
+        
+        <li class="wy-breadcrumbs-aside">
+            
+            <a href="https://github.com/adielcristo/composer-doc-pt-br/edit/1.9/doc/uso-basico.md"
+            class="icon icon-github"> Editar no GitHub
+            </a>
+            
+        </li>
+    </ul>
+    
+    <hr />
+</div>
+                <div role="main">
+                    <div class="section">
+                        
+                        <h1 id="uso-basico">Uso Básico<a class="headerlink" href="#uso-basico" title="Permanent link">&para;</a></h1>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
+<p>Para nossa introdução ao uso básico, instalaremos o <code>monolog/monolog</code>, uma
+biblioteca de registro de log. Se você ainda não instalou o Composer, consulte o
+capítulo <a href="introducao.html">Introdução</a>.</p>
+<blockquote>
+<p><strong>Nota:</strong> por uma questão de simplicidade, essa introdução assumirá que você
+executou uma instalação <a href="introducao.html#localmente">local</a> do Composer.</p>
+</blockquote>
+<h2 id="composerjson-configuracao-do-projeto"><code>composer.json</code>: Configuração do Projeto<a class="headerlink" href="#composerjson-configuracao-do-projeto" title="Permanent link">&para;</a></h2>
+<p>Para começar a usar o Composer em seu projeto, tudo o que você precisa é de um
+arquivo <code>composer.json</code>. Esse arquivo descreve as dependências do seu projeto e
+também pode conter outros metadados.</p>
+<h3 id="a-chave-require">A Chave <code>require</code><a class="headerlink" href="#a-chave-require" title="Permanent link">&para;</a></h3>
+<p>A primeira (e muitas vezes a única) coisa especificada no <code>composer.json</code> é a
+chave <a href="esquema.html#require"><code>require</code></a>. Você está simplesmente dizendo ao Composer de
+quais pacotes seu projeto depende.</p>
+<pre><code class="language-json">{
+    &quot;require&quot;: {
+        &quot;monolog/monolog&quot;: &quot;1.0.*&quot;
+    }
+}
+</code></pre>
+<p>Como você pode ver, <a href="esquema.html#require"><code>require</code></a> recebe um objeto que mapeia
+<strong>nomes de pacotes</strong> (por exemplo, <code>monolog/monolog</code>) para <strong>restrições de
+versão</strong> (por exemplo, <code>1.0.*</code>).</p>
+<p>O Composer usa essas informações para procurar o conjunto correto de arquivos
+nos "repositórios" de pacotes que você registra usando a chave <a href="esquema.html#repositories"><code>repositories</code></a> ou no Packagist, o repositório de pacotes padrão. No exemplo
+acima, como nenhum outro repositório foi registrado no arquivo <code>composer.json</code>,
+supõe-se que o pacote <code>monolog/monolog</code> esteja registrado no Packagist. (Veja
+mais sobre o Packagist <a href="#packagist">abaixo</a> ou leia mais sobre repositórios
+<a href="repositorios.html">aqui</a>).</p>
+<h3 id="nomes-de-pacotes">Nomes de Pacotes<a class="headerlink" href="#nomes-de-pacotes" title="Permanent link">&para;</a></h3>
+<p>O nome do pacote consiste no nome do vendor e o nome do projeto. Geralmente,
+eles serão idênticos - o nome do vendor existe apenas para prevenir conflitos de
+nomes. Por exemplo, isso permite que duas pessoas diferentes criem uma
+biblioteca chamada <code>json</code>. Uma pode ser chamada <code>igorw/json</code> enquanto a outra
+pode ser <code>seldaek/json</code>.</p>
+<p>Leia mais sobre a publicação e a nomeação de pacotes <a href="bibliotecas.html">aqui</a>. (Note que você
+também pode especificar "pacotes de plataforma" como dependências, permitindo
+que você exija determinadas versões do software do servidor. Consulte os
+<a href="#pacotes-de-plataforma">pacotes de plataforma</a> abaixo.)</p>
+<h3 id="restricoes-de-versao-de-pacote">Restrições de Versão de Pacote<a class="headerlink" href="#restricoes-de-versao-de-pacote" title="Permanent link">&para;</a></h3>
+<p>Em nosso exemplo, estamos solicitando o pacote Monolog com a restrição de versão
+<a href="https://semver.mwl.be/#?package=monolog%2Fmonolog&amp;version=1.0.*"><code>1.0.*</code></a>. Isso significa qualquer versão no branch de
+desenvolvimento <code>1.0</code> ou qualquer versão maior ou igual a 1.0 e menor que 1.1
+(<code>&gt;=1.0 &lt;1.1</code>).</p>
+<p>Leia o <a href="artigos/versions.md">artigo sobre versões</a> para obter informações mais
+detalhadas sobre versões, como as versões se relacionam entre si e sobre as
+restrições de versão.</p>
+<blockquote>
+<p><strong>Como o Composer baixa os arquivos corretos?</strong> Quando você especifica uma
+dependência no <code>composer.json</code>, o Composer primeiro pega o nome do pacote
+solicitado e o procura em qualquer repositório registrado usando a chave
+<a href="esquema.html#repositories"><code>repositories</code></a>. Se você não registrou nenhum repositório extra
+ou se ele não encontra um pacote com esse nome nos repositórios que você
+especificou, ele volta ao Packagist (mais <a href="#packagist">abaixo</a>).</p>
+<p>Quando o Composer encontra o pacote certo, no Packagist ou em um repositório
+que você especificou, ele usa os recursos de versão do VCS do pacote (ou seja,
+branches e tags) para tentar encontrar a melhor correspondência para a
+restrição de versão que você especificou. Leia sobre versões e resolução de
+pacotes no <a href="artigos/versions.md">artigo sobre versões</a>.</p>
+<p><strong>Nota:</strong> Se você está tentando requisitar um pacote mas o Composer gera um
+erro referente à estabilidade do pacote, a versão que você especificou pode
+não atender aos seus requisitos mínimos de estabilidade padrão. Por padrão,
+apenas versões estáveis são levadas em consideração ao procurar versões de
+pacotes válidas no seu VCS.</p>
+<p>Você pode se deparar com isso se estiver tentando requisitar as versões dev,
+alpha, beta ou RC de um pacote. Leia mais sobre flags de estabilidade e a
+chave <code>minimum-stability</code> na <a href="esquema.html">página do esquema</a>.</p>
+</blockquote>
+<h2 id="instalando-dependencias">Instalando Dependências<a class="headerlink" href="#instalando-dependencias" title="Permanent link">&para;</a></h2>
+<p>Para instalar as dependências definidas para o seu projeto, execute o comando
+<a href="cli.html#install"><code>install</code></a>.</p>
+<pre><code class="language-sh">php composer.phar install
+</code></pre>
+<p>Quando você executa esse comando, uma destas duas coisas pode acontecer:</p>
+<h3 id="instalando-sem-o-composerlock">Instalando sem o <code>composer.lock</code><a class="headerlink" href="#instalando-sem-o-composerlock" title="Permanent link">&para;</a></h3>
+<p>Se você nunca executou o comando antes e também não há nenhum <code>composer.lock</code>
+presente, o Composer simplesmente resolve todas as dependências listadas no seu
+arquivo <code>composer.json</code> e baixa a versão mais recente dos arquivos no diretório
+<code>vendor</code> do seu projeto. (O diretório <code>vendor</code> é o local convencional para todos
+os códigos de terceiros em um projeto). Em nosso exemplo acima, você acabaria
+com os arquivos-fonte do Monolog em <code>vendor/monolog/monolog/</code>. Se o Monolog
+listasse quaisquer dependências, elas também estariam em pastas em <code>vendor/</code>.</p>
+<blockquote>
+<p><strong>Dica:</strong> Se você estiver usando o git no seu projeto, provavelmente desejará
+adicionar <code>vendor</code> ao <code>.gitignore</code>. Você realmente não deseja adicionar todo
+esse código de terceiros ao seu repositório versionado.</p>
+</blockquote>
+<p>Quando o Composer termina a instalação, ele grava todos os pacotes e as versões
+exatas deles que foram baixadas no arquivo <code>composer.lock</code>, fixando o projeto
+naquelas versões específicas. Você deve fazer o commit do arquivo
+<code>composer.lock</code> no repositório do projeto, para que todas as pessoas que
+trabalham no projeto usem exatamente as mesmas versões das dependências (mais
+abaixo).</p>
+<h3 id="instalando-com-o-composerlock">Instalando com o <code>composer.lock</code><a class="headerlink" href="#instalando-com-o-composerlock" title="Permanent link">&para;</a></h3>
+<p>Isso nos leva ao segundo cenário. Se já existe um arquivo <code>composer.lock</code> e um
+arquivo <code>composer.json</code> quando você executa <code>composer install</code>, significa que
+você executou o comando <code>install</code> antes ou outra pessoa no projeto executou o
+comando <code>install</code> e fez o commit do arquivo <code>composer.lock</code> no projeto (o que é
+bom).</p>
+<p>De qualquer forma, executar <code>install</code> quando um arquivo <code>composer.lock</code> estiver
+presente resolve e instala todas as dependências listadas no <code>composer.json</code>,
+mas o Composer usa as versões exatas listadas no <code>composer.lock</code> para garantir
+que as versões dos pacotes sejam consistentes para todas as pessoas que
+trabalham no seu projeto. Como resultado você terá todas as dependências
+requisitadas pelo arquivo <code>composer.json</code>, mas elas podem não estar nas versões
+disponíveis mais recentes (algumas das dependências listadas no arquivo
+<code>composer.lock</code> podem ter lançado versões mais recentes desde que o arquivo foi
+criado). Isso é intencional e garante que seu projeto não quebre por causa de
+mudanças inesperadas nas dependências.</p>
+<h3 id="faca-o-commit-do-arquivo-composerlock-para-o-controle-de-versao">Faça o Commit do Arquivo <code>composer.lock</code> para o Controle de Versão<a class="headerlink" href="#faca-o-commit-do-arquivo-composerlock-para-o-controle-de-versao" title="Permanent link">&para;</a></h3>
+<p>Fazer o commit desse arquivo para o controle de versão é importante porque fará
+com que qualquer pessoa que configure o projeto use exatamente as mesmas versões
+das dependências que você está usando. Seu servidor de integração contínua,
+máquinas de produção, outras pessoas no seu time, tudo e todas as pessoas
+executam as mesmas dependências, o que reduz o potencial para erros que afetam
+apenas algumas partes das implantações. Mesmo se você for a única pessoa
+desenvolvendo, ao reinstalar o projeto após seis meses você poderá se sentir
+confiante de que as dependências instaladas ainda estão funcionando, mesmo que
+suas dependências tenham lançado muitas novas versões desde então. (Veja a nota
+abaixo sobre o uso do comando <code>update</code>.)</p>
+<h2 id="atualizando-as-dependencias-para-suas-versoes-mais-recentes">Atualizando as Dependências para Suas Versões mais Recentes<a class="headerlink" href="#atualizando-as-dependencias-para-suas-versoes-mais-recentes" title="Permanent link">&para;</a></h2>
+<p>Como mencionado acima, o arquivo <code>composer.lock</code> impede que você obtenha
+automaticamente as versões mais recentes de suas dependências. Para atualizar
+para as versões mais recentes, use o comando <a href="cli.html#update"><code>update</code></a>. Ele buscará
+as versões correspondentes mais recentes (de acordo com o arquivo
+<code>composer.json</code>) e atualizará o arquivo lock com as novas versões. (Isso é
+equivalente a excluir o arquivo <code>composer.lock</code> e executar <code>install</code> novamente.)</p>
+<pre><code class="language-sh">php composer.phar update
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> O Composer exibirá um aviso ao executar um comando <code>install</code> se o
+<code>composer.lock</code> não tiver sido atualizado depois que foram feitas alterações
+no <code>composer.json</code> que podem afetar a resolução de dependências.</p>
+</blockquote>
+<p>Se você deseja instalar ou atualizar apenas uma dependência, você pode listá-la:</p>
+<pre><code class="language-sh">php composer.phar update monolog/monolog [...]
+</code></pre>
+<blockquote>
+<p><strong>Nota:</strong> Para bibliotecas, não é necessário fazer o commit do arquivo lock,
+consulte também: <a href="bibliotecas.html#arquivo-lock">Bibliotecas - Arquivo Lock</a>.</p>
+</blockquote>
+<h2 id="packagist">Packagist<a class="headerlink" href="#packagist" title="Permanent link">&para;</a></h2>
+<p><a href="https://packagist.org/">Packagist</a> é o principal repositório do Composer. Um
+repositório do Composer é basicamente uma fonte de pacotes: um local de onde
+você pode obter pacotes. O Packagist pretende ser o repositório central que
+todas as pessoas usam. Isso significa que você pode exigir automaticamente
+qualquer pacote disponível lá usando <code>require</code>, sem especificar mais
+detalhes sobre onde o Composer deve procurar pelo pacote.</p>
+<p>Se você for ao <a href="https://packagist.org/">site do Packagist</a> (packagist.org), você pode
+navegar e procurar por pacotes.</p>
+<p>É recomendado que qualquer projeto de código aberto usando o Composer publique
+seus pacotes no Packagist. Uma biblioteca não precisa estar no Packagist para
+ser usada pelo Composer, mas isso permite a descoberta e adoção mais rápida por
+outras pessoas.</p>
+<h2 id="pacotes-de-plataforma">Pacotes de Plataforma<a class="headerlink" href="#pacotes-de-plataforma" title="Permanent link">&para;</a></h2>
+<p>O Composer possui pacotes de plataforma, que são pacotes virtuais para itens
+instalados no sistema, mas que não são realmente instaláveis pelo Composer. Isso
+inclui o próprio PHP, extensões PHP e algumas bibliotecas do sistema.</p>
+<ul>
+<li>
+<p><code>php</code> representa a versão do PHP do usuário, permitindo aplicar restrições,
+  por exemplo, <code>^7.1</code>. Para exigir uma versão do PHP de 64 bits, você pode
+  exigir o pacote <code>php-64bit</code>.</p>
+</li>
+<li>
+<p><code>hhvm</code> representa a versão do runtime do HHVM e permite aplicar uma restrição,
+  por exemplo, <code>^2.3</code>.</p>
+</li>
+<li>
+<p><code>ext-&lt;nome&gt;</code> permite exigir extensões PHP (incluindo extensões nativas). O
+  versionamento pode ser bastante inconsistente aqui, portanto é uma boa ideia
+  definir a restrição como <code>*</code>. Um exemplo de um nome de pacote de extensão é
+  <code>ext-gd</code>.</p>
+</li>
+<li>
+<p><code>lib-&lt;nome&gt;</code> permite que restrições sejam feitas nas versões das bibliotecas
+  usadas pelo PHP. As seguintes estão disponíveis: <code>curl</code>, <code>iconv</code>, <code>icu</code>,
+  <code>libxml</code>, <code>openssl</code>, <code>pcre</code>, <code>uuid</code>, <code>xsl</code>.</p>
+</li>
+</ul>
+<p>Você pode usar <a href="cli.html#show"><code>show --platform</code></a> para obter uma lista dos seus
+pacotes de plataforma disponíveis localmente.</p>
+<h2 id="autoloading">Autoloading<a class="headerlink" href="#autoloading" title="Permanent link">&para;</a></h2>
+<p>Para bibliotecas que especificam informações de autoload, o Composer gera um
+arquivo <code>vendor/autoload.php</code>. Você pode simplesmente incluir esse arquivo e
+começar a usar as classes que essas bibliotecas fornecem sem nenhum trabalho
+extra:</p>
+<pre><code class="language-php">require __DIR__ . '/vendor/autoload.php';
+
+$log = new Monolog\Logger('name');
+$log-&gt;pushHandler(new Monolog\Handler\StreamHandler('app.log', Monolog\Logger::WARNING));
+$log-&gt;addWarning('Foo');
+</code></pre>
+<p>Você pode até adicionar seu próprio código ao autoloader, adicionando um campo
+<a href="esquema.html#autoload"><code>autoload</code></a> ao <code>composer.json</code>.</p>
+<pre><code class="language-json">{
+    &quot;autoload&quot;: {
+        &quot;psr-4&quot;: {&quot;Acme\\&quot;: &quot;src/&quot;}
+    }
+}
+</code></pre>
+<p>O Composer registrará um autoloader <a href="https://www.php-fig.org/psr/psr-4/">PSR-4</a> para o namespace <code>Acme</code>.</p>
+<p>Você define um mapeamento de namespaces para diretórios. O diretório <code>src</code>
+estaria na raiz do seu projeto, no mesmo nível que o diretório <code>vendor</code>. Um
+exemplo de nome de arquivo seria <code>src/Foo.php</code> contendo uma classe <code>Acme\Foo</code>.</p>
+<p>Após adicionar o campo <a href="esquema.html#autoload"><code>autoload</code></a>, é necessário executar
+novamente o <a href="cli.html#dump-autoload"><code>dump-autoload</code></a> para gerar novamente o arquivo
+<code>vendor/autoload.php</code>.</p>
+<p>A inclusão desse arquivo também retornará a instância do autoloader, para que
+você possa armazenar o valor de retorno da chamada ao include em uma variável e
+possa adicionar mais namespaces. Isso pode ser útil para fazer o autoloading de
+classes em uma suite de testes, por exemplo.</p>
+<pre><code class="language-php">$loader = require __DIR__ . '/vendor/autoload.php';
+$loader-&gt;addPsr4('Acme\\Test\\', __DIR__);
+</code></pre>
+<p>Além do autoloading da PSR-4, o Composer também suporta a PSR-0, mapas de
+classes e autoloading de arquivos. Consulte a referência de <a href="esquema.html#autoload"><code>autoload</code></a> para obter mais informações.</p>
+<p>Consulte também a documentação sobre <a href="artigos/autoloader-optimization.md">otimização do autoloader</a>.</p>
+<blockquote>
+<p><strong>Nota:</strong> O Composer fornece seu próprio autoloader. Se você não quiser
+usá-lo, poderá incluir os arquivos <code>vendor/composer/autoload_*.php</code>, que
+retornam arrays associativos que permitem configurar seu próprio autoloader.</p>
+</blockquote>
+                        
+                    </div>
+                </div>
+                <footer>
+    
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        
+        <a href="bibliotecas.html" class="btn btn-neutral float-right" title="Bibliotecas">
+            Próxima <span class="icon icon-circle-arrow-right"></span>
+        </a>
+        
+        
+        <a href="introducao.html" class="btn btn-neutral" title="Introdução">
+            <span class="icon icon-circle-arrow-left"></span> Anterior
+        </a>
+        
+    </div>
+    
+
+    <hr />
+
+    <div role="contentinfo">
+        
+    </div>
+
+    <div>
+        Tradução da <a href="https://github.com/composer/composer/tree/1.9/doc">Documentação do Composer</a> |
+        <a href="https://github.com/composer/composer/blob/master/LICENSE">Licença</a><br />
+    </div>
+
+</footer>
+                
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/adielcristo/composer-doc-pt-br/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span>
+            <a href="introducao.html" style="color: #fcfcfc;">&laquo; Anterior</a>
+        </span>
+      
+      
+        <span style="margin-left: 15px">
+            <a href="bibliotecas.html" style="color: #fcfcfc">Próxima &raquo;</a>
+        </span>
+      
+    </span>
+</div>
+<script>var base_url = '.';</script>
+<script src="js/theme.js" defer></script>
+<script src="search/main.js" defer></script>
+<script defer>
+    window.onload = function () {
+      SphinxRtdTheme.Navigation.enable(false);
+    };
+</script>
+
+</body>
+</html>
